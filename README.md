@@ -1,7 +1,7 @@
 #ES6-Workshop
 
 ##Welcome
-Welcome to this ES6 workshop. Our goal is to help everyone makes strides towards learning the newest ES6 syntax, and
+Welcome to this ES6 workshop. Our goal is to help everyone make strides towards learning the newest ES6 syntax, and
 how to use the latest constructs in JavaScript.
 
 This repo is meant to be used in parallel with a lecture style presentation of the new features.
