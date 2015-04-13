@@ -30,3 +30,6 @@ npm install --global babel && npm install
 *Note that this step will install `Babel` globally. This project uses Babel to provide support for ES6 syntax. Without
 it, we wouldn't be able to use many of these features.*
 
+#Thanks
+If you have any questions, [let me know](https://www.twitter.com/js_dev).
+
