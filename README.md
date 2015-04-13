@@ -14,7 +14,19 @@ using the latest ES6 syntax. Once all of your tests pass, you will want to move 
 By the time that the workshop is over, all of your tests will be passing.
 
 ##How To Get Started
-You will need to start by cloning this repo:
+
+###Clone the repo
+You will need to start by cloning this repo. From your terminal, type:
 ```
 git clone git@github.com:aaronfrost/es6-workshop.git && cd es6-workshop
 ```
+
+###Install Dependencies
+Once you have cloned the repo, in need to install the local dependencies. From your terminal, type:
+```
+npm install --global babel && npm install
+```
+
+*Note that this step will install `Babel` globally. This project uses Babel to provide support for ES6 syntax. Without
+it, we wouldn't be able to use many of these features.*
+
