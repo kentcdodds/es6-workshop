@@ -41,7 +41,7 @@ describe('LET', () => {
 
     function doLoop(){
       //Change loop counter to `let` so that it is trapped inside of the loop, and can't be returned.
-      for(var i = 0; i < 10; i++){
+      for(let i = 0; i < 10; i++){
 
       }
       return i;

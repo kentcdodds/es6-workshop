@@ -19,6 +19,7 @@ describe('Destructuring', () => {
     //var city = address.city;
     //var state = address.state;
     //var zip = address.zip;
+    let {city, state, zip} = getAddress();
 
     expect(city).toBe("Salt Lake City");
     expect(state).toBe("UT");

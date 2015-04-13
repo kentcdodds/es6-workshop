@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "ES6-Workshop",
   "version": "0.0.1",
   "devDependencies": {
     "babel-jest": "*",
@@ -10,8 +10,16 @@
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
-    "testFileExtensions": ["js"],
-    "moduleFileExtensions": ["js", "json"],
+    "testFileExtensions": [
+      "js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "json"
+    ],
     "testDirectoryName": "spec-final"
+  },
+  "dependencies": {
+    "lodash": "^3.6.0"
   }
 }
