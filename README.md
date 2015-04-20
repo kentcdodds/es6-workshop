@@ -30,6 +30,23 @@ npm install --global babel && npm install
 *Note that this step will install `Babel` globally. This project uses Babel to provide support for ES6 syntax. Without
 it, we wouldn't be able to use many of these features.*
 
+#How To Run Tests
+Once you have everything installed, you are ready to run some tests. There are two directories with tests in them: `spec` and `spec-final`.
+The `spec-final` directory is like a cheat sheet. All of the tests contain the required ES6 code to make the tests pass. You will need to
+edit the tests in the `spec` directory, and make the tests pass.
+
+To run the tests, in your terminal run:
+
+```javascript
+npm test
+```
+
+This will execute the tests in teh `spec` directory. Currently all of these tests are disabled, because I have changed the `it()` statement
+to `xit()`, which will skip that test. Your jobs it to one-by-one turn each test back on and get the test to pass, by
+writing the required ES6 code. Once you have writen the required code, the tests will pass, and you can move onto the next test.
+
+As Axel teaches us about ES6, we will take breaks once in a while to run these exercises.
+
 #Thanks
 If you have any questions, [let me know](https://www.twitter.com/js_dev).
 

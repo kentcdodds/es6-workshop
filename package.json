@@ -17,7 +17,7 @@
       "js",
       "json"
     ],
-    "testDirectoryName": "spec-final"
+    "testDirectoryName": "spec"
   },
   "dependencies": {
     "lodash": "^3.6.0"
