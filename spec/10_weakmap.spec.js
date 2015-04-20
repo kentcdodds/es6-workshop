@@ -2,7 +2,7 @@ jest.autoMockOff();
 
 describe('WEAKMAPS', () => {
 
-  it('has a set method', ()=>{
+  xit('has a set method', ()=>{
     let key = {name: "Aaron"};
     let value = {twitter: '@js_dev', gplus: '+AaronFrost'};
 
