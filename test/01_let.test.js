@@ -27,26 +27,26 @@ describe('LET', () => {
 
   it.skip('is trapped inside of an `if` statement', () => {
 
-    if(true){
+    if (true) {
       //Change to `var` to `let`, so that 'b' is scoped inside of the if-statement
       var b = 1;
     }
 
-    expect(()=> console.log(b)).to.throw(new ReferenceError('b is not defined'));
+    expect(()=> console.log(b)).to.throw('b is not defined');
   });
 
 
   it.skip('prevents loop counters from hoisting', () => {
 
-    function doLoop(){
+    function doLoop() {
       //Change loop counter to `let` so that it is trapped inside of the loop, and can't be returned.
-      for(var i = 0; i < 10; i++){
+      for (var i = 0; i < 10; i++) {
 
       }
       return i;
     }
 
-    expect(doLoop).to.throw(new ReferenceError('i is not defined'));
+    expect(doLoop).to.throw('i is not defined');
   });
 
 
@@ -58,7 +58,7 @@ describe('LET', () => {
       var d = 2;
     }
 
-    expect(()=> console.log('d',d)).to.throw(new ReferenceError('d is not defined'));
+    expect(()=> console.log('d', d)).to.throw('d is not defined');
   });
 
 });

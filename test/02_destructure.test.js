@@ -35,9 +35,9 @@ describe('Destructuring', () => {
       expect(c).to.equal('Salt Lake City');
       expect(s).to.equal('UT');
       expect(z).to.equal(84115);
-      expect( ()=>console.log(city) ).to.throw();
-      expect( ()=>console.log(state) ).to.throw();
-      expect( ()=>console.log(zip) ).to.throw();
+      expect(()=>console.log(city)).to.throw();
+      expect(()=>console.log(state)).to.throw();
+      expect(()=>console.log(zip)).to.throw();
 
     });
 
@@ -54,9 +54,9 @@ describe('Destructuring', () => {
 
   });
 
-  describe('with Arrays', ()=>{
+  describe('with Arrays', ()=> {
 
-    it.skip('can be used to pull apart arrays', () =>{
+    it.skip('can be used to pull apart arrays', () => {
 
       //Call getNumbers and pull the first value out as `one` and the second as `two`
 
@@ -66,7 +66,7 @@ describe('Destructuring', () => {
 
     });
 
-    it.skip('can skip indexes in arrays', () =>{
+    it.skip('can skip indexes in arrays', () => {
 
       //Call getNumbers and pull the first value out as `one` and the third as `three`. Don't pull out the second index. Skip it
 
@@ -76,9 +76,9 @@ describe('Destructuring', () => {
 
     });
 
-    it.skip('can reach nested arrays', () =>{
+    it.skip('can reach nested arrays', () => {
 
-      function getNestedNumbers(){
+      function getNestedNumbers() {
         return [1, 2, [3, 4, [5, 6]]];
       }
 
@@ -96,8 +96,7 @@ describe('Destructuring', () => {
 });
 
 
-
-function getAddress(){
+function getAddress() {
   return {
     city: 'Salt Lake City',
     state: 'UT',
@@ -109,7 +108,7 @@ function getAddress(){
   };
 }
 
-function getNumbers(){
+function getNumbers() {
   return [1, 2, 3, 4, 5, 6];
 }
 

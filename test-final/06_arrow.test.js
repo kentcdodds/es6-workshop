@@ -6,7 +6,7 @@ describe('Arrow Functions', () => {
 
     let fnMultiply, arrowMultiply;
 
-    fnMultiply = function(a, b){
+    fnMultiply = function(a, b) {
       return a * b;
     };
 
@@ -19,7 +19,7 @@ describe('Arrow Functions', () => {
   it('can replace traditional functions #2', () => {
 
     let nums = [2, 5, 10];
-    let squares = nums.map((num) => num*num);
+    let squares = nums.map((num) => num * num);
 
     expect(squares.shift()).to.equal(4);
     expect(squares.shift()).to.equal(25);
@@ -31,7 +31,7 @@ describe('Arrow Functions', () => {
 
     let person = {
       name: 'Aaron',
-      greetFriends: function(friends){
+      greetFriends: function(friends) {
         friends.forEach((friend) => {
           console.log(this.name + ' greets to ' + friend);
         });
@@ -47,15 +47,15 @@ describe('Arrow Functions', () => {
   it('can make array filter chains more managable', () => {
 
     let data = [
-      {type: 'Widget', name: 'Sprocket',      price: 10.00, qty: 3},
-      {type: 'Widget', name: 'Bracket',       price: 1.00, qty: 5},
-      {type: 'Widget', name: 'Brace',         price: 2.50, qty: 1},
-      {type: 'Widget', name: 'Sprocket',      price: 4.00, qty: 2},
-      {type: 'Food', name: 'Gouda',           price: 8.75, qty: 4},
-      {type: 'Food', name: 'Bacon',           price: 3.50, qty: 3},
-      {type: 'CD', name: 'Queen Best Hits',   price: 5.50, qty: 5},
-      {type: 'CD', name: 'Brittney Best Hits',price: 6.25, qty: 3},
-      {type: 'CD', name: 'JT Best Hits',      price: 2.25, qty: 6},
+      {type: 'Widget', name: 'Sprocket', price: 10.00, qty: 3},
+      {type: 'Widget', name: 'Bracket', price: 1.00, qty: 5},
+      {type: 'Widget', name: 'Brace', price: 2.50, qty: 1},
+      {type: 'Widget', name: 'Sprocket', price: 4.00, qty: 2},
+      {type: 'Food', name: 'Gouda', price: 8.75, qty: 4},
+      {type: 'Food', name: 'Bacon', price: 3.50, qty: 3},
+      {type: 'CD', name: 'Queen Best Hits', price: 5.50, qty: 5},
+      {type: 'CD', name: 'Brittney Best Hits', price: 6.25, qty: 3},
+      {type: 'CD', name: 'JT Best Hits', price: 2.25, qty: 6},
     ];
 
     let shoppingList = data
