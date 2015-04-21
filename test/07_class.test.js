@@ -2,11 +2,17 @@ import {expect} from 'chai';
 
 describe('Classes', () => {
 
-  it.skip('has a constructor for initialization', ()=> {
+  it('has a constructor for initialization', ()=> {
 
     // Create an Animal class
     // Add a constructor that takes one param, the name.
     // Set this.name to the name passed in
+
+    class Animal {
+      constructor(name) {
+        this.name = name;
+      }
+    }
 
 
     let animal = new Animal();
@@ -16,10 +22,16 @@ describe('Classes', () => {
     expect(dog.name).to.equal('Dog');
   });
 
-  it.skip('constructor can have default param values', ()=> {
+  it('constructor can have default param values', ()=> {
 
     // Create an Animal class with a constructor
     // Make your class default (using default params) the name to 'Honey Badger'
+
+    class Animal {
+      constructor(name = 'Honey Badger') {
+        this.name = name;
+      }
+    }
 
 
     let animal = new Animal();
@@ -29,10 +41,14 @@ describe('Classes', () => {
     expect(dog.name).to.equal('Dog');
   });
 
-  it.skip('can have instance methods', ()=> {
+  it('can have instance methods', ()=> {
 
     //Create an Animal class, pass in the name to the constructor, and add a sayName function to the class definition as a non-static function
 
+    class Animal {
+      sayName() {
+      }
+    }
 
     let animal = new Animal();
 
@@ -42,11 +58,16 @@ describe('Classes', () => {
   });
 
 
-  it.skip('can have static methods', ()=> {
+  it('can have static methods', ()=> {
 
     // Create an Animal class, pass in the name to the constructor,
     // and add a static create method that takes a name and returns an instance
 
+    class Animal {
+      static create(name) {
+        return new Animal(name);
+      }
+    }
 
     let animal = new Animal();
 

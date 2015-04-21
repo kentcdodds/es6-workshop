@@ -2,28 +2,30 @@ import {expect} from 'chai';
 
 describe('Arrow Functions', () => {
 
-  it.skip('can replace traditional functions', () => {
-
-    let fnMultiply, arrowMultiply;
+  it('can replace traditional functions', () => {
 
     //Write two functions that take two params and return their product
     //For 'fnMultiply', set it equal to a regular function
     //For 'arrowMultiply', set it equal to an arrow function
+    function fnMultiply(arg1, arg2) {
+      return arg1 * arg2;
+    }
 
+    let arrowMultiply = (arg1, arg2) => {
+      return arg1 * arg2;
+    };
 
     expect(fnMultiply(5, 5)).to.equal(arrowMultiply(5, 5));
 
   });
 
-  it.skip('can replace traditional functions #2', () => {
+  it('can replace traditional functions #2', () => {
 
     let nums = [2, 5, 10];
 
     //Replace the 'function' in this 'map' call with an arrow function.
     //Hint: you shouldn't have any braces or 'return' after you are done
-    let squares = nums.map(function(num) {
-      return num * num;
-    });
+    let squares = nums.map(num => num * num);
 
     expect(squares.shift()).to.equal(4);
     expect(squares.shift()).to.equal(25);
@@ -31,14 +33,14 @@ describe('Arrow Functions', () => {
 
   });
 
-  it.skip('binds `this` to the eval scope, not the runtime scope', () => {
+  it('binds `this` to the eval scope, not the runtime scope', () => {
 
     //Change the person object. One of the functions should become an arrow to allow for 'this' to retain context correctly
 
     let person = {
       name: 'Aaron',
       greetFriends: function(friends) {
-        friends.forEach(function(friend) {
+        friends.forEach(friend => {
           console.log(this.name + ' greets to ' + friend);
         });
       }
@@ -50,7 +52,7 @@ describe('Arrow Functions', () => {
 
   });
 
-  it.skip('can make array filter chains more managable', () => {
+  it('can make array filter chains more managable', () => {
 
     let data = [
       {type: 'Widget', name: 'Sprocket', price: 10.00, qty: 3},
@@ -67,18 +69,10 @@ describe('Arrow Functions', () => {
     //REPLACE ALL REGULAR FUNCTION WITH ARROW FUNCTIONS
 
     let shoppingList = data
-      .filter(function(d) {
-        return d.type != 'Widget';
-      }) //Remove Widgets
-      .filter(function(d) {
-        return d.price < 5;
-      }) //Find only remaining items with price < 5
-      .sort(function(d) {
-        return d.qty * -1;
-      }) //Sort by price, desc
-      .map(function(d) {
-        return d.name;
-      });//Pull just the name from each item
+      .filter(d => d.type != 'Widget') //Remove Widgets
+      .filter(d => d.price < 5) //Find only remaining items with price < 5
+      .sort(d => d.qty * -1) //Sort by price, desc
+      .map(d => d.name);//Pull just the name from each item
 
     expect(shoppingList.shift()).to.equal('Bacon');
     expect(shoppingList.shift()).to.equal('JT Best Hits');
