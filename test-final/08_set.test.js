@@ -15,7 +15,7 @@ describe('SETS', () => {
     expect(mySet.has(1)).to.be.true;
     expect(mySet.has(2)).to.be.true;
     expect(mySet.has(3)).to.be.true;
-    expect(mySet.has(4)).to.equal(false);
+    expect(mySet.has(4)).to.be.false;
 
   });
 
@@ -31,9 +31,9 @@ describe('SETS', () => {
     mySet.add(1);
 
     expect(mySet.has(1)).to.be.true;
-    expect(mySet.has(2)).to.equal(false);
-    expect(mySet.has(3)).to.equal(false);
-    expect(mySet.has(4)).to.equal(false);
+    expect(mySet.has(2)).to.be.false;
+    expect(mySet.has(3)).to.be.false;
+    expect(mySet.has(4)).to.be.false;
 
   });
 

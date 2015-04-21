@@ -84,11 +84,11 @@ describe('Rest Parameters', () => {
       return others.length == arguments.length;
     }
 
-    //expect(resty()).to.be.true;
-    //expect(resty(1)).to.equal(false);
-    //expect(resty(1,2).length).to.equal(false);
-    //expect(resty(1,2,3).length).to.equal(false);
-    //expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10).length).to.equal(false);
+    expect(resty()).to.be.true;
+    expect(resty(1)).to.be.false;
+    expect(resty(1,2)).to.be.false;
+    expect(resty(1,2,3)).to.be.false;
+    expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10).length).to.be.false;
   });
 
   it('is an actual array, unlike arguments', () => {
@@ -104,7 +104,7 @@ describe('Rest Parameters', () => {
     var args = argy(1, 2, 3);
     var rests = resty(1, 2, 3);
 
-    expect(args.__proto__ == rests.__proto__).to.equal(false);
+    expect(args.__proto__ == rests.__proto__).to.be.false;
     expect(args.splice).to.be.undefined;
 
     expect(rests.__proto__).to.equal(Array.prototype);

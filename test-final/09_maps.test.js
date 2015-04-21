@@ -25,11 +25,11 @@ describe('MAPS', () => {
   });
 
   // calls to `map.get` are not working. leave commented out.
-  //xit('doesn\'t coerce keys', ()=>{
+  //it.skip('doesn\'t coerce keys', ()=>{
   //
   //  let myMap = new Map();
   //  myMap.set(1, 'Aaron');
-  //  expect(myMap.get('1')).to.equal(false);
+  //  expect(myMap.get('1')).to.be.false;
   //  myMap.set('1', 'Aaron');
   //  expect(myMap.get('1')).to.be.true;
   //
