@@ -8,7 +8,7 @@ describe('Arrow Functions', () => {
 
     //Write two functions that take two params and return their product
     //For 'fnMultiply', set it equal to a regular function
-    //For 'fnMultiply', set it equal to an arrow function
+    //For 'arrowMultiply', set it equal to an arrow function
 
 
     expect(fnMultiply(5, 5)).to.equal(arrowMultiply(5, 5));
@@ -20,7 +20,7 @@ describe('Arrow Functions', () => {
     let nums = [2, 5, 10];
 
     //Replace the 'function' in this 'map' call with an arrow function.
-    //Hint: you shouldn'd have any braces or 'return' after you are done
+    //Hint: you shouldn't have any braces or 'return' after you are done
     let squares = nums.map(function(num) {
       return num * num;
     });
