@@ -1,0 +1,10 @@
+require('./01_let.test');
+require('./02_destructure.test');
+require('./03_modules.test');
+require('./04_object-literal.test');
+require('./05_parameters.test');
+require('./06_arrow.test');
+require('./07_class.test');
+require('./08_set.test');
+require('./09_maps.test');
+require('./10_weakmap.test');
