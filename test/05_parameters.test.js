@@ -7,10 +7,10 @@ describe('Default Values', () => {
       return name;
     }
 
-    expect(test('Aaron')).toBe(/*ENTER YOUR GUESS HERE*/);
-    expect(test(undefined)).toBe(/*ENTER YOUR GUESS HERE*/);
-    expect(test(null)).toBe(/*ENTER YOUR GUESS HERE*/);
-    expect(test()).toBe(/*ENTER YOUR GUESS HERE*/);
+    expect(test('Aaron')).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(test(undefined)).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(test(null)).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(test()).to.equal(/*ENTER YOUR GUESS HERE*/);
 
   });
 
@@ -20,9 +20,9 @@ describe('Default Values', () => {
       return arguments.length;
     }
 
-    expect(test('Aaron')).toBe(/*ENTER YOUR GUESS HERE*/);
-    expect(test(null)).toBe(/*ENTER YOUR GUESS HERE*/);
-    expect(test()).toBe(/*ENTER YOUR GUESS HERE*/);
+    expect(test('Aaron')).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(test(null)).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(test()).to.equal(/*ENTER YOUR GUESS HERE*/);
 
   });
 
@@ -38,11 +38,11 @@ describe('Default Values', () => {
       return 'Mercury';
     }
 
-    expect(triggerCount).toBe(/*ENTER YOUR GUESS HERE*/);
-    expect(test('Aaron')).toBe(/*ENTER YOUR GUESS HERE*/);
-    expect(test()).toBe(/*ENTER YOUR GUESS HERE*/);
-    expect(test(null)).toBe(/*ENTER YOUR GUESS HERE*/);
-    expect(triggerCount).toBe(/*ENTER YOUR GUESS HERE*/);
+    expect(triggerCount).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(test('Aaron')).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(test()).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(test(null)).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(triggerCount).to.equal(/*ENTER YOUR GUESS HERE*/);
 
   });
 
@@ -91,8 +91,8 @@ describe('Rest Parameters', () => {
     var rests = resty(1, 2, 3);
 
     //
-    expect(args.__proto__ == rests.__proto__).toBe(/*ENTER YOUR GUESS HERE*/);
-    expect(args.splice).toBe(/*ENTER YOUR GUESS HERE*/);
+    expect(args.__proto__ == rests.__proto__).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(args.splice).to.equal(/*ENTER YOUR GUESS HERE*/);
 
     expect(rests.__proto__).to.equal(/*ENTER YOUR GUESS HERE*/);
     expect(rests.splice).to.exist;

@@ -7,10 +7,10 @@ describe('Default Values', () => {
       return name;
     }
 
-    //expect(test('Aaron'))   .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test())          .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test(undefined)) .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test(null))      .toBe(/*ENTER YOUR GUESS HERE*/);
+    //expect(test('Aaron'))   .to.equal(/*ENTER YOUR GUESS HERE*/);
+    //expect(test())          .to.equal(/*ENTER YOUR GUESS HERE*/);
+    //expect(test(undefined)) .to.equal(/*ENTER YOUR GUESS HERE*/);
+    //expect(test(null))      .to.equal(/*ENTER YOUR GUESS HERE*/);
 
     expect(test('Aaron')).to.equal('Aaron');
     expect(test()).to.equal('Mercury');
@@ -24,9 +24,9 @@ describe('Default Values', () => {
       return arguments.length;
     }
 
-    //expect(test('Aaron'))   .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test())          .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test(null))      .toBe(/*ENTER YOUR GUESS HERE*/);
+    //expect(test('Aaron'))   .to.equal(/*ENTER YOUR GUESS HERE*/);
+    //expect(test())          .to.equal(/*ENTER YOUR GUESS HERE*/);
+    //expect(test(null))      .to.equal(/*ENTER YOUR GUESS HERE*/);
 
     expect(test('Aaron')).to.equal(1);
     expect(test()).to.equal(0);
@@ -44,9 +44,9 @@ describe('Default Values', () => {
       return 'Mercury';
     }
 
-    //expect(test('Aaron'))   .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test())          .toBe(/*ENTER YOUR GUESS HERE*/);
-    //expect(test(null))      .toBe(/*ENTER YOUR GUESS HERE*/);
+    //expect(test('Aaron'))   .to.equal(/*ENTER YOUR GUESS HERE*/);
+    //expect(test())          .to.equal(/*ENTER YOUR GUESS HERE*/);
+    //expect(test(null))      .to.equal(/*ENTER YOUR GUESS HERE*/);
 
     expect(triggerCount).to.equal(0);
     expect(test('Aaron')).to.equal('Aaron');
