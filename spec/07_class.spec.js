@@ -35,10 +35,10 @@ describe('Classes', () => {
 
 
     let animal = new Animal();
-    animal.sayName();
 
     expect(animal.sayName).toBeDefined();
     expect(Animal.sayName).toBeUndefined();
+    expect(animal.sayName()).toBe("My name is: Honey Badger");
   });
 
 
@@ -53,6 +53,9 @@ describe('Classes', () => {
 
     expect(animal.create).toBeUndefined();
     expect(Animal.create).toBeDefined();
+
+    let createdAnimal = Animal.create('Snake');
+    expect(createdAnimal.name).toBe('Snake');
   });
 
   xit('can extend another class', ()=>{
@@ -79,9 +82,9 @@ describe('Classes', () => {
 
     let animal = new Animal();
     animal.name = "Dog";
-    expect(animal.name).toBe("Dog");
+    expect(animal.name).toBe("Dog type of animal");
     animal.name = "Cat";
-    expect(animal.name).toBe("Cat");
+    expect(animal.name).toBe("Cat type of animal");
   });
 
 });
