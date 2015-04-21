@@ -1,4 +1,4 @@
-jest.autoMockOff();
+import {expect} from 'chai';
 
 describe('Classes', () => {
 
@@ -14,47 +14,47 @@ describe('Classes', () => {
     }
 
     let animal = new Animal();
-    let dog = new Animal("Dog");
+    let dog = new Animal('Dog');
 
-    expect(animal.name).toBeUndefined();
-    expect(dog.name).toBe('Dog');
+    expect(animal.name).to.be.undefined;
+    expect(dog.name).to.equal('Dog');
   });
 
   it('constructor can have default param values', ()=>{
 
     // Create an Animal class with a constructor
-    // Make your class default (using default params) the name to "Honey Badger"
+    // Make your class default (using default params) the name to 'Honey Badger'
     class Animal{
-      constructor(name="Honey Badger"){
+      constructor(name='Honey Badger'){
         this.name = name;
       }
     }
 
     let animal = new Animal();
-    let dog = new Animal("Dog");
+    let dog = new Animal('Dog');
 
-    expect(animal.name).toBe("Honey Badger");
-    expect(dog.name).toBe('Dog');
+    expect(animal.name).to.equal('Honey Badger');
+    expect(dog.name).to.equal('Dog');
   });
 
   it('can have instance methods', ()=>{
 
     //Create an Animal class, pass in the name to the constructor, and add a sayName function to the class definition
     class Animal{
-      constructor(name="Honey Badger"){
+      constructor(name='Honey Badger'){
         this.name = name;
       }
 
       sayName(){
-        console.log("My name is: "+this.name);
+        console.log('My name is: '+this.name);
       }
     }
 
     let animal = new Animal();
     animal.sayName();
 
-    expect(animal.sayName).toBeDefined();
-    expect(Animal.sayName).toBeUndefined();
+    expect(animal.sayName).to.exist;
+    expect(Animal.sayName).to.be.undefined;
   });
 
 
@@ -63,12 +63,12 @@ describe('Classes', () => {
     // Create an Animal class, pass in the name to the constructor,
     // and add a create method that takes a name and returns an instance
     class Animal{
-      constructor(name="Honey Badger"){
+      constructor(name='Honey Badger'){
         this.name = name;
       }
 
       sayName(){
-        console.log("My name is: "+this.name);
+        console.log('My name is: '+this.name);
       }
 
       static create(name){
@@ -78,8 +78,8 @@ describe('Classes', () => {
 
     let animal = new Animal();
 
-    expect(animal.create).toBeUndefined();
-    expect(Animal.create).toBeDefined();
+    expect(animal.create).to.be.undefined;
+    expect(Animal.create).to.exist;
   });
 
   it('can extend another class', ()=>{
@@ -89,12 +89,12 @@ describe('Classes', () => {
     // Add sayName to Animal
     //
     class Animal{
-      constructor(name="Honey Badger"){
+      constructor(name='Honey Badger'){
         this.name = name;
       }
 
       sayName(){
-        console.log("My name is: "+this.name);
+        console.log('My name is: '+this.name);
       }
     }
 
@@ -106,8 +106,8 @@ describe('Classes', () => {
 
     let dog = new Dog('Fido');
 
-    expect(dog instanceof Dog).toBe(true);
-    expect(dog instanceof Animal).toBe(true);
+    expect(dog instanceof Dog).to.be.true;
+    expect(dog instanceof Animal).to.be.true;
   });
 
   it('can use property setters and getters', ()=>{
@@ -128,10 +128,10 @@ describe('Classes', () => {
     }
 
     let animal = new Animal();
-    animal.name = "Dog";
-    expect(animal.name).toBe("Dog");
-    animal.name = "Cat";
-    expect(animal.name).toBe("Cat");
+    animal.name = 'Dog';
+    expect(animal.name).to.equal('Dog');
+    animal.name = 'Cat';
+    expect(animal.name).to.equal('Cat');
   });
 
 });

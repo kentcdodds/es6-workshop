@@ -1,8 +1,8 @@
-jest.autoMockOff();
+import {expect} from 'chai';
 
 describe('Arrow Functions', () => {
 
-  xit('can replace traditional functions', () => {
+  it.skip('can replace traditional functions', () => {
 
     let fnMultiply, arrowMultiply;
 
@@ -11,11 +11,11 @@ describe('Arrow Functions', () => {
     //For 'fnMultiply', set it equal to an arrow function
 
 
-    expect(fnMultiply(5, 5)).toBe(arrowMultiply(5, 5));
+    expect(fnMultiply(5, 5)).to.equal(arrowMultiply(5, 5));
 
   });
 
-  xit('can replace traditional functions #2', () => {
+  it.skip('can replace traditional functions #2', () => {
 
     let nums = [2, 5, 10];
 
@@ -25,13 +25,13 @@ describe('Arrow Functions', () => {
       return num*num;
     });
 
-    expect(squares.shift()).toBe(4);
-    expect(squares.shift()).toBe(25);
-    expect(squares.shift()).toBe(100);
+    expect(squares.shift()).to.equal(4);
+    expect(squares.shift()).to.equal(25);
+    expect(squares.shift()).to.equal(100);
 
   });
 
-  xit('binds `this` to the eval scope, not the runtime scope', () => {
+  it.skip('binds `this` to the eval scope, not the runtime scope', () => {
 
     //Change the person object. One of the functions should become an arrow to allow for 'this' to retain context correctly
 
@@ -46,11 +46,11 @@ describe('Arrow Functions', () => {
 
     let friendsArray = ['Naomi', 'Jojo', 'Ryan', 'Owen'];
 
-    expect(()=> person.greetFriends(friendsArray)).not.toThrow();
+    expect(()=> person.greetFriends(friendsArray)).not.to.throw();
 
   });
 
-  xit('can make array filter chains more managable', () => {
+  it.skip('can make array filter chains more managable', () => {
 
     let data = [
       {type: 'Widget', name: 'Sprocket',      price: 10.00, qty: 3},
@@ -80,8 +80,8 @@ describe('Arrow Functions', () => {
         return d.name;
       });//Pull just the name from each item
 
-    expect(shoppingList.shift()).toBe('Bacon');
-    expect(shoppingList.shift()).toBe('JT Best Hits');
+    expect(shoppingList.shift()).to.equal('Bacon');
+    expect(shoppingList.shift()).to.equal('JT Best Hits');
 
   });
 

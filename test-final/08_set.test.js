@@ -1,4 +1,4 @@
-jest.autoMockOff();
+import {expect} from 'chai';
 
 describe('SETS', () => {
 
@@ -12,10 +12,10 @@ describe('SETS', () => {
     mySet.add(2);
     mySet.add(3);
 
-    expect(mySet.has(1)).toBe(true);
-    expect(mySet.has(2)).toBe(true);
-    expect(mySet.has(3)).toBe(true);
-    expect(mySet.has(4)).toBe(false);
+    expect(mySet.has(1)).to.be.true;
+    expect(mySet.has(2)).to.be.true;
+    expect(mySet.has(3)).to.be.true;
+    expect(mySet.has(4)).to.equal(false);
 
   });
 
@@ -30,10 +30,10 @@ describe('SETS', () => {
     mySet.add(1);
     mySet.add(1);
 
-    expect(mySet.has(1)).toBe(true);
-    expect(mySet.has(2)).toBe(false);
-    expect(mySet.has(3)).toBe(false);
-    expect(mySet.has(4)).toBe(false);
+    expect(mySet.has(1)).to.be.true;
+    expect(mySet.has(2)).to.equal(false);
+    expect(mySet.has(3)).to.equal(false);
+    expect(mySet.has(4)).to.equal(false);
 
   });
 

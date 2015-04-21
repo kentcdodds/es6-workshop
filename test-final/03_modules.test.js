@@ -5,15 +5,15 @@ import _ from 'lodash';
 import {sqrt as mySqrt, square as mySquare} from '../common/Mathy';
 
 
-jest.autoMockOff();
+import {expect} from 'chai';
 
 describe('ES6 Modules', () => {
   it('can import Mathy', () => {
 
     //I DID THIS ONE FOR YOU!
-    expect(Mathy.sqrt).toBeDefined();
-    expect(Mathy.square).toBeDefined();
-    expect(Mathy.diag).toBeDefined();
+    expect(Mathy.sqrt).to.exist;
+    expect(Mathy.square).to.exist;
+    expect(Mathy.diag).to.exist;
   });
 
 
@@ -21,27 +21,27 @@ describe('ES6 Modules', () => {
 
     //Import `Mathy as myMathy` to ge these tests to pass.
 
-    expect(myMathy).toBeDefined();
-    expect(myMathy.sqrt).toEqual(Mathy.sqrt);
-    expect(myMathy.square).toEqual(Mathy.square);
-    expect(myMathy.diag).toEqual(Mathy.diag);
+    expect(myMathy).to.exist;
+    expect(myMathy.sqrt).to.equal(Mathy.sqrt);
+    expect(myMathy.square).to.equal(Mathy.square);
+    expect(myMathy.diag).to.equal(Mathy.diag);
   });
 
   it('can destructure the import, to only retain pieces of the import', () => {
 
     //Import `Mathy` again, but pull out only the `sqrt` as mySqrt, and `square` as mySquare
 
-    expect(mySqrt).toBeDefined();
-    expect(mySquare).toBeDefined();
-    expect(mySqrt).toEqual(Mathy.sqrt);
-    expect(mySquare).toEqual(Mathy.square);
+    expect(mySqrt).to.exist;
+    expect(mySquare).to.exist;
+    expect(mySqrt).to.equal(Mathy.sqrt);
+    expect(mySquare).to.equal(Mathy.square);
   });
 
   it('can import from my node_modules', () => {
 
     //import `lodash`
 
-    expect(_).toBeDefined();
+    expect(_).to.exist;
 
   });
 });

@@ -1,53 +1,52 @@
-jest.autoMockOff();
-
+import {expect} from 'chai';
 
 describe('LET', () => {
 
   it('can be used in place of `var`', () => {
 
     //Declare bandName using 'let'
-    let bandName = "Queen";
+    let bandName = 'Queen';
     //Declare isBestBand using 'let'
     let isBestBand = true;
 
-    expect(bandName).toBe("Queen");
-    expect(isBestBand).toBe(true);
+    expect(bandName).to.be.equal('Queen');
+    expect(isBestBand).to.be.true;
   });
 
 
   it('can modify the value of a `let` variable', () => {
 
-    let releaseName = "ES6";
+    let releaseName = 'ES6';
 
     //Change value of releaseName to be `ES2015`, the new name for ES6
     releaseName = 'ES2015';
 
-    expect(releaseName).toBe("ES2015");
+    expect(releaseName).to.equal('ES2015');
   });
 
 
   it('is trapped inside of an `if` statement', () => {
 
-    if(true){
+    if (true) {
       //Change to `var` to `let`, so that b is scoped inside of the if-statement
       let b = 1;
     }
 
-    expect(()=> console.log(b)).toThrow(new ReferenceError('b is not defined'));
+    expect(()=> console.log(b)).to.throw('b is not defined');
   });
 
 
-  it('can\'t redeclare using the same name', () => {
+  it(`can't redeclare using the same name`, () => {
 
-    function doLoop(){
+    function doLoop() {
       //Change loop counter to `let` so that it is trapped inside of the loop, and can't be returned.
-      for(let i = 0; i < 10; i++){
+      for (let i = 0; i < 10; i++) {
 
       }
       return i;
     }
 
-    expect(doLoop).toThrow(new ReferenceError('i is not defined'));
+    expect(doLoop).to.throw('i is not defined');
   });
 
 
@@ -59,7 +58,7 @@ describe('LET', () => {
       let d = 2;
     }
 
-    expect(()=> console.log('d',d)).toThrow(new ReferenceError('d is not defined'));
+    expect(()=> console.log('d', d)).to.throw('d is not defined');
   });
 
 });

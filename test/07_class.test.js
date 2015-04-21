@@ -1,8 +1,8 @@
-jest.autoMockOff();
+import {expect} from 'chai';
 
 describe('Classes', () => {
 
-  xit('has a constructor for initialization', ()=>{
+  it.skip('has a constructor for initialization', ()=>{
 
     // Create an Animal class
     // Add a constructor that takes one param, the name.
@@ -10,26 +10,26 @@ describe('Classes', () => {
 
 
     let animal = new Animal();
-    let dog = new Animal("Dog");
+    let dog = new Animal('Dog');
 
-    expect(animal.name).toBeUndefined();
-    expect(dog.name).toBe('Dog');
+    expect(animal.name).to.be.undefined;
+    expect(dog.name).to.equal('Dog');
   });
 
-  xit('constructor can have default param values', ()=>{
+  it.skip('constructor can have default param values', ()=>{
 
     // Create an Animal class with a constructor
-    // Make your class default (using default params) the name to "Honey Badger"
+    // Make your class default (using default params) the name to 'Honey Badger'
 
 
     let animal = new Animal();
-    let dog = new Animal("Dog");
+    let dog = new Animal('Dog');
 
-    expect(animal.name).toBe("Honey Badger");
-    expect(dog.name).toBe('Dog');
+    expect(animal.name).to.equal('Honey Badger');
+    expect(dog.name).to.equal('Dog');
   });
 
-  xit('can have instance methods', ()=>{
+  it.skip('can have instance methods', ()=>{
 
     //Create an Animal class, pass in the name to the constructor, and add a sayName function to the class definition as a non-static function
 
@@ -37,12 +37,12 @@ describe('Classes', () => {
     let animal = new Animal();
     animal.sayName();
 
-    expect(animal.sayName).toBeDefined();
-    expect(Animal.sayName).toBeUndefined();
+    expect(animal.sayName).to.exist;
+    expect(Animal.sayName).to.be.undefined;
   });
 
 
-  xit('can have static methods', ()=>{
+  it.skip('can have static methods', ()=>{
 
     // Create an Animal class, pass in the name to the constructor,
     // and add a static create method that takes a name and returns an instance
@@ -51,11 +51,11 @@ describe('Classes', () => {
 
     let animal = new Animal();
 
-    expect(animal.create).toBeUndefined();
-    expect(Animal.create).toBeDefined();
+    expect(animal.create).to.be.undefined;
+    expect(Animal.create).to.exist;
   });
 
-  xit('can extend another class', ()=>{
+  it.skip('can extend another class', ()=>{
 
     // Create an Animal class
     // Create a Dog class that extends Animal
@@ -65,11 +65,11 @@ describe('Classes', () => {
 
     let dog = new Dog('Fido');
 
-    expect(dog instanceof Dog).toBe(true);
-    expect(dog instanceof Animal).toBe(true);
+    expect(dog instanceof Dog).to.be.true;
+    expect(dog instanceof Animal).to.be.true;
   });
 
-  xit('can use property setters and getters', ()=>{
+  it.skip('can use property setters and getters', ()=>{
 
     // Create an Animal class (don't pass name into constructor)
     // Add property setter for name
@@ -78,10 +78,10 @@ describe('Classes', () => {
 
 
     let animal = new Animal();
-    animal.name = "Dog";
-    expect(animal.name).toBe("Dog");
-    animal.name = "Cat";
-    expect(animal.name).toBe("Cat");
+    animal.name = 'Dog';
+    expect(animal.name).to.equal('Dog');
+    animal.name = 'Cat';
+    expect(animal.name).to.equal('Cat');
   });
 
 });
