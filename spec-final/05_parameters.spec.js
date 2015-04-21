@@ -84,11 +84,11 @@ describe('Rest Parameters', () => {
       return others.length == arguments.length;
     }
 
-    //expect(resty()).toBe(true);
-    //expect(resty(1)).toBe(false);
-    //expect(resty(1,2).length).toBe(false);
-    //expect(resty(1,2,3).length).toBe(false);
-    //expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10).length).toBe(false);
+    expect(resty()).toBe(true);
+    expect(resty(1)).toBe(false);
+    expect(resty(1,2)).toBe(false);
+    expect(resty(1,2,3)).toBe(false);
+    expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10)).toBe(false);
   });
 
   it('is an actual array, unlike arguments', () => {
