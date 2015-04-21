@@ -18,7 +18,7 @@ describe('Default Values', () => {
     expect(test(null)).to.equal(null);
   });
 
-  it('aren\'t included in arguments', () => {
+  it(`aren't included in arguments`, () => {
 
     function test(name = 'Mercury') {
       return arguments.length;
@@ -88,7 +88,7 @@ describe('Rest Parameters', () => {
     expect(resty(1)).to.be.false;
     expect(resty(1,2)).to.be.false;
     expect(resty(1,2,3)).to.be.false;
-    expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10).length).to.be.false;
+    expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10)).to.be.false;
   });
 
   it('is an actual array, unlike arguments', () => {

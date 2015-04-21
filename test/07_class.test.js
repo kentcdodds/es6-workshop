@@ -35,10 +35,10 @@ describe('Classes', () => {
 
 
     let animal = new Animal();
-    animal.sayName();
 
     expect(animal.sayName).to.exist;
     expect(Animal.sayName).to.be.undefined;
+    expect(animal.sayName()).to.equal('My name is: Honey Badger');
   });
 
 
@@ -52,6 +52,9 @@ describe('Classes', () => {
 
     expect(animal.create).to.be.undefined;
     expect(Animal.create).to.exist;
+
+    let createdAnimal = Animal.create('Snake');
+    expect(createdAnimal.name).toBe('Snake');
   });
 
   it.skip('can extend another class', ()=> {
@@ -78,9 +81,9 @@ describe('Classes', () => {
 
     let animal = new Animal();
     animal.name = 'Dog';
-    expect(animal.name).to.equal('Dog');
+    expect(animal.name).to.equal('Dog type of animal');
     animal.name = 'Cat';
-    expect(animal.name).to.equal('Cat');
+    expect(animal.name).to.equal('Cat type of animal');
   });
 
 });

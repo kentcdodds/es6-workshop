@@ -46,15 +46,15 @@ describe('Classes', () => {
       }
 
       sayName() {
-        console.log('My name is: ' + this.name);
+        return 'My name is: ' + this.name;
       }
     }
 
     let animal = new Animal();
-    animal.sayName();
 
     expect(animal.sayName).to.exist;
     expect(Animal.sayName).to.be.undefined;
+    expect(animal.sayName()).to.equal('My name is: Honey Badger');
   });
 
 
@@ -123,15 +123,15 @@ describe('Classes', () => {
       }
 
       get name() {
-        return this._name;
+        return this._name + ' type of animal';
       }
     }
 
     let animal = new Animal();
     animal.name = 'Dog';
-    expect(animal.name).to.equal('Dog');
+    expect(animal.name).to.equal('Dog type of animal');
     animal.name = 'Cat';
-    expect(animal.name).to.equal('Cat');
+    expect(animal.name).to.equal('Cat type of animal');
   });
 
 });
