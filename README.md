@@ -41,9 +41,9 @@ To run the tests, in your terminal run:
 npm test
 ```
 
-This will execute the tests in teh `spec` directory. Currently all of these tests are disabled, because I have changed the `it()` statement
+This will execute the tests in the `spec` directory. Currently all of these tests are disabled, because I have changed the `it()` statement
 to `xit()`, which will skip that test. Your jobs it to one-by-one turn each test back on and get the test to pass, by
-writing the required ES6 code. Once you have writen the required code, the tests will pass, and you can move onto the next test.
+writing the required ES6 code. Once you have written the required code, the tests will pass, and you can move onto the next test.
 
 As Axel teaches us about ES6, we will take breaks once in a while to run these exercises.
 
@@ -54,6 +54,7 @@ If you use this workshop, please Pull Request this readme with a link to your ev
 
 ###Events
 [FluentConf 2015 - Axel Rauschmayer & Aaron Frost](http://fluentconf.com/javascript-html-2015/public/schedule/detail/38811)
+Framsieforum 19.05, Finn.no
 
 
 
