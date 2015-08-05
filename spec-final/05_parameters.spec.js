@@ -124,7 +124,7 @@ describe('Rest Parameters', () => {
 
       //Modify the method signature of `myFunction` to allow for all args to be optional
 
-      function myFunction({name="Aaron", age=35, favoriteBand="Queen"}={name: "Aaron", age: 35, favoriteBand:'Queen'}){
+      function myFunction({name="Aaron", age=35, favoriteBand="Queen"}={}){
         expect(name).toBeDefined();
         expect(age).toBeDefined();
         expect(favoriteBand).toBeDefined();
