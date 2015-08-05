@@ -56,6 +56,7 @@ If you use this workshop, please Pull Request this readme with a link to your ev
 [FluentConf 2015 - Axel Rauschmayer & Aaron Frost](http://fluentconf.com/javascript-html-2015/public/schedule/detail/38811)
 Framsieforum 19.05, Finn.no
 
+[SLC JS Learners April 2015 - Kent C. Dodds](https://youtu.be/_Pn32tTtbuQ)
 
 
 
