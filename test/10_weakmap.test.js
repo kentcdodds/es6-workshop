@@ -16,7 +16,7 @@ describe('WEAKMAPS', () => {
   });
 
   describe(`EXTRA CREDIT`, () => {
-    it(`should enable private members in classes`, () => {
+    it.skip(`should enable private members in classes`, () => {
 
       // If you make it this far, write a class with private member variables, using WeakMaps
       class Person {

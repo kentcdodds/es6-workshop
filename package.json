@@ -14,6 +14,7 @@
     "mocha": "2.2.5"
   },
   "scripts": {
+    "start": "npm run test:watch",
     "test": "mocha test/index.js --compilers js:babel/register",
     "test:watch": "mocha test/index.js --watch --compilers js:babel/register",
     "test:final": "mocha test-final/index.js --compilers js:babel/register",
