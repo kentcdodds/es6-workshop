@@ -1,21 +1,23 @@
 {
   "name": "ES6-Workshop",
-  "version": "0.0.1",
+  "version": "0.0.0",
+  "private": true,
+  "homepage": "https://github.com/kentcdodds/es6-workshop",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kentcdodds/es6-workshop.git"
+  },
   "devDependencies": {
-    "babel": "^5.1.11",
-    "babel-jest": "*",
-    "chai": "^2.2.0",
-    "jest-cli": "*",
-    "mocha": "^2.2.4"
+    "babel": "5.8.21",
+    "chai": "3.2.0",
+    "lodash": "3.10.1",
+    "mocha": "2.2.5"
   },
   "scripts": {
     "test": "mocha test/index.js --compilers js:babel/register",
     "test:watch": "mocha test/index.js --watch --compilers js:babel/register",
-
     "test:final": "mocha test-final/index.js --compilers js:babel/register",
     "test:final:watch": "mocha test-final/index.js --watch --compilers js:babel/register"
   },
-  "dependencies": {
-    "lodash": "^3.6.0"
-  }
+  "LICENSE": "MIT"
 }
