@@ -56,11 +56,11 @@ describe('Rest Parameters', () => {
       return others;
     }
 
-    expect(resty().length).to.equal(/*ENTER YOUR GUESS HERE */);
-    expect(resty(1).length).to.equal(/*ENTER YOUR GUESS HERE */);
-    expect(resty(1, 2).length).to.equal(/*ENTER YOUR GUESS HERE */);
-    expect(resty(1, 2, 3).length).to.equal(/*ENTER YOUR GUESS HERE */);
-    expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10).length).to.equal(/*ENTER YOUR GUESS HERE */);
+    expect(resty().length).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(resty(1).length).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(resty(1, 2).length).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(resty(1, 2, 3).length).to.equal(/*ENTER YOUR GUESS HERE*/);
+    expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10).length).to.equal(/*ENTER YOUR GUESS HERE*/);
 
   });
 
@@ -90,7 +90,6 @@ describe('Rest Parameters', () => {
     var args = argy(1, 2, 3);
     var rests = resty(1, 2, 3);
 
-    //
     expect(args.__proto__ == rests.__proto__).to.equal(/*ENTER YOUR GUESS HERE*/);
     expect(args.splice).to.equal(/*ENTER YOUR GUESS HERE*/);
 
@@ -102,15 +101,9 @@ describe('Rest Parameters', () => {
 
 
   describe('EXTRA CREDIT', ()=> {
-
-    /*
-     EXTRA CREDIT
-     Comment this back in, and see if you can get it to pass
-     */
-
     it.skip('it can default all arguments, optionally', () => {
 
-      //Modify the method signature of `myFunction` to allow for all args to be optional
+      // Modify the method signature of `myFunction` to allow for all args to be optional
 
       function myFunction({name, age, favoriteBand}) {
         expect(name).to.exist;

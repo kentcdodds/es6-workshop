@@ -6,11 +6,11 @@ describe('Destructuring', () => {
 
     it('can be used to pull apart objects', () => {
 
-      //Using destructuring, call `getAddress()` and create a 'city', 'state' and 'zip' variable.
-      //var address = getAddress();
-      //var city = address.city;
-      //var state = address.state;
-      //var zip = address.zip;
+      // Using destructuring, call `getAddress()` and create a 'city', 'state' and 'zip' variable.
+      // var address = getAddress();
+      // var city = address.city;
+      // var state = address.state;
+      // var zip = address.zip;
       let {city, state, zip} = getAddress();
 
       expect(city).to.equal('Salt Lake City');
@@ -21,7 +21,7 @@ describe('Destructuring', () => {
 
     it('sets missing values to undefined', () => {
 
-      //Using destructuring, call `getAddress()` and create an 'address' variable.
+      // Using destructuring, call `getAddress()` and create an 'address' variable.
       let {address} = getAddress();
 
       expect(address).to.be.undefined;
@@ -29,7 +29,7 @@ describe('Destructuring', () => {
 
     it('can alias destructured variables', () => {
 
-      //Using destructuring, call `getAddress()` and pull the city, state and zip out, and alias them to c, s, z, respectively
+      // Using destructuring, call `getAddress()` and pull the city, state and zip out, and alias them to c, s, z, respectively
       let {city:c, state:s, zip:z} = getAddress();
 
       expect(c).to.equal('Salt Lake City');
@@ -43,7 +43,7 @@ describe('Destructuring', () => {
 
     it('can destructure nested variables', () => {
 
-      //Using destructuring, call `getAddress()` and create an 'address' variable.
+      // Using destructuring, call `getAddress()` and create an 'address' variable.
       let {coords: {lat, long}} = getAddress();
 
       expect(lat).to.equal(40.776608);
@@ -58,7 +58,7 @@ describe('Destructuring', () => {
 
     it('can be used to pull apart arrays', () => {
 
-      //Call getNumbers and pull the first value out as `one` and the second as `two`
+      // Call getNumbers and pull the first value out as `one` and the second as `two`
       let [one, two] = getNumbers();
 
       expect(one).to.equal(1);
@@ -68,7 +68,7 @@ describe('Destructuring', () => {
 
     it('can skip indexes in arrays', () => {
 
-      //Call getNumbers and pull the first value out as `one` and the second as `two`
+      // Call getNumbers and pull the first value out as `one` and the second as `two`
       let [one, ,three] = getNumbers();
 
       expect(one).to.equal(1);
@@ -79,7 +79,7 @@ describe('Destructuring', () => {
 
     it('can reach nested arrays', () => {
 
-      //Call getNestedNumbers and pull the first value out as `one`, the 3 as `three` and 6 as `sixth`.
+      // Call getNestedNumbers and pull the first value out as `one`, the 3 as `three` and 6 as `sixth`.
       let [one, ,[three, ,[ ,six]]] = getNestedNumbers();
 
       expect(one).to.equal(1);
@@ -113,4 +113,4 @@ function getNestedNumbers() {
   return [1, 2, [3, 4, [5, 6]]];
 }
 
-//MORE AT http://www.2ality.com/2015/01/es6-destructuring.html
+// MORE AT http://www.2ality.com/2015/01/es6-destructuring.html

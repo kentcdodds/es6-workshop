@@ -39,7 +39,7 @@ describe('Classes', () => {
 
   it('can have instance methods', ()=> {
 
-    //Create an Animal class, pass in the name to the constructor, and add a sayName function to the class definition
+    // Create an Animal class, pass in the name to the constructor, and add a sayName function to the class definition
     class Animal {
       constructor(name = 'Honey Badger') {
         this.name = name;
@@ -87,7 +87,7 @@ describe('Classes', () => {
     // Create an Animal class
     // Create a Dog class that extends Animal
     // Add sayName to Animal
-    //
+
     class Animal {
       constructor(name = 'Honey Badger') {
         this.name = name;
@@ -115,7 +115,7 @@ describe('Classes', () => {
     // Create an Animal class (don't pass name into constructor)
     // Add property setter for name
     // Add property getter for name
-    //
+
     class Animal {
 
       set name(name) {

@@ -62,7 +62,6 @@ describe('Classes', () => {
     // Create an Animal class
     // Create a Dog class that extends Animal
     // Add sayName to Animal
-    //
 
 
     let dog = new Dog('Fido');
@@ -76,7 +75,6 @@ describe('Classes', () => {
     // Create an Animal class (don't pass name into constructor)
     // Add property setter for name
     // Add property getter for name
-    //
 
 
     let animal = new Animal();

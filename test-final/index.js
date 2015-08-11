@@ -1,4 +1,4 @@
-require('./01_let.test');
+require('./01_block-scoping.test');
 require('./02_destructure.test');
 require('./03_modules.test');
 require('./04_object-literal.test');

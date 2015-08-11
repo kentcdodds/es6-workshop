@@ -55,14 +55,14 @@ describe('Arrow Functions', () => {
       {type: 'Food', name: 'Bacon', price: 3.50, qty: 3},
       {type: 'CD', name: 'Queen Best Hits', price: 5.50, qty: 5},
       {type: 'CD', name: 'Brittney Best Hits', price: 6.25, qty: 3},
-      {type: 'CD', name: 'JT Best Hits', price: 2.25, qty: 6},
+      {type: 'CD', name: 'JT Best Hits', price: 2.25, qty: 6}
     ];
 
     let shoppingList = data
-      .filter((d) => d.type != 'Widget') //Remove Widgets
-      .filter((d) => d.price < 5)        //Find only remaining items with price < 5
-      .sort((d) => d.qty * -1)           //Sort by price, desc
-      .map((d) => d.name);               //Pull just the name from each item
+      .filter((d) => d.type != 'Widget') // Remove Widgets
+      .filter((d) => d.price < 5)        // Find only remaining items with price < 5
+      .sort((d) => d.qty * -1)           // Sort by price, desc
+      .map((d) => d.name);               // Pull just the name from each item
 
     expect(shoppingList.shift()).to.equal('Bacon');
     expect(shoppingList.shift()).to.equal('JT Best Hits');

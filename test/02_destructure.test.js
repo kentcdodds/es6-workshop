@@ -6,11 +6,11 @@ describe('Destructuring', () => {
 
     it.skip('can be used to pull apart objects', () => {
 
-      //Using destructuring, call `getAddress()` and create a 'city', 'state' and 'zip' variable.
-      //var address = getAddress();
-      //var city = address.city;
-      //var state = address.state;
-      //var zip = address.zip;
+      // Using destructuring, call `getAddress()` and create a 'city', 'state' and 'zip' variable.
+      // var address = getAddress();
+      // var city = address.city;
+      // var state = address.state;
+      // var zip = address.zip;
 
 
       expect(city).to.equal('Salt Lake City');
@@ -21,7 +21,7 @@ describe('Destructuring', () => {
 
     it.skip('sets missing values to undefined', () => {
 
-      //Using destructuring, call `getAddress()` and create an 'address' variable.
+      // Using destructuring, call `getAddress()` and create an 'address' variable.
 
 
       expect(address).to.be.undefined;
@@ -29,7 +29,7 @@ describe('Destructuring', () => {
 
     it.skip('can alias destructured variables', () => {
 
-      //Using destructuring, call `getAddress()` and pull the city, state and zip out, and alias them to c, s, z, respectively
+      // Using destructuring, call `getAddress()` and pull the city, state and zip out, and alias them to c, s, z, respectively
 
 
       expect(c).to.equal('Salt Lake City');
@@ -43,7 +43,7 @@ describe('Destructuring', () => {
 
     it.skip('can destructure nested variables', () => {
 
-      //Using destructuring, call `getAddress()` and create an pull out the nested 'lat' and 'long' variables
+      // Using destructuring, call `getAddress()` and create an pull out the nested 'lat' and 'long' variables
 
 
       expect(lat).to.equal(40.776608);
@@ -58,7 +58,7 @@ describe('Destructuring', () => {
 
     it.skip('can be used to pull apart arrays', () => {
 
-      //Call getNumbers and pull the first value out as `one` and the second as `two`
+      // Call getNumbers and pull the first value out as `one` and the second as `two`
 
 
       expect(one).to.equal(1);
@@ -68,7 +68,7 @@ describe('Destructuring', () => {
 
     it.skip('can skip indexes in arrays', () => {
 
-      //Call getNumbers and pull the first value out as `one` and the third as `three`. Don't pull out the second index. Skip it
+      // Call getNumbers and pull the first value out as `one` and the third as `three`. Don't pull out the second index. Skip it
 
       expect(one).to.equal(1);
       expect(three).to.equal(3);
@@ -82,7 +82,7 @@ describe('Destructuring', () => {
         return [1, 2, [3, 4, [5, 6]]];
       }
 
-      //Call getNestedNumbers and pull 1 out as `one`, the 3 as `three` and 6 as `sixth`.
+      // Call getNestedNumbers and pull 1 out as `one`, the 3 as `three` and 6 as `sixth`.
 
 
       expect(one).to.equal(1);
@@ -112,4 +112,4 @@ function getNumbers() {
   return [1, 2, 3, 4, 5, 6];
 }
 
-//MORE AT http://www.2ality.com/2015/01/es6-destructuring.html
+// MORE AT http://www.2ality.com/2015/01/es6-destructuring.html

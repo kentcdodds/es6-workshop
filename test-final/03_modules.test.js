@@ -1,4 +1,4 @@
-//WRITE YOUR IMPORT STATEMENTS HERE
+// WRITE YOUR IMPORT STATEMENTS HERE
 import Mathy from '../common/Mathy';
 import myMathy from '../common/Mathy';
 import _ from 'lodash';
@@ -10,7 +10,7 @@ import {expect} from 'chai';
 describe('ES6 Modules', () => {
   it('can import Mathy', () => {
 
-    //I DID THIS ONE FOR YOU!
+    // I DID THIS ONE FOR YOU!
     expect(Mathy.sqrt).to.exist;
     expect(Mathy.square).to.exist;
     expect(Mathy.diag).to.exist;
@@ -19,7 +19,7 @@ describe('ES6 Modules', () => {
 
   it('Can alias the import name', () => {
 
-    //Import `Mathy as myMathy` to ge these tests to pass.
+    // Import `myMathy` to ge these tests to pass.
 
     expect(myMathy).to.exist;
     expect(myMathy.sqrt).to.equal(Mathy.sqrt);
@@ -29,7 +29,7 @@ describe('ES6 Modules', () => {
 
   it('can destructure the import, to only retain pieces of the import', () => {
 
-    //Import `Mathy` again, but pull out only the `sqrt` as mySqrt, and `square` as mySquare
+    // Import `Mathy` again, but pull out only the `sqrt` as mySqrt, and `square` as mySquare
 
     expect(mySqrt).to.exist;
     expect(mySquare).to.exist;
@@ -39,7 +39,7 @@ describe('ES6 Modules', () => {
 
   it('can import from my node_modules', () => {
 
-    //import `lodash`
+    // import `lodash`
 
     expect(_).to.exist;
 

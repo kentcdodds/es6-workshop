@@ -7,11 +7,6 @@ describe('Default Values', () => {
       return name;
     }
 
-    //expect(test('Aaron'))   .to.equal(/*ENTER YOUR GUESS HERE*/);
-    //expect(test())          .to.equal(/*ENTER YOUR GUESS HERE*/);
-    //expect(test(undefined)) .to.equal(/*ENTER YOUR GUESS HERE*/);
-    //expect(test(null))      .to.equal(/*ENTER YOUR GUESS HERE*/);
-
     expect(test('Aaron')).to.equal('Aaron');
     expect(test()).to.equal('Mercury');
     expect(test(undefined)).to.equal('Mercury');
@@ -23,10 +18,6 @@ describe('Default Values', () => {
     function test(name = 'Mercury') {
       return arguments.length;
     }
-
-    //expect(test('Aaron'))   .to.equal(/*ENTER YOUR GUESS HERE*/);
-    //expect(test())          .to.equal(/*ENTER YOUR GUESS HERE*/);
-    //expect(test(null))      .to.equal(/*ENTER YOUR GUESS HERE*/);
 
     expect(test('Aaron')).to.equal(1);
     expect(test()).to.equal(0);
@@ -43,10 +34,6 @@ describe('Default Values', () => {
       triggerCount++;
       return 'Mercury';
     }
-
-    //expect(test('Aaron'))   .to.equal(/*ENTER YOUR GUESS HERE*/);
-    //expect(test())          .to.equal(/*ENTER YOUR GUESS HERE*/);
-    //expect(test(null))      .to.equal(/*ENTER YOUR GUESS HERE*/);
 
     expect(triggerCount).to.equal(0);
     expect(test('Aaron')).to.equal('Aaron');
@@ -65,12 +52,6 @@ describe('Rest Parameters', () => {
       return others;
     }
 
-    //expect(resty().length).to.equal(/*ENTER YOUR GUESS HERE */);
-    //expect(resty(1).length).to.equal(/*ENTER YOUR GUESS HERE */);
-    //expect(resty(1,2).length).to.equal(/*ENTER YOUR GUESS HERE */);
-    //expect(resty(1,2,3).length).to.equal(/*ENTER YOUR GUESS HERE */);
-    //expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10).length).to.equal(/*ENTER YOUR GUESS HERE */);
-
     expect(resty().length).to.equal(0);
     expect(resty(1).length).to.equal(0);
     expect(resty(1, 2).length).to.equal(0);
@@ -86,9 +67,9 @@ describe('Rest Parameters', () => {
 
     expect(resty()).to.be.true;
     expect(resty(1)).to.be.false;
-    expect(resty(1,2)).to.be.false;
-    expect(resty(1,2,3)).to.be.false;
-    expect(resty(1,2,3, undefined, 5, undefined, 7, undefined, 9, 10)).to.be.false;
+    expect(resty(1, 2)).to.be.false;
+    expect(resty(1, 2, 3)).to.be.false;
+    expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10)).to.be.false;
   });
 
   it('is an actual array, unlike arguments', () => {
@@ -115,20 +96,17 @@ describe('Rest Parameters', () => {
 
   describe('EXTRA CREDIT', ()=> {
 
-    /*
-     EXTRA CREDIT
-     Comment this back in, and see if you can get it to pass
-     */
-
     it('it can default all arguments, optionally', () => {
 
-      //Modify the method signature of `myFunction` to allow for all args to be optional
+      // Modify the method signature of `myFunction` to allow for all args to be optional
 
-      function myFunction({name='Aaron', age=35, favoriteBand='Queen'}={
+      const defaultObj = {
         name: 'Aaron',
         age: 35,
         favoriteBand: 'Queen'
-      }) {
+      };
+
+      function myFunction({name = 'Aaron', age = 35, favoriteBand = 'Queen'} = defaultObj) {
         expect(name).to.exist;
         expect(age).to.exist;
         expect(favoriteBand).to.exist;

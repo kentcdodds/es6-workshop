@@ -5,16 +5,16 @@ describe('Object Literal', () => {
 
     function createMonster(name, power) {
 
-      //Using NEW Object Literal Syntax, return a literal that will allow the tests to pass
-      //return {
-      //  type: 'Monster',
-      //  name: name,
-      //  power: power,
-      //  attack: function (target){
-      //    console.log('RAAAARRRR!!! #breathesfire');
-      //    return `${this.name} attacked ${target.name}`;
-      //  }
-      //};
+      // Using NEW Object Literal Syntax, return a literal that will allow the tests to pass
+      // return {
+      //   type: 'Monster',
+      //   name: name,
+      //   power: power,
+      //   attack: function (target){
+      //     console.log('RAAAARRRR!!! #breathesfire');
+      //     return `${this.name} attacked ${target.name}`;
+      //   }
+      // };
     }
 
     var godzilla = createMonster('Godzilla', 1000);

@@ -5,7 +5,7 @@ describe('Object Literal', () => {
 
     function createMonster(name, power) {
 
-      //Using NEW Object Literal Syntax, return a literal that will allow the tests to pass
+      // Using NEW Object Literal Syntax, return a literal that will allow the tests to pass
       return {
         type: 'Monster',
         name,
