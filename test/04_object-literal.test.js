@@ -1,9 +1,18 @@
 import {expect} from 'chai';
 
 describe('Object Literal', () => {
-  it.skip('can use shorthand for property names', () => {
+  it('can use shorthand for property names', () => {
 
     function createMonster(name, power) {
+      return {
+        type: 'Monster',
+        name,
+        power,
+        attack(target) {
+          console.log('RAAAARRRR!!! #breathesfire');
+          return `${this.name} attacked ${target.name}`;
+        }
+      };
 
       //Using NEW Object Literal Syntax, return a literal that will allow the tests to pass
       //return {
