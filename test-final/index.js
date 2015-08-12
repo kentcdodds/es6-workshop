@@ -11,3 +11,4 @@ import './10_class.test';
 import './11_set.test';
 import './12_maps.test';
 import './13_weakmap.test';
+import './14_promises.test';
