@@ -54,7 +54,7 @@ describe('Classes', () => {
     expect(Animal.create).to.exist;
 
     let createdAnimal = Animal.create('Snake');
-    expect(createdAnimal.name).toBe('Snake');
+    expect(createdAnimal.name).to.be.equal('Snake');
   });
 
   it.skip('can extend another class', ()=> {
