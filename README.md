@@ -35,9 +35,9 @@ npm install
 ```
 
 # How To Run Tests
-Once you have everything installed, you are ready to run some tests. There are two directories with tests in them: `spec` and `spec-final`.
-The `spec-final` directory is like a cheat sheet. All of the tests contain the required ES6 code to make the tests pass. You will need to
-edit the tests in the `spec` directory, and make the tests pass.
+Once you have everything installed, you are ready to run some tests. There are two directories with tests in them: `test` and `test-final`.
+The `test-final` directory is like a cheat sheet. All of the tests contain the required ES6 code to make the tests pass. You will need to
+edit the tests in the `test` directory, and make the tests pass.
 
 To run the tests, in your terminal run:
 
