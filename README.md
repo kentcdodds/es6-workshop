@@ -58,6 +58,8 @@ Framsieforum 19.05, Finn.no
 
 [SLC JS Learners April 2015 - Kent C. Dodds](https://youtu.be/_Pn32tTtbuQ)
 
+[MidwestJS 2015 - Kent C. Dodds](https://youtu.be/aeY6ctvsurs)
+
 
 
 
