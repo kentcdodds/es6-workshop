@@ -65,3 +65,4 @@ If you use this workshop, please Pull Request this readme with a link to your ev
 
 - [FluentConf 2015 - Axel Rauschmayer & Aaron Frost](http://fluentconf.com/javascript-html-2015/public/schedule/detail/38811)
 - [SLC JS Learners Meetup - Kent C. Dodds](http://www.meetup.com/SLC-JS-Learners/events/220770922/)
+- [MidwestJS 2015 - Kent C. Dodds](https://youtu.be/aeY6ctvsurs)
