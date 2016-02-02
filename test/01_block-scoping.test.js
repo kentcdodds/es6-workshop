@@ -29,7 +29,7 @@ describe('Block Scoped Variables', () => {
     var releaseName = 'ES6';
 
     // This doesn't even transpile, so we can't actually test this...
-    // once you've changed the `var` above to `cost`, comment out the line below
+    // once you've changed the `var` above to `const`, comment out the line below
     releaseName = 'ES2015';
     expect(releaseName).to.equal('ES6');
   });
