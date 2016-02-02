@@ -82,7 +82,7 @@ describe('Destructuring', () => {
         return [1, 2, [3, 4, [5, 6]]];
       }
 
-      // Call getNestedNumbers and pull 1 out as `one`, the 3 as `three` and 6 as `sixth`.
+      // Call getNestedNumbers and pull 1 out as `one`, the 3 as `three` and 6 as `six`.
 
 
       expect(one).to.equal(1);
