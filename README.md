@@ -57,6 +57,9 @@ written the required code, the tests will pass, and you can move onto the next t
 
 # Thanks
 
+Special thanks to [Aaron Frost](https://twitter.com/js_dev) and [Axel Rauschmayer](https://twitter.com/rauschma) for
+creating the [original repo](https://github.com/aaronfrost/es6-workshop) from which this is forked.
+
 If you have any questions, [let me know](https://twitter.com/kentcdodds).
 
 If you use this workshop, please Pull Request this readme with a link to your event.
