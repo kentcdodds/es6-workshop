@@ -1,4 +1,4 @@
-import {expect} from 'chai';
+import {expect} from 'chai'
 
 describe('Object Literal', () => {
   it.skip('can use shorthand for property names', () => {
@@ -17,13 +17,13 @@ describe('Object Literal', () => {
       // };
     }
 
-    var godzilla = createMonster('Godzilla', 1000);
-    var mechaGodzilla = createMonster('MechaGodzilla', 5000);
+    var godzilla = createMonster('Godzilla', 1000)
+    var mechaGodzilla = createMonster('MechaGodzilla', 5000)
 
-    expect(godzilla.name).to.equal('Godzilla');
-    expect(godzilla.power).to.equal(1000);
-    expect(godzilla.attack(mechaGodzilla)).to.equal('Godzilla attacked MechaGodzilla');
-  });
+    expect(godzilla.name).to.equal('Godzilla')
+    expect(godzilla.power).to.equal(1000)
+    expect(godzilla.attack(mechaGodzilla)).to.equal('Godzilla attacked MechaGodzilla')
+  })
 
 
-});
+})

@@ -8,17 +8,29 @@
     "url": "git://github.com/kentcdodds/es6-workshop.git"
   },
   "devDependencies": {
-    "babel": "5.8.21",
-    "chai": "3.2.0",
-    "lodash": "3.10.1",
-    "mocha": "2.2.5"
+    "babel-cli": "6.9.0",
+    "babel-core": "6.9.1",
+    "babel-eslint": "6.0.4",
+    "babel-polyfill": "6.9.1",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-stage-2": "6.5.0",
+    "babel-register": "6.9.0",
+    "chai": "3.5.0",
+    "lodash": "4.13.1",
+    "mocha": "2.5.3"
   },
   "scripts": {
     "start": "npm run test:watch",
-    "test": "mocha test/index.js --compilers js:babel/register",
-    "test:watch": "mocha test/index.js --watch --compilers js:babel/register",
-    "test:final": "mocha test-final/index.js --compilers js:babel/register",
-    "test:final:watch": "mocha test-final/index.js --watch --compilers js:babel/register"
+    "test": "mocha test/index.js --compilers js:babel-register --require babel-polyfill",
+    "test:watch": "npm test -- --watch",
+    "test:final": "mocha test-final/index.js --compilers js:babel-register --require babel-polyfill",
+    "test:final:watch": "npm run test:fine -- --watch"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
   },
   "LICENSE": "MIT"
 }

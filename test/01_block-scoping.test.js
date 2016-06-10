@@ -1,4 +1,4 @@
-import {expect} from 'chai';
+import {expect} from 'chai'
 
 describe('Block Scoped Variables', () => {
 
@@ -9,9 +9,9 @@ describe('Block Scoped Variables', () => {
     // Declare 'isBestBand' using 'let'
 
 
-    expect(bandName).to.equal('Queen');
-    expect(isBestBand).to.be.true;
-  });
+    expect(bandName).to.equal('Queen')
+    expect(isBestBand).to.be.true
+  })
 
 
   it.skip('can modify the value of a `let` variable', () => {
@@ -21,29 +21,29 @@ describe('Block Scoped Variables', () => {
     // Change value of 'releaseName' to be `ES2015`, the new name for ES6
 
 
-    expect(releaseName).to.equal('ES2015');
-  });
+    expect(releaseName).to.equal('ES2015')
+  })
 
   it.skip('cannot modify the value of a `const` variable', () => {
 
-    var releaseName = 'ES6';
+    var releaseName = 'ES6'
 
     // This doesn't even transpile, so we can't actually test this...
     // once you've changed the `var` above to `const`, comment out the line below
-    releaseName = 'ES2015';
-    expect(releaseName).to.equal('ES6');
-  });
+    releaseName = 'ES2015'
+    expect(releaseName).to.equal('ES6')
+  })
 
 
   it.skip('is trapped inside of an `if` statement', () => {
 
     if (true) {
       // Change to `var` to `let`, so that 'b' is scoped inside of the if-statement
-      var b = 1;
+      var b = 1
     }
 
-    expect(()=> console.log(b)).to.throw('b is not defined');
-  });
+    expect(()=> console.log(b)).to.throw('b is not defined')
+  })
 
 
   it.skip('prevents loop counters from hoisting', () => {
@@ -53,11 +53,11 @@ describe('Block Scoped Variables', () => {
       for (var i = 0; i < 10; i++) {
 
       }
-      return i;
+      return i
     }
 
-    expect(doLoop).to.throw('i is not defined');
-  });
+    expect(doLoop).to.throw('i is not defined')
+  })
 
 
   it.skip('means that we can start using block statements', () => {
@@ -65,10 +65,10 @@ describe('Block Scoped Variables', () => {
     // BLOCK STATEMENT
     {
       // Change to `const` declaration
-      var d = 2;
+      var d = 2
     }
 
-    expect(()=> console.log('d', d)).to.throw('d is not defined');
-  });
+    expect(()=> console.log('d', d)).to.throw('d is not defined')
+  })
 
-});
+})

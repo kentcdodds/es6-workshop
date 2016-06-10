@@ -1,31 +1,31 @@
-import {expect} from 'chai';
+import {expect} from 'chai'
 
 describe('Arrow Functions', () => {
 
   it('can replace traditional functions', () => {
 
-    let fnMultiply, arrowMultiply;
+    let fnMultiply, arrowMultiply
 
     fnMultiply = function(a, b) {
-      return a * b;
-    };
+      return a * b
+    }
 
-    arrowMultiply = (a, b) => a * b;
+    arrowMultiply = (a, b) => a * b
 
-    expect(fnMultiply(5, 5)).to.equal(arrowMultiply(5, 5));
+    expect(fnMultiply(5, 5)).to.equal(arrowMultiply(5, 5))
 
-  });
+  })
 
   it('can replace traditional functions #2', () => {
 
-    let nums = [2, 5, 10];
-    let squares = nums.map((num) => num * num);
+    let nums = [2, 5, 10]
+    let squares = nums.map((num) => num * num)
 
-    expect(squares.shift()).to.equal(4);
-    expect(squares.shift()).to.equal(25);
-    expect(squares.shift()).to.equal(100);
+    expect(squares.shift()).to.equal(4)
+    expect(squares.shift()).to.equal(25)
+    expect(squares.shift()).to.equal(100)
 
-  });
+  })
 
   it('binds `this` to the eval scope, not the runtime scope', () => {
 
@@ -33,16 +33,16 @@ describe('Arrow Functions', () => {
       name: 'Aaron',
       greetFriends: function(friends) {
         friends.forEach((friend) => {
-          console.log(this.name + ' greets to ' + friend);
-        });
-      }
-    };
+          console.log(this.name + ' greets to ' + friend)
+        })
+      },
+    }
 
-    let friendsArray = ['Naomi', 'Jojo', 'Ryan', 'Owen'];
+    let friendsArray = ['Naomi', 'Jojo', 'Ryan', 'Owen']
 
-    expect(()=> person.greetFriends(friendsArray)).not.to.throw();
+    expect(()=> person.greetFriends(friendsArray)).not.to.throw()
 
-  });
+  })
 
   it('can make array filter chains more managable', () => {
 
@@ -55,18 +55,18 @@ describe('Arrow Functions', () => {
       {type: 'Food', name: 'Bacon', price: 3.50, qty: 3},
       {type: 'CD', name: 'Queen Best Hits', price: 5.50, qty: 5},
       {type: 'CD', name: 'Brittney Best Hits', price: 6.25, qty: 3},
-      {type: 'CD', name: 'JT Best Hits', price: 2.25, qty: 6}
-    ];
+      {type: 'CD', name: 'JT Best Hits', price: 2.25, qty: 6},
+    ]
 
     let shoppingList = data
       .filter((d) => d.type != 'Widget') // Remove Widgets
       .filter((d) => d.price < 5)        // Find only remaining items with price < 5
       .sort((d) => d.qty * -1)           // Sort by price, desc
-      .map((d) => d.name);               // Pull just the name from each item
+      .map((d) => d.name)               // Pull just the name from each item
 
-    expect(shoppingList.shift()).to.equal('Bacon');
-    expect(shoppingList.shift()).to.equal('JT Best Hits');
+    expect(shoppingList.shift()).to.equal('Bacon')
+    expect(shoppingList.shift()).to.equal('JT Best Hits')
 
-  });
+  })
 
-});
+})
