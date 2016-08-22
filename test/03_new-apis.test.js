@@ -25,7 +25,7 @@ describe(`Array`, () => {
   it.skip(`should be easier to fill an array with values`, () => {
     const originalArray = new Array(5)
     // create a variable called `result` and assign it to an array that's filled with 3s except for the first item.
-    expect(result).to.deep.equal([, 3, 3, 3, 3])
+    expect(result).to.deep.equal([, 3, 3, 3, 3]) // eslint-disable-line no-sparse-arrays
   })
 })
 
