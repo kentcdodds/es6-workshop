@@ -1,45 +1,37 @@
 import {expect} from 'chai'
 
 describe(`Promises`, () => {
-  it.skip(`should resolve`, (done) => {
+  it.skip(`should resolve`, () => {
     pickApple('ripe')
       .then((result) => {
         expect(result).to.equal(/*ENTER GUESS HERE*/)
-        done()
       }, (result) => {
         expect(result).to.equal(/*ENTER GUESS HERE*/)
-        done()
       })
       .catch((error) => {
         expect(error).to.equal(/* ENTER GUESS HERE */)
-        done()
       })
   })
 
-  it.skip(`should reject`, (done) => {
+  it.skip(`should reject`, () => {
     pickApple('unripe')
       .then((result) => {
         expect(result).to.equal(/*ENTER GUESS HERE*/)
-        done()
       }, (result) => {
         expect(result).to.equal(/* ENTER GUESS HERE */)
-        done()
       })
       .catch((error) => {
         expect(error).to.equal(/* ENTER GUESS HERE */)
-        done()
       })
   })
 
-  it.skip(`errors can be caught`, (done) => {
+  it.skip(`errors can be caught`, () => {
     return pickApple()
       .then((result) => {
         expect(result).to.equal(/*ENTER GUESS HERE*/)
-        done()
       })
       .catch((error) => {
         expect(error.message).to.equal(/* ENTER GUESS HERE*/)
-        done()
       })
   })
 
@@ -56,7 +48,7 @@ describe(`Promises`, () => {
         } else {
           reject(new Error('out of apples'))
         }
-      }, 500)
+      })
     })
   }
 })

@@ -29,7 +29,7 @@ describe(`Array`, () => {
     const originalArray = new Array(5)
     // create a variable called `result` and assign it to an array that's filled with 3s except for the first item.
     const result = originalArray.fill(3, 1)
-    expect(result).to.deep.equal([, 3, 3, 3, 3])
+    expect(result).to.deep.equal([undefined, 3, 3, 3, 3])
   })
 })
 

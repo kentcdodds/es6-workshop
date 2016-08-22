@@ -37,7 +37,7 @@ describe('Block Scoped Variables', () => {
 
   it('is trapped inside of an `if` statement', () => {
 
-    if (true) {
+    if (true) { // eslint-disable-line no-constant-condition
       // Change to `var` to `let`, so that b is scoped inside of the if-statement
       let b = 1
     }
@@ -51,7 +51,7 @@ describe('Block Scoped Variables', () => {
     function doLoop() {
       // Change loop counter to `let` so that it is trapped inside of the loop, and can't be returned.
       for (let i = 0; i < 10; i++) {
-
+        /* eslint no-empty:"off" */
       }
       return i
     }
