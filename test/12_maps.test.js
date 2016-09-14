@@ -2,7 +2,7 @@ import {expect} from 'chai'
 
 describe('MAPS', () => {
 
-  it.skip('has a set method', ()=> {
+  it.skip('has a set method', () => {
 
     // Create a new map called 'myMap'
     // add a new entry. Use 'name' as the key and 'Aaron' as the value
@@ -12,7 +12,7 @@ describe('MAPS', () => {
 
   })
 
-  it.skip('can use objects as a key', ()=> {
+  it.skip('can use objects as a key', () => {
 
     let user = {name: 'Aaron'}
     let value = {twitter: '@js_dev', gplus: '+AaronFrost'}
@@ -26,7 +26,7 @@ describe('MAPS', () => {
 
   })
 
-  it.skip(`doesn't coerce keys`, ()=> {
+  it.skip(`doesn't coerce keys`, () => {
 
     let myMap = new Map()
     myMap.set(1, 'Aaron')

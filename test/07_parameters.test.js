@@ -100,7 +100,7 @@ describe('Rest Parameters', () => {
   })
 
 
-  describe('EXTRA CREDIT', ()=> {
+  describe('EXTRA CREDIT', () => {
     it.skip('it can default all arguments, optionally', () => {
 
       // Modify the method signature of `myFunction` to allow for all args to be optional

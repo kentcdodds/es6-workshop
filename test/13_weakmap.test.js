@@ -2,7 +2,7 @@ import {expect} from 'chai'
 
 describe('WEAKMAPS', () => {
 
-  it.skip('has a set method', ()=> {
+  it.skip('has a set method', () => {
     let key = {name: 'Aaron'}
     let value = {twitter: '@js_dev', gplus: '+AaronFrost'}
 

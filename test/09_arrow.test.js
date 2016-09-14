@@ -46,7 +46,7 @@ describe('Arrow Functions', () => {
 
     let friendsArray = ['Naomi', 'Jojo', 'Ryan', 'Owen']
 
-    expect(()=> person.greetFriends(friendsArray)).not.to.throw()
+    expect(() => person.greetFriends(friendsArray)).not.to.throw()
 
   })
 
