@@ -19,7 +19,7 @@ describe('Arrow Functions', () => {
   it('can replace traditional functions #2', () => {
 
     let nums = [2, 5, 10]
-    let squares = nums.map((num) => num * num)
+    let squares = nums.map(num => num * num)
 
     expect(squares.shift()).to.equal(4)
     expect(squares.shift()).to.equal(25)
@@ -32,7 +32,7 @@ describe('Arrow Functions', () => {
     let person = {
       name: 'Aaron',
       greetFriends: function(friends) {
-        friends.forEach((friend) => {
+        friends.forEach(friend => {
           console.log(this.name + ' greets to ' + friend)
         })
       },
@@ -40,7 +40,7 @@ describe('Arrow Functions', () => {
 
     let friendsArray = ['Naomi', 'Jojo', 'Ryan', 'Owen']
 
-    expect(()=> person.greetFriends(friendsArray)).not.to.throw()
+    expect(() => person.greetFriends(friendsArray)).not.to.throw()
 
   })
 
@@ -59,10 +59,10 @@ describe('Arrow Functions', () => {
     ]
 
     let shoppingList = data
-      .filter((d) => d.type != 'Widget') // Remove Widgets
-      .filter((d) => d.price < 5)        // Find only remaining items with price < 5
-      .sort((d) => d.qty * -1)           // Sort by price, desc
-      .map((d) => d.name)               // Pull just the name from each item
+      .filter(d => d.type != 'Widget') // Remove Widgets
+      .filter(d => d.price < 5)        // Find only remaining items with price < 5
+      .sort(d => d.qty * -1)           // Sort by price, desc
+      .map(d => d.name)               // Pull just the name from each item
 
     expect(shoppingList.shift()).to.equal('Bacon')
     expect(shoppingList.shift()).to.equal('JT Best Hits')

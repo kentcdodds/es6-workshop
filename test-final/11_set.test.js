@@ -2,7 +2,7 @@ import {expect} from 'chai'
 
 describe('SETS', () => {
 
-  it('has an add method and a has method', ()=> {
+  it('has an add method and a has method', () => {
 
     // Create a new Set
     // add the following numbers to it, using set.add(num): 1, 2, 3
@@ -20,7 +20,7 @@ describe('SETS', () => {
   })
 
 
-  it('doesn`t allow duplicates', ()=> {
+  it('doesn`t allow duplicates', () => {
 
     // Create a new Set
     // add the following numbers to it, using set.add(num): 1, 1, 1

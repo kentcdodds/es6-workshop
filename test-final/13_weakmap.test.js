@@ -2,7 +2,7 @@ import {expect} from 'chai'
 
 describe('WEAKMAPS', () => {
 
-  it('has a set method', ()=> {
+  it('has a set method', () => {
     let key = {name: 'Aaron'}
     let value = {twitter: '@js_dev', gplus: '+AaronFrost'}
 
@@ -18,7 +18,7 @@ describe('WEAKMAPS', () => {
 
     class Person {
       constructor(name, age) {
-        privateData.set(this, {name: name, age: age})
+        privateData.set(this, {name, age})
       }
 
       getName() {

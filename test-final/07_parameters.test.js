@@ -94,7 +94,7 @@ describe('Rest Parameters', () => {
   })
 
 
-  describe('EXTRA CREDIT', ()=> {
+  describe('EXTRA CREDIT', () => {
 
     it('it can default all arguments, optionally', () => {
 

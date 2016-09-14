@@ -42,7 +42,7 @@ describe('Block Scoped Variables', () => {
       let b = 1
     }
 
-    expect(()=> console.log(b)).to.throw('b is not defined')
+    expect(() => console.log(b)).to.throw('b is not defined')
   })
 
 
@@ -68,7 +68,7 @@ describe('Block Scoped Variables', () => {
       const d = 2
     }
 
-    expect(()=> console.log('d', d)).to.throw('d is not defined')
+    expect(() => console.log('d', d)).to.throw('d is not defined')
   })
 
 })

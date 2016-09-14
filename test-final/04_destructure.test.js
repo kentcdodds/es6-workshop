@@ -35,9 +35,9 @@ describe('Destructuring', () => {
       expect(c).to.equal('Salt Lake City')
       expect(s).to.equal('UT')
       expect(z).to.equal(84115)
-      expect(()=>console.log(city)).to.throw()
-      expect(()=>console.log(state)).to.throw()
-      expect(()=>console.log(zip)).to.throw()
+      expect(() => console.log(city)).to.throw()
+      expect(() => console.log(state)).to.throw()
+      expect(() => console.log(zip)).to.throw()
 
     })
 
@@ -48,13 +48,13 @@ describe('Destructuring', () => {
 
       expect(lat).to.equal(40.776608)
       expect(long).to.equal(-111.920485)
-      expect(()=> console.log(coords)).to.throw()
+      expect(() => console.log(coords)).to.throw()
 
     })
 
   })
 
-  describe('with Arrays', ()=> {
+  describe('with Arrays', () => {
 
     it('can be used to pull apart arrays', () => {
 
@@ -73,7 +73,7 @@ describe('Destructuring', () => {
 
       expect(one).to.equal(1)
       expect(three).to.equal(3)
-      expect(()=>console.log(two)).to.throw()
+      expect(() => console.log(two)).to.throw()
 
     })
 

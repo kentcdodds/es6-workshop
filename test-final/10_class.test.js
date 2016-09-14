@@ -2,7 +2,7 @@ import {expect} from 'chai'
 
 describe('Classes', () => {
 
-  it('has a constructor for initialization', ()=> {
+  it('has a constructor for initialization', () => {
 
     // Create an Animal class
     // Add a constructor that takes one param, the name.
@@ -20,7 +20,7 @@ describe('Classes', () => {
     expect(dog.name).to.equal('Dog')
   })
 
-  it('constructor can have default param values', ()=> {
+  it('constructor can have default param values', () => {
 
     // Create an Animal class with a constructor
     // Make your class default (using default params) the name to 'Honey Badger'
@@ -37,7 +37,7 @@ describe('Classes', () => {
     expect(dog.name).to.equal('Dog')
   })
 
-  it('can have instance methods', ()=> {
+  it('can have instance methods', () => {
 
     // Create an Animal class, pass in the name to the constructor, and add a sayName function to the class definition
     class Animal {
@@ -58,7 +58,7 @@ describe('Classes', () => {
   })
 
 
-  it('can have static methods', ()=> {
+  it('can have static methods', () => {
 
     // Create an Animal class, pass in the name to the constructor,
     // and add a create method that takes a name and returns an instance
@@ -82,7 +82,7 @@ describe('Classes', () => {
     expect(Animal.create).to.exist
   })
 
-  it('can extend another class', ()=> {
+  it('can extend another class', () => {
 
     // Create an Animal class
     // Create a Dog class that extends Animal
@@ -110,7 +110,7 @@ describe('Classes', () => {
     expect(dog instanceof Animal).to.be.true
   })
 
-  it('can use property setters and getters', ()=> {
+  it('can use property setters and getters', () => {
 
     // Create an Animal class (don't pass name into constructor)
     // Add property setter for name
