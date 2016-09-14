@@ -2,35 +2,35 @@ import {expect} from 'chai'
 
 describe(`Promises`, () => {
   it(`should resolve`, () => {
-    pickApple('ripe')
-      .then((result) => {
+    return pickApple('ripe')
+      .then(result => {
         expect(result).to.equal('ripe apple')
-      }, (result) => {
-        expect(result).to.equal(undefined)
+      }, error => {
+        throw new Error('this should not run')
       })
-      .catch((error) => {
-        expect(error).to.equal(undefined)
+      .catch(error => {
+        throw new Error('this should not run')
       })
   })
 
   it(`should reject`, () => {
-    pickApple('unripe')
-      .then((result) => {
-        expect(result).to.equal(undefined)
-      }, (result) => {
-        expect(result).to.equal('unripe apple')
+    return pickApple('unripe')
+      .then(result => {
+        throw new Error('this should not run')
+      }, error => {
+        expect(error).to.equal('unripe apple')
       })
-      .catch((error) => {
-        expect(error).to.equal(undefined)
+      .catch(error => {
+        throw new Error('this should not run')
       })
   })
 
   it(`errors can be caught`, () => {
     return pickApple()
-      .then((result) => {
-        expect(result).to.equal(undefined)
+      .then(result => {
+        throw new Error('this should not run')
       })
-      .catch((error) => {
+      .catch(error => {
         expect(error.message).to.equal('out of apples')
       })
   })

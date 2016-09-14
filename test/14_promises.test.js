@@ -2,36 +2,48 @@ import {expect} from 'chai'
 
 describe(`Promises`, () => {
   it.skip(`should resolve`, () => {
-    pickApple('ripe')
-      .then((result) => {
-        expect(result).to.equal(/*ENTER GUESS HERE*/)
-      }, (result) => {
-        expect(result).to.equal(/*ENTER GUESS HERE*/)
+    return pickApple('ripe')
+      .then(result => {
+        // throw new Error('this should not run')
+        // expect(result).to.equal(/*ENTER GUESS HERE*/)
+        throw new Error('assert or throw here')
+      }, error => {
+        // throw new Error('this should not run')
+        // expect(result).to.equal(/*ENTER GUESS HERE*/)
+        throw new Error('assert or throw here')
       })
-      .catch((error) => {
-        expect(error).to.equal(/* ENTER GUESS HERE */)
+      .catch(error => {
+        // throw new Error('this should not run')
+        // expect(result).to.equal(/*ENTER GUESS HERE*/)
+        throw new Error('assert or throw here')
       })
   })
 
   it.skip(`should reject`, () => {
-    pickApple('unripe')
-      .then((result) => {
+    return pickApple('unripe')
+      .then(result => {
         expect(result).to.equal(/*ENTER GUESS HERE*/)
-      }, (result) => {
-        expect(result).to.equal(/* ENTER GUESS HERE */)
+      }, error => {
+        // throw new Error('this should not run')
+        // expect(error).to.equal(/*ENTER GUESS HERE*/)
+        throw new Error('assert or throw here')
       })
-      .catch((error) => {
-        expect(error).to.equal(/* ENTER GUESS HERE */)
+      .catch(error => {
+        // throw new Error('this should not run')
+        // expect(error).to.equal(/*ENTER GUESS HERE*/)
+        throw new Error('assert or throw here')
       })
   })
 
   it.skip(`errors can be caught`, () => {
     return pickApple()
-      .then((result) => {
+      .then(result => {
         expect(result).to.equal(/*ENTER GUESS HERE*/)
       })
-      .catch((error) => {
-        expect(error.message).to.equal(/* ENTER GUESS HERE*/)
+      .catch(error => {
+        // throw new Error('this should not run')
+        // expect(error.message).to.equal(/* ENTER GUESS HERE*/)
+        throw new Error('assert or throw here')
       })
   })
 
