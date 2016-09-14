@@ -24,10 +24,10 @@
   "scripts": {
     "start": "npm run test:watch",
     "lint": "eslint test-final common",
-    "test": "mocha test/index.js --compilers js:babel-register --require babel-polyfill",
+    "test": "mocha test/*.test.js --compilers js:babel-register --require babel-polyfill",
     "test:watch": "npm test -- --watch",
-    "test:final": "mocha test-final/index.js --compilers js:babel-register --require babel-polyfill",
-    "test:final:watch": "npm run test:fine -- --watch",
+    "test:final": "mocha test-final/*.test.js --compilers js:babel-register --require babel-polyfill",
+    "test:final:watch": "npm run test:final -- --watch",
     "validate": "npm run lint && npm run test && npm run test:final",
     "setup": "npm install && npm run validate"
   },
