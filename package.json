@@ -8,16 +8,16 @@
     "url": "git://github.com/kentcdodds/es6-workshop.git"
   },
   "devDependencies": {
-    "babel-cli": "6.11.4",
-    "babel-core": "6.13.2",
+    "babel-cli": "6.14.0",
+    "babel-core": "6.14.0",
     "babel-eslint": "6.1.2",
     "babel-polyfill": "6.13.0",
-    "babel-preset-es2015": "6.13.2",
+    "babel-preset-es2015": "6.14.0",
     "babel-preset-stage-2": "6.13.0",
-    "babel-register": "6.11.6",
+    "babel-register": "6.14.0",
     "chai": "3.5.0",
-    "eslint": "3.3.1",
-    "eslint-config-kentcdodds": "10.0.1",
+    "eslint": "3.5.0",
+    "eslint-config-kentcdodds": "10.1.0",
     "lodash": "4.15.0",
     "mocha": "3.0.2"
   },
