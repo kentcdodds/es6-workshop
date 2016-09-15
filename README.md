@@ -1,5 +1,11 @@
 # ES6-Workshop
 
+[![slides-badge][slides-badge]][slides]
+[![Donate][donate-badge]][donate]
+[![Watch on GitHub][github-watch-badge]][github-watch]
+[![Star on GitHub][github-star-badge]][github-star]
+[![Tweet][twitter-badge]][twitter]
+
 ## Welcome
 
 Welcome to this ES6 workshop. Our goal is to help everyone make strides towards learning the newest ES6 syntax, and
@@ -72,3 +78,15 @@ If you use this workshop, please Pull Request this readme with a link to your ev
 - [FluentConf 2015 - Axel Rauschmayer & Aaron Frost](http://fluentconf.com/javascript-html-2015/public/schedule/detail/38811)
 - [SLC JS Learners Meetup - Kent C. Dodds](http://www.meetup.com/SLC-JS-Learners/events/220770922/)
 - [MidwestJS 2015 - Kent C. Dodds](https://youtu.be/aeY6ctvsurs)
+- [The Strange Loop 2016 - Kent C. Dodds](http://www.thestrangeloop.com/2016/es6-and-beyond.html)
+
+[slides]: http://kcd.im/es6-intro-slides
+[slides-badge]: https://cdn.rawgit.com/kentcdodds/custom-badges/2/badges/slides.svg
+[donate-badge]: https://img.shields.io/badge/$-support-green.svg?style=flat-square
+[donate]: http://kcd.im/donate
+[github-watch-badge]: https://img.shields.io/github/watchers/kentcdodds/es6-workshop.svg?style=social
+[github-watch]: https://github.com/kentcdodds/es6-workshop/watchers
+[github-star-badge]: https://img.shields.io/github/stars/kentcdodds/es6-workshop.svg?style=social
+[github-star]: https://github.com/kentcdodds/es6-workshop/stargazers
+[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20es6-workshop!%20https://git.io/es6-workshop%20%F0%9F%91%8D
+[twitter-badge]: https://img.shields.io/twitter/url/https/github.com/kentcdodds/es6-workshop.svg?style=social
