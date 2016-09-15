@@ -1,31 +1,26 @@
-import {expect} from 'chai'
+test('has a set method', () => {
+  // Create a new map called 'myMap'
+  // add a new entry. Use 'name' as the key and 'Aaron' as the value
 
-describe('MAPS', () => {
+  expect(myMap.get('name')).toBe('Aaron')
+})
 
-  it('has a set method', () => {
-    // Create a new map called 'myMap'
-    // add a new entry. Use 'name' as the key and 'Aaron' as the value
+test('can use objects as a key', () => {
+  const user = {name: 'Aaron'}
+  const value = {twitter: '@js_dev', gplus: '+AaronFrost'}
 
-    expect(myMap.get('name')).to.equal('Aaron')
-  })
+  // Create a map called 'myMap'
+  // add a new entry. Use user as the key, and value as the value
 
-  it('can use objects as a key', () => {
-    const user = {name: 'Aaron'}
-    const value = {twitter: '@js_dev', gplus: '+AaronFrost'}
+  expect(myMap.has(user)).toBe(true)
+  expect(myMap.get(user)).toBe(value)
 
-    // Create a map called 'myMap'
-    // add a new entry. Use user as the key, and value as the value
+})
 
-    expect(myMap.has(user)).to.be.true
-    expect(myMap.get(user)).to.equal(value)
-
-  })
-
-  it(`doesn't coerce keys`, () => {
-    const myMap = new Map()
-    myMap.set(1, 'Aaron')
-    expect(myMap.get('1')).to.equal(/*ENTER YOUR GUESS HERE*/)
-    myMap.set('1', 'Aaron')
-    expect(myMap.get('1')).to.equal(/*ENTER YOUR GUESS HERE*/)
-  })
+test(`doesn't coerce keys`, () => {
+  const myMap = new Map()
+  myMap.set(1, 'Aaron')
+  expect(myMap.get('1')).toBe(/*ENTER YOUR GUESS HERE*/)
+  myMap.set('1', 'Aaron')
+  expect(myMap.get('1')).toBe(/*ENTER YOUR GUESS HERE*/)
 })

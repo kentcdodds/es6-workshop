@@ -1,61 +1,50 @@
-import {expect} from 'chai'
+test('can be used to pull apart objects', () => {
+  const {city, state, zip} = getAddress()
+  expect(city).toBe('Salt Lake City')
+  expect(state).toBe('UT')
+  expect(zip).toBe(84115)
+})
 
-describe('Destructuring', () => {
+test('sets missing values to undefined', () => {
+  const {address} = getAddress()
+  expect(address).toBeUndefined()
+})
 
-  describe('with Objects', () => {
+test('can alias destructured variables', () => {
+  const {city: c, state: s, zip: z} = getAddress()
+  expect(c).toBe('Salt Lake City')
+  expect(s).toBe('UT')
+  expect(z).toBe(84115)
+  expect(() => console.log(city)).toThrow()
+  expect(() => console.log(state)).toThrow()
+  expect(() => console.log(zip)).toThrow()
+})
 
-    it('can be used to pull apart objects', () => {
-      const {city, state, zip} = getAddress()
-      expect(city).to.equal('Salt Lake City')
-      expect(state).to.equal('UT')
-      expect(zip).to.equal(84115)
-    })
+test('can destructure nested variables', () => {
+  const {coords: {lat, long}} = getAddress()
+  expect(lat).toBe(40.776608)
+  expect(long).toBe(-111.920485)
+  expect(() => console.log(coords)).toThrow()
+})
 
-    it('sets missing values to undefined', () => {
-      const {address} = getAddress()
-      expect(address).to.be.undefined
-    })
+test('can be used to pull apart arrays', () => {
+  const [one, two] = getNumbers()
+  expect(one).toBe(1)
+  expect(two).toBe(2)
+})
 
-    it('can alias destructured variables', () => {
-      const {city: c, state: s, zip: z} = getAddress()
-      expect(c).to.equal('Salt Lake City')
-      expect(s).to.equal('UT')
-      expect(z).to.equal(84115)
-      expect(() => console.log(city)).to.throw()
-      expect(() => console.log(state)).to.throw()
-      expect(() => console.log(zip)).to.throw()
-    })
+test('can skip indexes in arrays', () => {
+  const [one, , three] = getNumbers()
+  expect(one).toBe(1)
+  expect(three).toBe(3)
+  expect(() => console.log(two)).toThrow()
+})
 
-    it('can destructure nested variables', () => {
-      const {coords: {lat, long}} = getAddress()
-      expect(lat).to.equal(40.776608)
-      expect(long).to.equal(-111.920485)
-      expect(() => console.log(coords)).to.throw()
-    })
-  })
-
-  describe('with Arrays', () => {
-
-    it('can be used to pull apart arrays', () => {
-      const [one, two] = getNumbers()
-      expect(one).to.equal(1)
-      expect(two).to.equal(2)
-    })
-
-    it('can skip indexes in arrays', () => {
-      const [one, , three] = getNumbers()
-      expect(one).to.equal(1)
-      expect(three).to.equal(3)
-      expect(() => console.log(two)).to.throw()
-    })
-
-    it('can reach nested arrays', () => {
-      const [one, , [three, , [, six]]] = getNestedNumbers()
-      expect(one).to.equal(1)
-      expect(three).to.equal(3)
-      expect(six).to.equal(6)
-    })
-  })
+test('can reach nested arrays', () => {
+  const [one, , [three, , [, six]]] = getNestedNumbers()
+  expect(one).toBe(1)
+  expect(three).toBe(3)
+  expect(six).toBe(6)
 })
 
 function getAddress() {

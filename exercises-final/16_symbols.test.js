@@ -1,49 +1,45 @@
-import {expect} from 'chai'
+test(`should ensure a variable is unique reference`, () => {
+  const SKY_COLOR_BLUE = Symbol()
+  const OCEAN_COLOR_BLUE = Symbol()
 
-describe(`Symbols`, () => {
-  it(`should ensure a variable is unique reference`, () => {
-    const SKY_COLOR_BLUE = Symbol()
-    const OCEAN_COLOR_BLUE = Symbol()
+  expect(SKY_COLOR_BLUE).not.toBe(OCEAN_COLOR_BLUE)
+  expect(typeof SKY_COLOR_BLUE).toBe('symbol')
+  expect(typeof SKY_COLOR_BLUE).toBe('symbol')
+})
 
-    expect(SKY_COLOR_BLUE).to.not.equal(OCEAN_COLOR_BLUE)
-    expect(typeof SKY_COLOR_BLUE).to.equal('symbol')
-    expect(typeof SKY_COLOR_BLUE).to.equal('symbol')
-  })
+test(`should help determine if a singleton has already been declared`, () => {
+  const toRuleThemAll = Symbol('One ring, to rule them all.')
+  const myRing = OneRing()
+  const myPrecious = OneRing()
 
-  it(`should help determine if a singleton has already been declared`, () => {
-    const toRuleThemAll = Symbol('One ring, to rule them all.')
-    const myRing = OneRing()
-    const myPrecious = OneRing()
+  function OneRing() {
 
-    function OneRing() {
+    // Check if we already have an instance of OneRing
+    // If so, return it
+    if (OneRing[toRuleThemAll]) return OneRing[toRuleThemAll]
 
-      // Check if we already have an instance of OneRing
-      // If so, return it
-      if (OneRing[toRuleThemAll]) return OneRing[toRuleThemAll]
-
-      // If not, set up a new instance.
-      let destroy = function() {
-        return 'Ring destroyed!'
-      }
-
-      // Return the new instance and assign it to a symbol
-      return OneRing[toRuleThemAll] = {
-        destroy,
-      }
+    // If not, set up a new instance.
+    let destroy = function() {
+      return 'Ring destroyed!'
     }
 
-    // Rings should be defined
-    expect(myRing).to.be.defined
-    expect(myPrecious).to.be.defined
+    // Return the new instance and assign it to a symbol
+    return OneRing[toRuleThemAll] = {
+      destroy,
+    }
+  }
 
-    // We should have a symbol to hold a reference to the singleton
-    expect(typeof toRuleThemAll).to.equal('symbol')
+  // Rings should be defined
+  expect(myRing).toBeDefined()
+  expect(myPrecious).toBeDefined()
 
-    // Both variables should reference the same instance
-    expect(myRing).to.equal(myPrecious)
+  // We should have a symbol to hold a reference to the singleton
+  expect(typeof toRuleThemAll).toBe('symbol')
 
-    // Both should be properly created instances
-    expect(myRing.destroy()).to.equal('Ring destroyed!')
-    expect(myPrecious.destroy()).to.equal('Ring destroyed!')
-  })
+  // Both variables should reference the same instance
+  expect(myRing).toBe(myPrecious)
+
+  // Both should be properly created instances
+  expect(myRing.destroy()).toBe('Ring destroyed!')
+  expect(myPrecious.destroy()).toBe('Ring destroyed!')
 })

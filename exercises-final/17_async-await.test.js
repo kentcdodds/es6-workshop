@@ -1,19 +1,15 @@
-import {expect} from 'chai'
+test('should work with resolved promises', async () => {
+  const result = await doAsync()
+  expect(result).toBe('resolved')
+})
 
-describe('async/await', () => {
-  it('should work with resolved promises', async () => {
-    const result = await doAsync()
-    expect(result).to.equal('resolved')
-  })
-
-  it('should throw an error with a rejected promise', async () => {
-    try {
-      await doAsync(true)
-      throw new Error('this should not run')
-    } catch (error) {
-      expect(error).to.equal('rejected')
-    }
-  })
+test('should throw an error with a rejected promise', async () => {
+  try {
+    await doAsync(true)
+    throw new Error('this should not run')
+  } catch (error) {
+    expect(error).toBe('rejected')
+  }
 })
 
 function doAsync(rejectPromise = false) {

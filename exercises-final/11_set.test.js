@@ -1,28 +1,23 @@
-import {expect} from 'chai'
+test('has an add method and a has method', () => {
+  const mySet = new Set()
+  mySet.add(1)
+  mySet.add(2)
+  mySet.add(3)
 
-describe('SETS', () => {
+  expect(mySet.has(1)).toBe(true)
+  expect(mySet.has(2)).toBe(true)
+  expect(mySet.has(3)).toBe(true)
+  expect(mySet.has(4)).toBe(false)
+})
 
-  it('has an add method and a has method', () => {
-    const mySet = new Set()
-    mySet.add(1)
-    mySet.add(2)
-    mySet.add(3)
+test('doesn`t allow duplicates', () => {
+  const mySet = new Set()
+  mySet.add(1)
+  mySet.add(1)
+  mySet.add(1)
 
-    expect(mySet.has(1)).to.be.true
-    expect(mySet.has(2)).to.be.true
-    expect(mySet.has(3)).to.be.true
-    expect(mySet.has(4)).to.be.false
-  })
-
-  it('doesn`t allow duplicates', () => {
-    const mySet = new Set()
-    mySet.add(1)
-    mySet.add(1)
-    mySet.add(1)
-
-    expect(mySet.has(1)).to.be.true
-    expect(mySet.has(2)).to.be.false
-    expect(mySet.has(3)).to.be.false
-    expect(mySet.has(4)).to.be.false
-  })
+  expect(mySet.has(1)).toBe(true)
+  expect(mySet.has(2)).toBe(false)
+  expect(mySet.has(3)).toBe(false)
+  expect(mySet.has(4)).toBe(false)
 })

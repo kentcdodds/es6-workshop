@@ -52,7 +52,11 @@
   },
   "jest": {
     "cacheDirectory": "./node_modules/.cache",
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "testPathDirs": [
+      "exercises",
+      "exercises-final"
+    ]
   },
   "LICENSE": "MIT"
 }

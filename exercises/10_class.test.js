@@ -1,71 +1,66 @@
-import {expect} from 'chai'
+test('has a constructor for initialization', () => {
+  // Create an Animal class
+  // Add a constructor that takes one param, the name.
+  // Set this.name to the name passed in
 
-describe('Classes', () => {
+  const animal = new Animal()
+  const dog = new Animal('Dog')
 
-  it('has a constructor for initialization', () => {
-    // Create an Animal class
-    // Add a constructor that takes one param, the name.
-    // Set this.name to the name passed in
+  expect(animal.name).toBeUndefined()
+  expect(dog.name).toBe('Dog')
+})
 
-    const animal = new Animal()
-    const dog = new Animal('Dog')
+test('constructor can have default param values', () => {
+  // Create an Animal class with a constructor
+  // Make your class default (using default params) the name to 'Honey Badger'
 
-    expect(animal.name).to.be.undefined
-    expect(dog.name).to.equal('Dog')
-  })
+  const animal = new Animal()
+  const dog = new Animal('Dog')
 
-  it('constructor can have default param values', () => {
-    // Create an Animal class with a constructor
-    // Make your class default (using default params) the name to 'Honey Badger'
+  expect(animal.name).toBe('Honey Badger')
+  expect(dog.name).toBe('Dog')
+})
 
-    const animal = new Animal()
-    const dog = new Animal('Dog')
+test('can have instance methods', () => {
+  // Create an Animal class, pass in the name to the constructor, and add a sayName function to the class definition
 
-    expect(animal.name).to.equal('Honey Badger')
-    expect(dog.name).to.equal('Dog')
-  })
+  const animal = new Animal()
 
-  it('can have instance methods', () => {
-    // Create an Animal class, pass in the name to the constructor, and add a sayName function to the class definition
-
-    const animal = new Animal()
-
-    expect(animal.sayName).to.exist
-    expect(Animal.sayName).to.be.undefined
-    expect(animal.sayName()).to.equal('My name is: Honey Badger')
-  })
+  expect(animal.sayName).toBeTruthy()
+  expect(Animal.sayName).toBeUndefined()
+  expect(animal.sayName()).toBe('My name is: Honey Badger')
+})
 
 
-  it('can have static methods', () => {
-    // Create an Animal class, pass in the name to the constructor,
-    // and add a create method that takes a name and returns an instance
+test('can have static methods', () => {
+  // Create an Animal class, pass in the name to the constructor,
+  // and add a create method that takes a name and returns an instance
 
-    const animal = new Animal()
+  const animal = new Animal()
 
-    expect(animal.create).to.be.undefined
-    expect(Animal.create).to.exist
-  })
+  expect(animal.create).toBeUndefined()
+  expect(Animal.create).toBeTruthy()
+})
 
-  it('can extend another class', () => {
-    // Create an Animal class
-    // Create a Dog class that extends Animal
-    // Add sayName to Animal
+test('can extend another class', () => {
+  // Create an Animal class
+  // Create a Dog class that extends Animal
+  // Add sayName to Animal
 
-    const dog = new Dog('Fido')
+  const dog = new Dog('Fido')
 
-    expect(dog instanceof Dog).to.be.true
-    expect(dog instanceof Animal).to.be.true
-  })
+  expect(dog instanceof Dog).toBe(true)
+  expect(dog instanceof Animal).toBe(true)
+})
 
-  it('can use property setters and getters', () => {
-    // Create an Animal class (don't pass name into constructor)
-    // Add property setter for name
-    // Add property getter for name
+test('can use property setters and getters', () => {
+  // Create an Animal class (don't pass name into constructor)
+  // Add property setter for name
+  // Add property getter for name
 
-    const animal = new Animal()
-    animal.name = 'Dog'
-    expect(animal.name).to.equal('Dog type of animal')
-    animal.name = 'Cat'
-    expect(animal.name).to.equal('Cat type of animal')
-  })
+  const animal = new Animal()
+  animal.name = 'Dog'
+  expect(animal.name).toBe('Dog type of animal')
+  animal.name = 'Cat'
+  expect(animal.name).toBe('Cat type of animal')
 })

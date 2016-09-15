@@ -1,20 +1,16 @@
-import {expect} from 'chai'
-
-describe('async/await', () => {
-  // Rewrite all of these from promises to async/await
-  // tip: you can turn the `it` callbacks to async functions by adding `async` to them :)
-  it('should work with resolved promises', async () => {
-    return doAsync().then(result => {
-      expect(result).to.equal('resolved')
-      throw new Error('convert this to an async/await function and remove this error')
-    })
+// Rewrite all of these from promises to async/await
+// tip: you can turn the `it` callbacks to async functions by adding `async` to them :)
+test('should work with resolved promises', async () => {
+  return doAsync().then(result => {
+    expect(result).toBe('resolved')
+    throw new Error('convert this to an async/await function and remove this error')
   })
+})
 
-  it('should throw an error with a rejected promise', async () => {
-    return doAsync(true).catch(error => {
-      expect(error).to.equal('rejected')
-      throw new Error('convert this to an async/await function and remove this error')
-    })
+test('should throw an error with a rejected promise', async () => {
+  return doAsync(true).catch(error => {
+    expect(error).toBe('rejected')
+    throw new Error('convert this to an async/await function and remove this error')
   })
 })
 

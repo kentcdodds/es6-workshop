@@ -1,109 +1,100 @@
-import {expect} from 'chai'
+test('can be triggered when the incoming argument is undefined', () => {
 
-describe('Default Values', () => {
-  it('can be triggered when the incoming argument is undefined', () => {
+  function test(name = 'Mercury') {
+    return name
+  }
 
-    function test(name = 'Mercury') {
-      return name
-    }
-
-    expect(test('Aaron')).to.equal('Aaron')
-    expect(test()).to.equal('Mercury')
-    expect(test(undefined)).to.equal('Mercury')
-    expect(test(null)).to.equal(null)
-  })
-
-  it(`aren't included in arguments`, () => {
-
-    function test(name = 'Mercury') {
-      return arguments.length
-    }
-
-    expect(test('Aaron')).to.equal(1)
-    expect(test(null)).to.equal(1)
-    expect(test()).to.equal(0)
-  })
-
-  it('can trigger a function call', () => {
-    let triggerCount = 0
-
-    function test(name = getDefault()) {
-      return name
-    }
-
-    function getDefault() {
-      triggerCount++
-      return 'Mercury'
-    }
-
-    expect(triggerCount).to.equal(0)
-    expect(test('Aaron')).to.equal('Aaron')
-    expect(test()).to.equal('Mercury')
-    expect(test(undefined)).to.equal('Mercury')
-    expect(triggerCount).to.equal(2)
-  })
+  expect(test('Aaron')).toBe('Aaron')
+  expect(test()).toBe('Mercury')
+  expect(test(undefined)).toBe('Mercury')
+  expect(test(null)).toBe(null)
 })
 
-describe('Rest Parameters', () => {
+test(`aren't included in arguments`, () => {
 
-  it('catch non-specified params', () => {
-    function resty(first, second, ...others) {
-      return others
-    }
+  function test(name = 'Mercury') {
+    return arguments.length
+  }
 
-    expect(resty().length).to.equal(0)
-    expect(resty(1).length).to.equal(0)
-    expect(resty(1, 2).length).to.equal(0)
-    expect(resty(1, 2, 3).length).to.equal(1)
-    expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10).length).to.equal(8)
-  })
+  expect(test('Aaron')).toBe(1)
+  expect(test(null)).toBe(1)
+  expect(test()).toBe(0)
+})
 
-  it('has a different length than `arguments`', () => {
-    function resty(first, second, ...others) {
-      return others.length == arguments.length
-    }
+test('can trigger a function call', () => {
+  let triggerCount = 0
 
-    // expect(resty()).to.equal(true)
-    // expect(resty(1)).to.equal(false)
-    // expect(resty(1, 2)).to.equal(false)
-    // expect(resty(1, 2, 3)).to.equal(false)
-    // expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10)).to.equal(false)
-  })
+  function test(name = getDefault()) {
+    return name
+  }
 
-  it('is an actual array, unlike arguments', () => {
-    function resty(...args) {
-      return args
-    }
+  function getDefault() {
+    triggerCount++
+    return 'Mercury'
+  }
 
-    function argy() {
-      return arguments
-    }
+  expect(triggerCount).toBe(0)
+  expect(test('Aaron')).toBe('Aaron')
+  expect(test()).toBe('Mercury')
+  expect(test(undefined)).toBe('Mercury')
+  expect(triggerCount).toBe(2)
+})
 
-    var args = argy(1, 2, 3)
-    var rests = resty(1, 2, 3)
+test('catch non-specified params', () => {
+  function resty(first, second, ...others) {
+    return others
+  }
 
-    expect(args.__proto__ == rests.__proto__).to.equal(false)
-    expect(args.splice).to.equal(undefined)
-    expect(rests.__proto__).to.equal(Array.prototype)
-    expect(rests.splice).to.exist
-    expect(rests.splice).to.equal(Array.prototype.splice)
-  })
+  expect(resty().length).toBe(0)
+  expect(resty(1).length).toBe(0)
+  expect(resty(1, 2).length).toBe(0)
+  expect(resty(1, 2, 3).length).toBe(1)
+  expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10).length).toBe(8)
+})
 
-  describe('EXTRA CREDIT', () => {
+test('has a different length than `arguments`', () => {
+  function resty(first, second, ...others) {
+    return others.length == arguments.length
+  }
 
-    it('it can default all arguments, optionally', () => {
+  // expect(resty()).toBe(true)
+  // expect(resty(1)).toBe(false)
+  // expect(resty(1, 2)).toBe(false)
+  // expect(resty(1, 2, 3)).toBe(false)
+  // expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10)).toBe(false)
+})
 
-      function myFunction({name = 'Aaron', age = 35, favoriteBand = 'Queen'} = {}) {
-        expect(name).to.exist
-        expect(age).to.exist
-        expect(favoriteBand).to.exist
-      }
+test('is an actual array, unlike arguments', () => {
+  function resty(...args) {
+    return args
+  }
 
-      myFunction({name: 'Axel', age: 37, favoriteBand: 'Taylor Swift'})
-      myFunction({name: 'Axel', age: 37})
-      myFunction({name: 'Axel'})
-      myFunction({})
-      myFunction()
-    })
-  })
+  function argy() {
+    return arguments
+  }
+
+  var args = argy(1, 2, 3)
+  var rests = resty(1, 2, 3)
+
+  expect(args.__proto__ == rests.__proto__).toBe(false)
+  expect(args.splice).toBe(undefined)
+  expect(rests.__proto__).toBe(Array.prototype)
+  expect(rests.splice).toBeTruthy()
+  expect(rests.splice).toBe(Array.prototype.splice)
+})
+
+
+test('it can default all arguments, optionally', () => {
+
+  function myFunction({name = 'Aaron', age = 35, favoriteBand = 'Queen'} = {}) {
+    expect(name).toBeTruthy()
+    expect(age).toBeTruthy()
+    expect(favoriteBand).toBeTruthy()
+  }
+
+  myFunction({name: 'Axel', age: 37, favoriteBand: 'Taylor Swift'})
+  myFunction({name: 'Axel', age: 37})
+  myFunction({name: 'Axel'})
+  myFunction({})
+  myFunction()
 })
