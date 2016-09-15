@@ -19,7 +19,6 @@
     "eslint": "3.5.0",
     "eslint-config-kentcdodds": "10.1.0",
     "eslint-plugin-babel": "^3.3.0",
-    "eslint-plugin-mocha": "^4.5.1",
     "jest-cli": "15.1.1",
     "lodash": "4.15.0",
     "split-guide": "1.0.0"
@@ -45,7 +44,7 @@
     "extends": [
       "kentcdodds/possible-errors",
       "kentcdodds/es6/possible-errors",
-      "kentcdodds/mocha"
+      "kentcdodds/jest"
     ],
     "rules": {
       "no-console": 0
