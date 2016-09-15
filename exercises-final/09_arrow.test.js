@@ -27,9 +27,7 @@ describe('Arrow Functions', () => {
     const person = {
       name: 'Aaron',
       greetFriends: function(friends) {
-        friends.forEach(friend => {
-          console.log(this.name + ' greets to ' + friend)
-        })
+        return friends.map(friend => this.name + ' greets to ' + friend)
       },
     }
 

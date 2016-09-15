@@ -11,6 +11,7 @@
     "babel-cli": "6.14.0",
     "babel-core": "6.14.0",
     "babel-eslint": "6.1.2",
+    "babel-jest": "15.0.0",
     "babel-polyfill": "6.13.0",
     "babel-preset-es2015": "6.14.0",
     "babel-preset-stage-2": "6.13.0",
@@ -18,16 +19,16 @@
     "chai": "3.5.0",
     "eslint": "3.5.0",
     "eslint-config-kentcdodds": "10.1.0",
+    "jest-cli": "15.1.1",
     "lodash": "4.15.0",
-    "mocha": "3.0.2",
     "split-guide": "1.0.0"
   },
   "scripts": {
     "start": "npm run test:watch",
     "lint": "eslint exercises-final common",
-    "test": "mocha exercises/*.test.js --compilers js:babel-register --require babel-polyfill",
+    "test": "jest exercises/",
     "test:watch": "npm test -- --watch",
-    "test:final": "mocha exercises-final/*.test.js --compilers js:babel-register --require babel-polyfill",
+    "test:final": "jest exercises-final/",
     "test:final:watch": "npm run test:final -- --watch",
     "generate": "split-guide generate",
     "validate": "npm run generate && npm run lint && npm run test:final",
@@ -48,6 +49,10 @@
     "rules": {
       "no-console": 0
     }
+  },
+  "jest": {
+    "cacheDirectory": "./node_modules/.cache",
+    "testEnvironment": "node"
   },
   "LICENSE": "MIT"
 }

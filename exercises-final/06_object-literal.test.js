@@ -8,7 +8,6 @@ describe('Object Literal', () => {
         name,
         power,
         attack(target) {
-          console.log('RAAAARRRR!!! #breathesfire')
           return `${this.name} attacked ${target.name}`
         },
       }
