@@ -19,16 +19,18 @@
     "eslint": "3.5.0",
     "eslint-config-kentcdodds": "10.1.0",
     "lodash": "4.15.0",
-    "mocha": "3.0.2"
+    "mocha": "3.0.2",
+    "split-guide": "1.0.0"
   },
   "scripts": {
     "start": "npm run test:watch",
-    "lint": "eslint test-final common",
-    "test": "mocha test/*.test.js --compilers js:babel-register --require babel-polyfill",
+    "lint": "eslint exercises-final common",
+    "test": "mocha exercises/*.test.js --compilers js:babel-register --require babel-polyfill",
     "test:watch": "npm test -- --watch",
-    "test:final": "mocha test-final/*.test.js --compilers js:babel-register --require babel-polyfill",
+    "test:final": "mocha exercises-final/*.test.js --compilers js:babel-register --require babel-polyfill",
     "test:final:watch": "npm run test:final -- --watch",
-    "validate": "npm run lint && npm run test && npm run test:final",
+    "generate": "split-guide generate",
+    "validate": "npm run generate && npm run lint && npm run test:final",
     "setup": "npm install && npm run validate"
   },
   "babel": {
