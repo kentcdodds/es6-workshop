@@ -47,9 +47,10 @@ npm run setup
 If this finishes without issues, great 👏! However, if you have problems, please file an issue on this repo [here](https://github.com/kentcdodds/es6-workshop/issues/new?title=Issues%20Setting%20Up&body=Here%27s%20my%20node/npm%20version%20and%20the%20output%20when%20I%20run%20the%20commands:).
 
 # How To Run Tests
-Once you have everything installed, you are ready to run some tests. There are two directories with tests in them: `test` and `test-final`.
-The `test-final` directory is like a cheat sheet. All of the tests contain the required ES6 code to make the tests pass. You will need to
-edit the tests in the `test` directory, and make the tests pass.
+Once you have everything installed, you are ready to run some tests. There are two directories with tests in them:
+`exercises` and `exercises-final`. The `exercises-final` directory is like a cheat sheet. All of the tests contain the
+required ES6 code to make the tests pass. You will need to edit the tests in the `exercises` directory, and make the
+tests pass.
 
 To run the tests, in your terminal run:
 
@@ -63,15 +64,19 @@ If you want the tests to continue running as you make changes, run:
 npm run test:watch
 ```
 
-This will execute the tests in the `test` directory. Currently all of these tests are disabled, using `it.skip`. Your
-job is to one-by-one turn each test back on and get the test to pass, by writing the required ES6 code. Once you have
-written the required code, the tests will pass, and you can move onto the next test.
+This will start `jest` in its interactive watch mode ([learn more][watch-mode]). If you see a bunch of failures, make
+sure you're in "only changed" mode by clicking the `o` key. There should not be any tests run at this point. Your
+job is to go into each test file in `exercises` and make the tests pass. As you make changes, jest will run the file's
+tests. Once you have written the required ES6 code, the tests will pass, and you can move on.
 
 ### Contributing
 
 If you have any questions, [let me know](https://twitter.com/kentcdodds).
 
-If you use this workshop, please Pull Request this readme with a link to your event.
+If you use this workshop, please Pull Request this README with a link to your event.
+
+If you want to edit/update anything in the exercises, please make all changes in the `templates` directory. We're using
+[`split-guide`](https://git.io/split-guide), so the `exercises` and `exercises-final` directories are generated.
 
 ### Events
 
@@ -90,3 +95,4 @@ If you use this workshop, please Pull Request this readme with a link to your ev
 [github-star]: https://github.com/kentcdodds/es6-workshop/stargazers
 [twitter]: https://twitter.com/intent/tweet?text=Check%20out%20es6-workshop!%20https://git.io/es6-workshop%20%F0%9F%91%8D
 [twitter-badge]: https://img.shields.io/twitter/url/https/github.com/kentcdodds/es6-workshop.svg?style=social
+[watch-mode]: https://egghead.io/lessons/javascript-use-jest-s-interactive-watch-mode?pl=testing-javascript-with-jest-a36c4074
