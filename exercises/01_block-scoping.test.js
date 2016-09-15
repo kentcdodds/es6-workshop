@@ -1,3 +1,4 @@
+const noop = () => {}
 test('can be used in place of `var`', () => {
   // Declare bandName using 'let'
   // Declare isBestBand using 'let'
@@ -24,7 +25,7 @@ test('is trapped inside of an `if` statement', () => {
     // Change to `var` to `let`, so that b is scoped inside of the if-statement
     var b = 1
   }
-  expect(() => console.log(b)).toThrow('b is not defined')
+  expect(() => noop(b)).toThrow('b is not defined')
 })
 
 test(`can't redeclare using the same name`, () => {
@@ -46,5 +47,5 @@ test('means that we can start using block statements', () => {
     var d = 2
   }
 
-  expect(() => console.log('d', d)).toThrow('d is not defined')
+  expect(() => noop('d', d)).toThrow('d is not defined')
 })

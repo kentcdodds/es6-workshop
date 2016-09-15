@@ -79,7 +79,7 @@ test('is an actual array, unlike arguments', () => {
   expect(args.__proto__ == rests.__proto__).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(args.splice).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(rests.__proto__).toBe(/*ENTER YOUR GUESS HERE*/)
-  expect(rests.splice).toBeTruthy()
+  expect(rests.splice).toBeDefined()
   expect(rests.splice).toBe(Array.prototype.splice)
 })
 
@@ -88,9 +88,9 @@ test('it can default all arguments, optionally', () => {
   // Modify the method signature of `myFunction` to allow for all args to be optional
 
   function myFunction({name, age, favoriteBand}) {
-    expect(name).toBeTruthy()
-    expect(age).toBeTruthy()
-    expect(favoriteBand).toBeTruthy()
+    expect(name).toBeDefined()
+    expect(age).toBeDefined()
+    expect(favoriteBand).toBeDefined()
   }
 
   myFunction({name: 'Axel', age: 37, favoriteBand: 'Taylor Swift'})

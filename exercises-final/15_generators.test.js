@@ -2,7 +2,7 @@ test(`should yield objects with value and done properties`, () => {
   const odds = giveMeOneOddNumber()
 
   expect(typeof odds).toBe('object')
-  expect(odds.next).toBeTruthy()
+  expect(odds.next).toBeDefined()
   expect(odds.next().value).toBe(1)
   expect(odds.next().value).toBe(3)
   expect(odds.next().done).toBe(false)

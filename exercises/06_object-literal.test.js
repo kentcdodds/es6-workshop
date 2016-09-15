@@ -6,7 +6,6 @@ test('can use shorthand for property names', () => {
     //   name: name,
     //   power: power,
     //   attack: function (target){
-    //     console.log('RAAAARRRR!!! #breathesfire');
     //     return `${this.name} attacked ${target.name}`;
     //   }
     // }

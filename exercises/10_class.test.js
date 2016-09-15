@@ -26,7 +26,7 @@ test('can have instance methods', () => {
 
   const animal = new Animal()
 
-  expect(animal.sayName).toBeTruthy()
+  expect(animal.sayName).toBeDefined()
   expect(Animal.sayName).toBeUndefined()
   expect(animal.sayName()).toBe('My name is: Honey Badger')
 })
@@ -39,7 +39,7 @@ test('can have static methods', () => {
   const animal = new Animal()
 
   expect(animal.create).toBeUndefined()
-  expect(Animal.create).toBeTruthy()
+  expect(Animal.create).toBeDefined()
 })
 
 test('can extend another class', () => {

@@ -1,3 +1,4 @@
+const noop = () => {}
 test('can be used to pull apart objects', () => {
   // FINAL_START
   const {city, state, zip} = getAddress()
@@ -34,9 +35,9 @@ test('can alias destructured variables', () => {
   expect(c).toBe('Salt Lake City')
   expect(s).toBe('UT')
   expect(z).toBe(84115)
-  expect(() => console.log(city)).toThrow()
-  expect(() => console.log(state)).toThrow()
-  expect(() => console.log(zip)).toThrow()
+  expect(() => noop(city)).toThrow()
+  expect(() => noop(state)).toThrow()
+  expect(() => noop(zip)).toThrow()
 })
 
 test('can destructure nested variables', () => {
@@ -48,7 +49,7 @@ test('can destructure nested variables', () => {
   // WORKSHOP_END
   expect(lat).toBe(40.776608)
   expect(long).toBe(-111.920485)
-  expect(() => console.log(coords)).toThrow()
+  expect(() => noop(coords)).toThrow()
 })
 
 test('can be used to pull apart arrays', () => {
@@ -71,7 +72,7 @@ test('can skip indexes in arrays', () => {
   // WORKSHOP_END
   expect(one).toBe(1)
   expect(three).toBe(3)
-  expect(() => console.log(two)).toThrow()
+  expect(() => noop(two)).toThrow()
 })
 
 test('can reach nested arrays', () => {

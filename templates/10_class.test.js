@@ -47,7 +47,7 @@ test('can have instance methods', () => {
     }
 
     sayName() {
-      return 'My name is: ' + this.name
+      return `My name is: ${this.name}`
     }
   }
   // FINAL_END
@@ -57,7 +57,7 @@ test('can have instance methods', () => {
 
   const animal = new Animal()
 
-  expect(animal.sayName).toBeTruthy()
+  expect(animal.sayName).toBeDefined()
   expect(Animal.sayName).toBeUndefined()
   expect(animal.sayName()).toBe('My name is: Honey Badger')
 })
@@ -71,7 +71,7 @@ test('can have static methods', () => {
     }
 
     sayName() {
-      console.log('My name is: ' + this.name)
+      return `My name is: ${this.name}`
     }
 
     static create(name) {
@@ -87,7 +87,7 @@ test('can have static methods', () => {
   const animal = new Animal()
 
   expect(animal.create).toBeUndefined()
-  expect(Animal.create).toBeTruthy()
+  expect(Animal.create).toBeDefined()
 })
 
 test('can extend another class', () => {
@@ -98,7 +98,7 @@ test('can extend another class', () => {
     }
 
     sayName() {
-      console.log('My name is: ' + this.name)
+      return `My name is: ${this.name}`
     }
   }
 
@@ -127,7 +127,7 @@ test('can use property setters and getters', () => {
       this._name = name
     }
     get name() {
-      return this._name + ' type of animal'
+      return `${this._name} type of animal`
     }
   }
   // FINAL_END

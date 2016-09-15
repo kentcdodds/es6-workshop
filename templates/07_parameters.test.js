@@ -122,14 +122,14 @@ test('is an actual array, unlike arguments', () => {
   expect(args.__proto__ == rests.__proto__).toBe(false)
   expect(args.splice).toBe(undefined)
   expect(rests.__proto__).toBe(Array.prototype)
-  expect(rests.splice).toBeTruthy()
+  expect(rests.splice).toBeDefined()
   expect(rests.splice).toBe(Array.prototype.splice)
   // FINAL_END
   // WORKSHOP_START
   expect(args.__proto__ == rests.__proto__).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(args.splice).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(rests.__proto__).toBe(/*ENTER YOUR GUESS HERE*/)
-  expect(rests.splice).toBeTruthy()
+  expect(rests.splice).toBeDefined()
   expect(rests.splice).toBe(Array.prototype.splice)
   // WORKSHOP_END
 })
@@ -149,9 +149,9 @@ test('it can default all arguments, optionally', () => {
   // WORKSHOP_START
   function myFunction({name, age, favoriteBand}) {
     // WORKSHOP_END
-    expect(name).toBeTruthy()
-    expect(age).toBeTruthy()
-    expect(favoriteBand).toBeTruthy()
+    expect(name).toBeDefined()
+    expect(age).toBeDefined()
+    expect(favoriteBand).toBeDefined()
   }
 
   myFunction({name: 'Axel', age: 37, favoriteBand: 'Taylor Swift'})

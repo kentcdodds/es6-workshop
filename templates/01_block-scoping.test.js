@@ -1,6 +1,7 @@
 // COMMENT_START
 /* eslint no-const-assign:0 */
 // COMMENT_END
+const noop = () => {}
 test('can be used in place of `var`', () => {
   // FINAL_START
   let bandName = 'Queen'
@@ -50,7 +51,7 @@ test('is trapped inside of an `if` statement', () => {
     var b = 1
     // WORKSHOP_END
   }
-  expect(() => console.log(b)).toThrow('b is not defined')
+  expect(() => noop(b)).toThrow('b is not defined')
 })
 
 test(`can't redeclare using the same name`, () => {
@@ -84,5 +85,5 @@ test('means that we can start using block statements', () => {
     // WORKSHOP_END
   }
 
-  expect(() => console.log('d', d)).toThrow('d is not defined')
+  expect(() => noop('d', d)).toThrow('d is not defined')
 })
