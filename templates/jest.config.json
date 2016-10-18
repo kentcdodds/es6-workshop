@@ -1,0 +1,11 @@
+{
+  "testEnvironment": "node",
+  "testPathDirs": [
+    // WORKSHOP_START
+    "exercises"
+    // WORKSHOP_END
+    // FINAL_START
+    "exercises-final"
+    // FINAL_END
+  ]
+}
