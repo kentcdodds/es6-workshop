@@ -29,7 +29,7 @@
   "scripts": {
     "start": "npm run test:watch",
     "lint": "eslint exercises-final common",
-    "pre-commit": "npm run lint && npm run generate && npm run test:final && git add exercises exercises-final",
+    "precommit": "npm run lint && npm run generate && npm run test:final && git add exercises exercises-final",
     "test": "jest --config=exercises/jest.config.json",
     "test:watch": "npm test -- --watch",
     "test:final": "jest --config=exercises-final/jest.config.json",
