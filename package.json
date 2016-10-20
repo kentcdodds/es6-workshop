@@ -36,7 +36,8 @@
     "test:final:watch": "npm run test:final -- --watch",
     "generate": "split-guide generate",
     "validate": "npm run lint && npm run test:final",
-    "setup": "npm install && npm run validate"
+    "setup": "npm install && npm run validate",
+    "setup:yarn": "yarn && yarn run validate"
   },
   "babel": {
     "presets": [

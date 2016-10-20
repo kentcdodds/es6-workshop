@@ -46,6 +46,10 @@ npm run setup
 
 If this finishes without issues, great 👏! However, if you have problems, please file an issue on this repo [here](https://github.com/kentcdodds/es6-workshop/issues/new?title=Issues%20Setting%20Up&body=Here%27s%20my%20node/npm%20version%20and%20the%20output%20when%20I%20run%20the%20commands:).
 
+> NOTE: This workshop repo also has a `yarn.lock` file and a yarn setup script. So if you have
+[yarn](https://yarnpkg.com/), you can run `yarn run setup:yarn` instead of `npm run setup` and get a faster install!
+
+
 # How To Run Tests
 Once you have everything installed, you are ready to run some tests. There are two directories with tests in them:
 `exercises` and `exercises-final`. The `exercises-final` directory is like a cheat sheet. All of the tests contain the
