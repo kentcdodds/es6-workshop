@@ -88,6 +88,7 @@ If you want to edit/update anything in the exercises, please make all changes in
 - [SLC JS Learners Meetup - Kent C. Dodds](http://www.meetup.com/SLC-JS-Learners/events/220770922/)
 - [MidwestJS 2015 - Kent C. Dodds](https://youtu.be/aeY6ctvsurs)
 - [The Strange Loop 2016 - Kent C. Dodds](http://www.thestrangeloop.com/2016/es6-and-beyond.html)
+- [Connect Tech - Kent C. Dodds](http://connect.tech/) - [video](https://youtu.be/nCP6jsN9XPI)
 
 [slides]: http://kcd.im/es6-intro-slides
 [slides-badge]: https://cdn.rawgit.com/kentcdodds/custom-badges/2/badges/slides.svg
