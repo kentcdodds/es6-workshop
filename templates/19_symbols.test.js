@@ -5,7 +5,7 @@ test(`should ensure a variable is unique reference`, () => {
   // FINAL_END
   // WORKSHOP_START
   // The sky's blue and the ocean's blue are both, well, blue.
-  // But the shade of blue changes over time based light and
+  // But the shade of blue changes over time based on light and
   // atmosphere.
   //
   // Let's assume that both the sky's blue and ocean's blue are

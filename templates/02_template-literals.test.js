@@ -48,7 +48,7 @@ test(`should support string escaping`, () => {
   // WORKSHOP_END
 })
 
-// you likely wont often use tagging, but it can be handy!
+// you likely won't often use tagging, but it can be handy!
 test(`should call the tagging function`, () => {
   const noun = 'World'
   const emotion = 'happy'
