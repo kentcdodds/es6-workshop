@@ -21,7 +21,7 @@ test('can modify the value of a `let` variable', () => {
   releaseName = 'ES2015'
   // FINAL_END
   // WORKSHOP_START
-  // Delcare 'releaseName' using 'let', setting the value to 'ES6'
+  // Declare 'releaseName' using 'let', setting the value to 'ES6'
   // Change value of releaseName to be `ES2015`, the new name for ES6
   // WORKSHOP_END
   expect(releaseName).toBe('ES2015')

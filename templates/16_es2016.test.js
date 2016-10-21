@@ -18,7 +18,7 @@ test('array.includes can be used to determine whether an item exists in an array
     {name: 'Ingvar Stepanyan'},
   ]
   // WORKSHOP_START
-  // refactor this use `includes` instead
+  // refactor this to use `includes` instead
   const result = greatFriends.indexOf(bestFriend) !== -1
   // WORKSHOP_END
   // FINAL_START
