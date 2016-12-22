@@ -1,5 +1,3 @@
-import {transform} from 'babel-core'
-
 test('String.prototype.padStart saves us from left-pad-gate', () => {
   const originalString = 'Worlds Finest'
   // WORKSHOP_START
@@ -94,63 +92,62 @@ test('Object.entries gives an array of arrays as [key, value]', () => {
 })
 
 test('Trailing commas in function parameter lists and calls help us with git', () => {
-  function doStuff() {
-    // use trailing commas everywhere you can...
-    eval(transform(`
-      function foo(
-        a,
-        b,
-        // WORKSHOP_START
-        c
-        // WORKSHOP_END
-        // FINAL_START
-        c,
-        // FINAL_END
-      ) {
-        log(a, b, c)
-      }
+  // becasue this is a syntax thing, we'll put it inside a string and use `eval` to make sure
+  // that you get the syntax correct :)
+  expect(`
+    function foo(
+      a,
+      b,
+      // WORKSHOP_START
+      c
+      // WORKSHOP_END
+      // FINAL_START
+      c,
+      // FINAL_END
+    ) {
+      log(a, b, c)
+    }
 
-      foo(
-        1,
-        2,
-        // WORKSHOP_START
-        3
-        // WORKSHOP_END
-        // FINAL_START
-        3,
-        // FINAL_END
-      )
+    foo(
+      1,
+      2,
+      // WORKSHOP_START
+      3
+      // WORKSHOP_END
+      // FINAL_START
+      3,
+      // FINAL_END
+    )
 
-      function bar(
-        a,
-        b,
-        // WORKSHOP_START
-        ...rest,
-        // WORKSHOP_END
-        // FINAL_START
-        ...rest
-        // FINAL_END
-      ) {
-        log(a, b, ...rest)
-      }
-      bar(
-        1, 2, 3,
-        // WORKSHOP_START
-        4, 5, 6
-        // WORKSHOP_END
-        // FINAL_START
-        4, 5, 6,
-        // FINAL_END
-      )
+    function bar(
+      a,
+      b,
+      // WORKSHOP_START
+      ...rest,
+      // WORKSHOP_END
+      // FINAL_START
+      ...rest
+      // FINAL_END
+    ) {
+      log(a, b, ...rest)
+    }
+    bar(
+      1, 2, 3,
+      // WORKSHOP_START
+      4, 5, 6
+      // WORKSHOP_END
+      // FINAL_START
+      4, 5, 6,
+      // FINAL_END
+    )
 
-      function log() {
-        // do nothing :)
-      }
-    `).code)
-  }
-
-  expect(doStuff).not.toThrow()
+    function log() {
+      // do nothing :)
+    }
+  `).toBeValidSyntax()
 })
 
 // there's also this fancy Object.getOwnPropertyDescriptors thing, but you'll likely rarely
 // use that directly... https://github.com/tc39/proposal-object-getownpropertydescriptors
+// if you get this far though, see if you can write a test for that and contribute it back
+// to the workshop! https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md

@@ -13,9 +13,11 @@ test('can modify the value of a `let` variable', () => {
 })
 
 test('cannot modify the value of a `const` variable', () => {
-  const releaseName = 'ES6'
-  // releaseName = 'ES2015';
-  expect(releaseName).toEqual('ES6')
+  function getReleaseName() {
+    const releaseName = 'ES6'
+    return releaseName
+  }
+  expect(getReleaseName).not.toThrow()
 })
 
 test('is trapped inside of an `if` statement', () => {

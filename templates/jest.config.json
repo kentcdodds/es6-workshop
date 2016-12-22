@@ -7,5 +7,6 @@
     // FINAL_START
     "exercises-final"
     // FINAL_END
-  ]
+  ],
+  "setupTestFrameworkScriptFile": "./common/helpers/expect-to-be-valid-syntax.js"
 }

@@ -1,5 +1,3 @@
-import {transform} from 'babel-core'
-
 test('String.prototype.padStart saves us from left-pad-gate', () => {
   const originalString = 'Worlds Finest'
   // call padStart on this string to make the test pass
@@ -74,43 +72,42 @@ test('Object.entries gives an array of arrays as [key, value]', () => {
 })
 
 test('Trailing commas in function parameter lists and calls help us with git', () => {
-  function doStuff() {
-    // use trailing commas everywhere you can...
-    eval(transform(`
-      function foo(
-        a,
-        b,
-        c
-      ) {
-        log(a, b, c)
-      }
+  // becasue this is a syntax thing, we'll put it inside a string and use `eval` to make sure
+  // that you get the syntax correct :)
+  expect(`
+    function foo(
+      a,
+      b,
+      c
+    ) {
+      log(a, b, c)
+    }
 
-      foo(
-        1,
-        2,
-        3
-      )
+    foo(
+      1,
+      2,
+      3
+    )
 
-      function bar(
-        a,
-        b,
-        ...rest,
-      ) {
-        log(a, b, ...rest)
-      }
-      bar(
-        1, 2, 3,
-        4, 5, 6
-      )
+    function bar(
+      a,
+      b,
+      ...rest,
+    ) {
+      log(a, b, ...rest)
+    }
+    bar(
+      1, 2, 3,
+      4, 5, 6
+    )
 
-      function log() {
-        // do nothing :)
-      }
-    `).code)
-  }
-
-  expect(doStuff).not.toThrow()
+    function log() {
+      // do nothing :)
+    }
+  `).toBeValidSyntax()
 })
 
 // there's also this fancy Object.getOwnPropertyDescriptors thing, but you'll likely rarely
 // use that directly... https://github.com/tc39/proposal-object-getownpropertydescriptors
+// if you get this far though, see if you can write a test for that and contribute it back
+// to the workshop! https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md

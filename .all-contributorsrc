@@ -20,6 +20,15 @@
       ]
     },
     {
+      "login": "rauschma",
+      "name": "Axel Rauschmayer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/526114?v=3",
+      "profile": "http://rauschma.de/",
+      "contributions": [
+        "talk"
+      ]
+    },
+    {
       "login": "kentcdodds",
       "name": "Kent C. Dodds",
       "avatar_url": "https://avatars.githubusercontent.com/u/1500684?v=3",
