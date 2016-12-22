@@ -1,0 +1,74 @@
+{
+  "projectName": "es6-workshop",
+  "projectOwner": "kentcdodds",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "aaronfrost",
+      "name": "Aaron Frost",
+      "avatar_url": "https://avatars.githubusercontent.com/u/662832?v=3",
+      "profile": "https://github.com/aaronfrost",
+      "contributions": [
+        "code",
+        "doc",
+        "talk",
+        "test"
+      ]
+    },
+    {
+      "login": "kentcdodds",
+      "name": "Kent C. Dodds",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1500684?v=3",
+      "profile": "https://kentcdodds.com",
+      "contributions": [
+        "code",
+        "doc",
+        "infra",
+        "review",
+        "talk",
+        "test"
+      ]
+    },
+    {
+      "login": "jimthedev",
+      "name": "Jim Cummins",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108938?v=3",
+      "profile": "https://jimthedev.com",
+      "contributions": [
+        "doc",
+        "test"
+      ]
+    },
+    {
+      "login": "lmdragun",
+      "name": "Lindsey",
+      "avatar_url": "https://avatars.githubusercontent.com/u/11346889?v=3",
+      "profile": "http://lindsey.international",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "mariusbutuc",
+      "name": "Marius Butuc",
+      "avatar_url": "https://avatars.githubusercontent.com/u/511893?v=3",
+      "profile": "https://github.com/mariusbutuc",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "cyborgspider",
+      "name": "Carlos Ortega",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1740882?v=3",
+      "profile": "http://cyborgspider.com",
+      "contributions": [
+        "doc"
+      ]
+    }
+  ]
+}
