@@ -29,7 +29,7 @@ test(`should support string escaping`, () => {
   expect(`This is \`escaped\` backtics`).toBe('This is `escaped` backtics')
 })
 
-// you likely wont often use tagging, but it can be handy!
+// you likely won't often use tagging, but it can be handy!
 test(`should call the tagging function`, () => {
   const noun = 'World'
   const emotion = 'happy'
