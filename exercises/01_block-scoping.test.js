@@ -15,7 +15,7 @@ test('can modify the value of a `let` variable', () => {
 test('cannot modify the value of a `const` variable', () => {
   var releaseName = 'ES6'
   // This doesn't even compile, so we can't actually test this...
-  // once you've changed the `var` above to `cost`, comment out the line below
+  // once you've changed the `var` above to `const`, comment out the line below
   releaseName = 'ES2015';
   expect(releaseName).toEqual('ES6')
 })
