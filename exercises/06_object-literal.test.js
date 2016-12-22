@@ -17,3 +17,22 @@ test('can use shorthand for property names', () => {
   expect(godzilla.power).toBe(1000)
   expect(godzilla.attack(mechaGodzilla)).toBe('Godzilla attacked MechaGodzilla')
 })
+
+test('can use expressions as property names', () => {
+  function createCandy(type, description) {
+    return {
+      tasty: true,
+      type,
+      // add a expression as property name where the property name is the given type.toUpperCase() + type.length
+      // sound contrived? It is... 😅
+    }
+  }
+
+  const twixDescription = 'Twix is a chocolate bar made by Mars, Inc., consisting of biscuit applied with other ' +
+    'confectionery toppings and coatings. Twix bars are packaged in pairs, although smaller single bars are available.'
+  const twixType = 'twix'
+  const snickers = createCandy('twix', twixDescription)
+  expect(snickers.tasty).toBe(true)
+  expect(snickers.type).toBe(twixType)
+  expect(snickers.TWIX4).toBe(twixDescription)
+})
