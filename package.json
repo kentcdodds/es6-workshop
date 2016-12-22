@@ -28,7 +28,7 @@
     "lodash": "^4.17.2",
     "onchange": "^3.2.0",
     "opt-cli": "^1.5.1",
-    "split-guide": "^1.1.0"
+    "split-guide": "^1.2.0"
   },
   "scripts": {
     "add-contributor": "all-contributors add",
@@ -42,7 +42,7 @@
     "test:final:watch": "npm run test:final -- --watch",
     "dev": "npm-run-all --parallel generate:watch test:final:watch",
     "generate:watch": "onchange \"templates/**/*.*\" -- npm run generate",
-    "generate": "split-guide generate",
+    "generate": "split-guide generate --silent-success",
     "validate": "npm run lint && npm run test:final",
     "setup": "node ./scripts/verify && node ./scripts/install && npm run validate"
   },
