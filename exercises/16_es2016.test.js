@@ -12,7 +12,7 @@ test('array.includes can be used to determine whether an item exists in an array
     {name: 'Sam Saccone'},
     {name: 'Ingvar Stepanyan'},
   ]
-  // refactor this use `includes` instead
+  // refactor this to use `includes` instead
   const result = greatFriends.indexOf(bestFriend) !== -1
   expect(result).toBe(true)
 })

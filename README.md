@@ -1,7 +1,14 @@
 # ES6-Workshop
 
 [![slides-badge][slides-badge]][slides]
+[![Build Status][build-badge]][build]
+[![Dependencies][dependencyci-badge]][dependencyci]
+[![MIT License][license-badge]][LICENSE]
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors)
+
+[![PRs Welcome][prs-badge]][prs]
 [![Donate][donate-badge]][donate]
+[![Code of Conduct][coc-badge]][coc]
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
 [![Tweet][twitter-badge]][twitter]
@@ -29,9 +36,9 @@ By the time that the workshop is over (time permitting), all of your tests will 
 
 ## System Requirements
 
-- [git](https://git-scm.com/)
-- [Node](https://nodejs.org/) (at least version 4)
-- [npm](https://www.npmjs.com/) (at least version 3)
+- [git][git]
+- [Node][node] (at least version 6)
+- [yarn][yarn] (at least version 0.17.0)
 
 ## Setup
 
@@ -41,14 +48,17 @@ dependencies and validate that you're ready to go. From your terminal, type:
 ```
 git clone https://github.com/kentcdodds/es6-workshop.git
 cd es6-workshop
-npm run setup
+yarn run setup
 ```
 
-If this finishes without issues, great 👏! However, if you have problems, please file an issue on this repo [here](https://github.com/kentcdodds/es6-workshop/issues/new?title=Issues%20Setting%20Up&body=Here%27s%20my%20node/npm%20version%20and%20the%20output%20when%20I%20run%20the%20commands:).
+If this finishes without issues, great 👏! However, if you have problems, please file an issue on this repo [here](https://github.com/kentcdodds/es6-workshop/issues/new?title=Issues%20Setting%20Up&body=Here%27s%20my%20node/yarn%20version%20and%20the%20output%20when%20I%20run%20the%20commands:).
 
-> NOTE: This workshop repo also has a `yarn.lock` file and a yarn setup script. So if you have
-[yarn](https://yarnpkg.com/), you can run `yarn run setup:yarn` instead of `npm run setup` and get a faster install!
+### Note on yarn
 
+If you don't have `yarn` installed and don't want to use it for some reason, you can use [`npm`][npm] as well. Instead
+of `yarn run setup`, run `node ./scripts/install && npm run validate` and enjoy waiting (and hopefully things don't
+break for you). May be a good idea to still run `node ./scripts/verify` to verify you have the right version of other
+things too.
 
 # How To Run Tests
 Once you have everything installed, you are ready to run some tests. There are two directories with tests in them:
@@ -59,13 +69,13 @@ tests pass.
 To run the tests, in your terminal run:
 
 ```
-npm test
+yarn test
 ```
 
 If you want the tests to continue running as you make changes, run:
 
 ```
-npm run test:watch
+yarn run test:watch
 ```
 
 This will start `jest` in its interactive watch mode ([learn more][watch-mode]). If you see a bunch of failures, make
@@ -90,14 +100,45 @@ If you want to edit/update anything in the exercises, please make all changes in
 - [The Strange Loop 2016 - Kent C. Dodds](http://www.thestrangeloop.com/2016/es6-and-beyond.html)
 - [Connect Tech - Kent C. Dodds](http://connect.tech/) - [video](https://youtu.be/nCP6jsN9XPI)
 
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+| [<img src="https://avatars.githubusercontent.com/u/662832?v=3" width="100px;"/><br /><sub>Aaron Frost</sub>](https://github.com/aaronfrost)<br />[💻](https://github.com/kentcdodds/es6-workshop/commits?author=aaronfrost) [📖](https://github.com/kentcdodds/es6-workshop/commits?author=aaronfrost) 📢 [⚠️](https://github.com/kentcdodds/es6-workshop/commits?author=aaronfrost) | [<img src="https://avatars.githubusercontent.com/u/1500684?v=3" width="100px;"/><br /><sub>Kent C. Dodds</sub>](https://kentcdodds.com)<br />[💻](https://github.com/kentcdodds/es6-workshop/commits?author=kentcdodds) [📖](https://github.com/kentcdodds/es6-workshop/commits?author=kentcdodds) 🚇 👀 📢 [⚠️](https://github.com/kentcdodds/es6-workshop/commits?author=kentcdodds) | [<img src="https://avatars.githubusercontent.com/u/108938?v=3" width="100px;"/><br /><sub>Jim Cummins</sub>](https://jimthedev.com)<br />[📖](https://github.com/kentcdodds/es6-workshop/commits?author=jimthedev) [⚠️](https://github.com/kentcdodds/es6-workshop/commits?author=jimthedev) | [<img src="https://avatars.githubusercontent.com/u/11346889?v=3" width="100px;"/><br /><sub>Lindsey</sub>](http://lindsey.international)<br />[📖](https://github.com/kentcdodds/es6-workshop/commits?author=lmdragun) | [<img src="https://avatars.githubusercontent.com/u/511893?v=3" width="100px;"/><br /><sub>Marius Butuc</sub>](https://github.com/mariusbutuc)<br />[💻](https://github.com/kentcdodds/es6-workshop/commits?author=mariusbutuc) | [<img src="https://avatars.githubusercontent.com/u/1740882?v=3" width="100px;"/><br /><sub>Carlos Ortega</sub>](http://cyborgspider.com)<br />[📖](https://github.com/kentcdodds/es6-workshop/commits?author=cyborgspider) |
+| :---: | :---: | :---: | :---: | :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
+
+# LICENSE
+
+MIT
+
+[npm]: https://www.npmjs.com/
+[yarn]: https://yarnpkg.com/
+[node]: https://nodejs.org
+[git]: https://git-scm.com/
 [slides]: http://kcd.im/es6-intro-slides
 [slides-badge]: https://cdn.rawgit.com/kentcdodds/custom-badges/2/badges/slides.svg
+[build-badge]: https://img.shields.io/travis/kentcdodds/es6-workshop.svg?style=flat-square
+[build]: https://travis-ci.org/kentcdodds/es6-workshop
+[dependencyci-badge]: https://dependencyci.com/github/kentcdodds/es6-workshop/badge?style=flat-square
+[dependencyci]: https://dependencyci.com/github/kentcdodds/es6-workshop
+[license-badge]: https://img.shields.io/badge/license-MIT%20License-blue.svg?style=flat-square
+[license]: https://github.com/kentcdodds/es6-workshop/blob/master/other/LICENSE
+[prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
+[prs]: http://makeapullrequest.com
 [donate-badge]: https://img.shields.io/badge/$-support-green.svg?style=flat-square
 [donate]: http://kcd.im/donate
+[coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
+[coc]: https://github.com/kentcdodds/es6-workshop/blob/master/other/CODE_OF_CONDUCT.md
 [github-watch-badge]: https://img.shields.io/github/watchers/kentcdodds/es6-workshop.svg?style=social
 [github-watch]: https://github.com/kentcdodds/es6-workshop/watchers
 [github-star-badge]: https://img.shields.io/github/stars/kentcdodds/es6-workshop.svg?style=social
 [github-star]: https://github.com/kentcdodds/es6-workshop/stargazers
-[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20es6-workshop!%20https://git.io/es6-workshop%20%F0%9F%91%8D
+[twitter]: https://twitter.com/intent/tweet?text=Check%20out%20es6-workshop%20by%20@kentcdodds%20https://github.com/kentcdodds/es6-workshop%20%F0%9F%91%8D
 [twitter-badge]: https://img.shields.io/twitter/url/https/github.com/kentcdodds/es6-workshop.svg?style=social
+[emojis]: https://github.com/kentcdodds/all-contributors#emoji-key
+[all-contributors]: https://github.com/kentcdodds/all-contributors
 [watch-mode]: https://egghead.io/lessons/javascript-use-jest-s-interactive-watch-mode?pl=testing-javascript-with-jest-a36c4074
