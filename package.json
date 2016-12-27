@@ -26,6 +26,7 @@
     "husky": "^0.12.0",
     "jest-cli": "^18.0.0",
     "lodash": "^4.17.2",
+    "npm-run-all": "^3.1.2",
     "onchange": "^3.2.0",
     "opt-cli": "^1.5.1",
     "split-guide": "^1.2.0"
