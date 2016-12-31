@@ -29,8 +29,11 @@ test(`should support string escaping`, () => {
   expect(``).toBe('This is `escaped` backtics')
 })
 
+
+//////// EXTRA CREDIT ////////
+
 // you likely won't often use tagging, but it can be handy!
-test(`should call the tagging function`, () => {
+test.skip(`should call the tagging function`, () => {
   const noun = 'World'
   const emotion = 'happy'
   const result = tagIt`Hello ${noun}! Are you feeling ${emotion} today?`
@@ -41,3 +44,6 @@ test(`should call the tagging function`, () => {
     return 'fixme'
   }
 })
+
+// If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
+// Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development

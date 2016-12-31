@@ -107,7 +107,11 @@ test('Trailing commas in function parameter lists and calls help us with git', (
   `).toBeValidSyntax()
 })
 
+//////// EXTRA CREDIT ////////
+
+// If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
+// Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development
+
 // there's also this fancy Object.getOwnPropertyDescriptors thing, but you'll likely rarely
 // use that directly... https://github.com/tc39/proposal-object-getownpropertydescriptors
-// if you get this far though, see if you can write a test for that and contribute it back
-// to the workshop! https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md
+// Maybe you could make a PR to add a test for this?!

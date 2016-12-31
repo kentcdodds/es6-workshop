@@ -35,6 +35,13 @@ This project uses [`split-guide`](https://github.com/kentcdodds/split-guide) to 
 `generate` script. So any changes you make should go in a `templates` directory. When you've made your changes,
 please run `yarn run split` to regenerate the exercises and commit those changes as part of your pull request.
 
+### Development
+
+The best workflow for adding/changing tests is to run `yarn run dev` which will fire up [`onchange`][onchange] for
+`split-guide` and the `exercises-final` tests in watch mode ([learn more][jest-watch]). With this going, you can open up
+the relevant files in the `templates` directory and start making changes. When you save your changes, the files will
+be generated and the `exercises-final` tests will be re-run.
+
 ## opt into git hooks
 
 There are git hooks set up with this project that are automatically installed when you install dependencies. They're
@@ -47,3 +54,5 @@ precommit
 
 [egghead]: https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github
 [all-contributors]: https://github.com/kentcdodds/all-contributors
+[onchange]: https://npmjs.com/package/onchange
+[jest-watch]: https://egghead.io/lessons/javascript-use-jest-s-interactive-watch-mode?pl=testing-javascript-with-jest-a36c4074

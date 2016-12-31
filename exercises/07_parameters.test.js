@@ -99,3 +99,8 @@ test('it can default all arguments, optionally', () => {
   myFunction({})
   myFunction()
 })
+
+//////// EXTRA CREDIT ////////
+
+// If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
+// Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development

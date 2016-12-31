@@ -32,3 +32,8 @@ test('public class fields help us avoid .bind-ing everything', () => {
   expect(onClick).toHaveBeenCalledTimes(1)
   expect(onClick).toHaveBeenCalledWith('hello world')
 })
+
+//////// EXTRA CREDIT ////////
+
+// If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
+// Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development
