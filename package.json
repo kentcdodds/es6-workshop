@@ -38,6 +38,7 @@
     "lint": "eslint exercises-final common",
     "precommit": "opt --in precommit --exec \"npm run lint && npm run generate && npm run test:final && git add exercises exercises-final\"",
     "test": "jest --config=exercises/jest.config.json",
+    "test:changed": "npm run test --silent -- --onlyChanged",
     "test:watch": "npm test -- --watch",
     "test:final": "jest --config=exercises-final/jest.config.json",
     "test:final:watch": "npm run test:final -- --watch",

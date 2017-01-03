@@ -83,6 +83,9 @@ sure you're in "only changed" mode by clicking the `o` key. There should not be 
 job is to go into each test file in `exercises` and make the tests pass. As you make changes, jest will run the file's
 tests. Once you have written the required ES6 code, the tests will pass, and you can move on.
 
+**Note:** You may prefer to run the `test:changed` script which will run the tests only once. This will allow you to
+avoid the "learning crutch" of immediate feedback that you get from the watch mode. But it's up to you!
+
 ### Contributing
 
 If you have any questions, [let me know](https://twitter.com/kentcdodds).
