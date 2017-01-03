@@ -1,6 +1,10 @@
 {
   "testEnvironment": "node",
   "testPathDirs": [
+    // COMMENT_START
+    NOTE: This is not valid JSON. That is intended
+    this file should never be parsed directly. It's simply a template.
+    // COMMENT_END
     // WORKSHOP_START
     "exercises"
     // WORKSHOP_END
