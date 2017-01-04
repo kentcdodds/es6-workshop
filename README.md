@@ -1,6 +1,7 @@
 # ES6-Workshop
 
 [![slides-badge][slides-badge]][slides]
+[![chat-badge][chat-badge]][chat]
 [![Build Status][build-badge]][build]
 [![Dependencies][dependencyci-badge]][dependencyci]
 [![MIT License][license-badge]][LICENSE]
@@ -124,6 +125,8 @@ MIT
 [git]: https://git-scm.com/
 [slides]: http://kcd.im/es6-intro-slides
 [slides-badge]: https://cdn.rawgit.com/kentcdodds/custom-badges/2/badges/slides.svg
+[chat]: https://gitter.im/kentcdodds/es6-workshop
+[chat-badge]: https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=flat-square
 [build-badge]: https://img.shields.io/travis/kentcdodds/es6-workshop.svg?style=flat-square
 [build]: https://travis-ci.org/kentcdodds/es6-workshop
 [dependencyci-badge]: https://dependencyci.com/github/kentcdodds/es6-workshop/badge?style=flat-square
