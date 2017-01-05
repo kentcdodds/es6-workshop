@@ -7,7 +7,7 @@ Thanks for being willing to contribute!
 
 ## Project setup
 
-It is recommended you use [`yarn`](https://yarnpkg.com/) rather than [`yarn`](https://www.npmjs.com/). But if you'd
+It is recommended you use [`yarn`](https://yarnpkg.com/) rather than [`npm`](https://www.npmjs.com/). But if you'd
 rather stick with `npm`, simply replace `yarn` in the commands below with `npm`.
 
 1. Fork and clone the repo
