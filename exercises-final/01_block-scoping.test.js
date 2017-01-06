@@ -6,9 +6,11 @@ test('can be used in place of `var`', () => {
   expect(isBestBand).toBe(true)
 })
 
-test('can modify the value of a `let` variable', () => {
+test('can modify the value of a `let` variable even in the next block statement', () => {
   let releaseName = 'ES6'
+  {
   releaseName = 'ES2015'
+  }
   expect(releaseName).toBe('ES2015')
 })
 
@@ -49,6 +51,15 @@ test('means that we can start using block statements', () => {
 })
 
 //////// EXTRA CREDIT ////////
+
+test.skip('means that we can declare constant with the same name in block statement', () => {
+  const d = 5
+  // BLOCK STATEMENT
+  {
+    const d = 10
+  }
+  expect(d).toBe(5)
+})
 
 // If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
 // Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development
