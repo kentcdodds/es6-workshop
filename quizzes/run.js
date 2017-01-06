@@ -32,7 +32,7 @@ function listenForInput() {
       case 'quit':
       case 'q':
         watcher.close()
-        process.exit() // TODO: find out why this is needed
+        process.stdin.pause()
         break
       case '':
         if (lastFileRun) {
