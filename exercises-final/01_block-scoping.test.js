@@ -57,6 +57,7 @@ test.skip('means that we can declare constant with the same name in block statem
   // BLOCK STATEMENT
   {
     const d = 10
+    expect(d).toBe(10)
   }
   expect(d).toBe(5)
 })
