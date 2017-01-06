@@ -78,6 +78,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "ryanbraganza",
+      "name": "Ryan Braganza",
+      "avatar_url": "https://avatars.githubusercontent.com/u/290242?v=3",
+      "profile": "www.ryanbraganza.com",
+      "contributions": [
+        "code"
+      ]
     }
   ]
 }

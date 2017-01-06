@@ -5,7 +5,7 @@
 [![Build Status][build-badge]][build]
 [![Dependencies][dependencyci-badge]][dependencyci]
 [![MIT License][license-badge]][LICENSE]
-[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square)](#contributors)
 
 [![PRs Welcome][prs-badge]][prs]
 [![Donate][donate-badge]][donate]
@@ -111,6 +111,7 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 | [<img src="https://avatars.githubusercontent.com/u/662832?v=3" width="100px;"/><br /><sub>Aaron Frost</sub>](https://github.com/aaronfrost)<br />[💻](https://github.com/kentcdodds/es6-workshop/commits?author=aaronfrost) [📖](https://github.com/kentcdodds/es6-workshop/commits?author=aaronfrost) 📢 [⚠️](https://github.com/kentcdodds/es6-workshop/commits?author=aaronfrost) | [<img src="https://avatars.githubusercontent.com/u/526114?v=3" width="100px;"/><br /><sub>Axel Rauschmayer</sub>](http://rauschma.de/)<br />📢 | [<img src="https://avatars.githubusercontent.com/u/1500684?v=3" width="100px;"/><br /><sub>Kent C. Dodds</sub>](https://kentcdodds.com)<br />[💻](https://github.com/kentcdodds/es6-workshop/commits?author=kentcdodds) [📖](https://github.com/kentcdodds/es6-workshop/commits?author=kentcdodds) 🚇 👀 📢 [⚠️](https://github.com/kentcdodds/es6-workshop/commits?author=kentcdodds) | [<img src="https://avatars.githubusercontent.com/u/108938?v=3" width="100px;"/><br /><sub>Jim Cummins</sub>](https://jimthedev.com)<br />[📖](https://github.com/kentcdodds/es6-workshop/commits?author=jimthedev) [⚠️](https://github.com/kentcdodds/es6-workshop/commits?author=jimthedev) | [<img src="https://avatars.githubusercontent.com/u/11346889?v=3" width="100px;"/><br /><sub>Lindsey</sub>](http://lindsey.international)<br />[📖](https://github.com/kentcdodds/es6-workshop/commits?author=lmdragun) | [<img src="https://avatars.githubusercontent.com/u/511893?v=3" width="100px;"/><br /><sub>Marius Butuc</sub>](https://github.com/mariusbutuc)<br />[💻](https://github.com/kentcdodds/es6-workshop/commits?author=mariusbutuc) | [<img src="https://avatars.githubusercontent.com/u/1740882?v=3" width="100px;"/><br /><sub>Carlos Ortega</sub>](http://cyborgspider.com)<br />[📖](https://github.com/kentcdodds/es6-workshop/commits?author=cyborgspider) |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| [<img src="https://avatars.githubusercontent.com/u/290242?v=3" width="100px;"/><br /><sub>Ryan Braganza</sub>](www.ryanbraganza.com)<br />[💻](https://github.com/kentcdodds/es6-workshop/commits?author=ryanbraganza) |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
