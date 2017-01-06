@@ -1,5 +1,9 @@
 console.log(
-  quiz1()
+  // quiz1(),
+  // quiz2(),
+  // quiz3(),
+  // quiz4(),
+  // quiz5(),
 )
 
 function quiz1() {
@@ -30,6 +34,7 @@ function quiz4() {
 }
 
 function quiz5() {
+  let x = 23
   {
     let x
     {
