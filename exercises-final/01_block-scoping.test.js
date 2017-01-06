@@ -9,9 +9,9 @@ test('can be used in place of `var`', () => {
 test('can modify the value of a `let` variable even in the next block statement', () => {
   let releaseName = 'ES6'
   {
-		releaseName = 'ES2015'
+    releaseName = 'ES2015'
   }
-		expect(releaseName).toBe('ES2015')
+  expect(releaseName).toBe('ES2015')
 })
 
 test('cannot modify the value of a `const` variable', () => {
@@ -56,9 +56,9 @@ test.skip('means that we can declare constant with the same name in block statem
   const d = 5
   // BLOCK STATEMENT
   {
-		const d = 10
+    const d = 10
   }
-		expect(d).toBe(5)
+  expect(d).toBe(5)
 })
 
 // If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
