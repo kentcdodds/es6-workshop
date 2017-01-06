@@ -51,6 +51,12 @@ these at the bottom in the "Extra Credit" section with `test.skip`. This way peo
 quickly can have something to solidify their learning further while others finish the core content. Please follow the
 instructions above when contributing. Thanks for your help!
 
+### Quizzes
+
+There are a bunch of quizzes in the quizzes folder. It'd be awesome to get more of these! I recorded
+[a video](https://youtu.be/LlNGtPFK9OM) showing how it works. Pretty much just open the `quizzes` directory and follow
+the current conventions there! For development, just run `yarn run quiz` and start developing and seeing the output!
+
 ## opt into git hooks
 
 There are git hooks set up with this project that are automatically installed when you install dependencies. They're
