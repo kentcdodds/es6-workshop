@@ -8,41 +8,6 @@ console.log(
   // getSecondItem();
 );
 
-// Do not alter anything below this
-const getVoxel = () = > ({
-    x: 3.6,
-    y: 7.8,
-    z: 4.3,
-});
-
-const greet = () => ({
-  'text': 'dattebayo',
-  'locale': 'Japanese', // this is intentional
-});
-
-const getWeather = () => ({
-  'location': 'Toronto',
-  'unit': 'Celsius'
-  'today': {
-    'max': 2.6,
-    'min': -6.3,
-  },
-  'tomorrow': {
-    'max': 3.2,
-    'min': -5.8,
-  },
-});
-
-const getArray = () => [...Array(8).keys()];
-
-const getFood = () => ([
-  ['carrots', 'beans', 'peas', 'lettuce'],
-  ['apple', 'mango', 'orange'],
-  ['cookies', 'cake', 'pizza', 'chocolate']
-]);
-
-
-
 function getAverage() {
   // refactor with object destructuring
   const obj = getVoxel();
@@ -126,3 +91,36 @@ function getSecondItem() {
   }
 
 }
+
+// Do not alter anything below this
+const getVoxel = () = > ({
+    x: 3.6,
+    y: 7.8,
+    z: 4.3,
+});
+
+const greet = () => ({
+  'text': 'dattebayo',
+  'locale': 'Japanese', // this is intentional
+});
+
+const getWeather = () => ({
+  'location': 'Toronto',
+  'unit': 'Celsius'
+  'today': {
+    'max': 2.6,
+    'min': -6.3,
+  },
+  'tomorrow': {
+    'max': 3.2,
+    'min': -5.8,
+  },
+});
+
+const getArray = () => [...Array(8).keys()];
+
+const getFood = () => ([
+  ['carrots', 'beans', 'peas', 'lettuce'],
+  ['apple', 'mango', 'orange'],
+  ['cookies', 'cake', 'pizza', 'chocolate']
+]);
