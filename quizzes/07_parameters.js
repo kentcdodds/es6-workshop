@@ -1,7 +1,7 @@
 console.log(
   // randGen(),
   // randGen(45),
-  weatherOnDemand(getCities(), 'Bali', 'London'),
+  // weatherOnDemand(getCities(), 'Bali', 'London'),
 )
 
 function randGen(n) {

@@ -1,3 +1,4 @@
+/* eslint no-case-declarations:0 */
 import path from 'path'
 import chokidar from 'chokidar'
 import chalk from 'chalk'
@@ -21,6 +22,7 @@ function watchFiles() {
 function listenForInput() {
   process.stdin.setEncoding('utf8')
   process.stdin.on('data', text => {
+    /* eslint complexity:0 */
     const input = text.trim()
     
     switch (input) {
@@ -56,7 +58,7 @@ function rerunFile(relativePath) {
 
   try {
     delete require.cache[fullPath]
-    require(fullPath)
+    require(fullPath) // eslint-disable-line global-require
   } catch (e) {
     console.error(chalk.red(getRelevantStackTrace(e)))
   }

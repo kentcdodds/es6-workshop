@@ -38,7 +38,7 @@
     "add-contributor": "all-contributors add",
     "generate-contributors": "all-contributors generate",
     "start": "npm run test:watch",
-    "lint": "eslint exercises-final common",
+    "lint": "eslint exercises-final common quizzes",
     "precommit": "opt --in precommit --exec \"npm run lint && npm run generate && npm run test:final && git add exercises exercises-final\"",
     "quiz": "babel-node quizzes/run.js",
     "test": "jest --config=exercises/jest.config.json",
