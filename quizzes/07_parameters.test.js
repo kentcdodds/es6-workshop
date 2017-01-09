@@ -1,10 +1,10 @@
 console.log(
-  // randGen();
-  // weatherOnDemand(arr, 'Bali', 'London')``
+  randGen()
+  , weatherOnDemand(arr(), 'Bali', 'London')
 )
 
-function randGen(n) {
-  // generates a random integer betweeb 0 and n
+function randGen(n=2) {
+  // generates a random integer between 0 and n
   // assume n is always positive
   // randGen(n) can be at least 0 and at max n - 1
   // If n is undefined, output can be either 0 or 1
@@ -26,11 +26,21 @@ function weatherOnDemand(args) {
   // = [[{city: 'Paris', temp: 66}, {city: 'Moscow', temp: 45}]
   // If no city is provided, return empty array
   // TODO: Use default parameters, argument destructuring
-  //  and other Array methods to implement this. An arr will always be provided
+  //  and other Array methods to refactor
+  // An arr will always be provided
+  var allArgs = Array.prototype.slice.call(arguments);
+  var weatherArray = allArgs[0];
+  var cities = allArgs.slice(1);
+  
+  return weatherArray.filter(function(cityData) {
+    return cities.indexOf(cityData.city) !== -1;
+  })
 }
 
+
 // do not alter anything below
-const arr = [
+function arr() {
+  return [
   {
     "city": 'London',
     "temp": 50.1,
@@ -47,4 +57,4 @@ const arr = [
     "city": 'San Diego',
     "temp": 58.1,
   }
-]
+]}
