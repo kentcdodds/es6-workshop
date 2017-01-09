@@ -1,9 +1,9 @@
 console.log(
-  randGen()
-  , weatherOnDemand(arr(), 'Bali', 'London')
+  // randGen()
+  //, weatherOnDemand(arr(), 'Bali', 'London')
 )
 
-function randGen(n=2) {
+function randGen(n) {
   // generates a random integer between 0 and n
   // assume n is always positive
   // randGen(n) can be at least 0 and at max n - 1
