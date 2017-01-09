@@ -1,17 +1,11 @@
-console.log(
-  // curryAdd(2)(4)
-  // genSeries(7, 100)
-  // shift("havin pasta for brunch")
-)
-
-// population.display()
-
 function curryAdd(a){
   // TODO: refactor this function
   // rewrite with arrow syntax
-  // remove function and return keywords
+  // remove 'function' and 'return' keywords
   return function(b) {
-    return a + b;
+    return function(c) {
+      return a + b + c;
+    }
   }
 }
 
@@ -33,21 +27,29 @@ function genSeries(n=10, limit=10) {
 }
 
 /**
- * This is a complex example, be careful while refactoring.
+ * This is a complex example, 
+ * mostly to show that arrow refactoring
+ * doesn't need to hurt readability
+ * You may use () => () or () => {}
+ * based on how complex you think the code can be
  */
 function shift(str, amount=1) {
-  // TODO: shift() shifts the input string
-  // assume str is made of only lowercase alphabet letters
-  // update the RegEx below
-  str.replace(/\/g, function(x){
-    // make the shift!
-    // remember to normalize before proceeding
-    // and don't forget to take a modulo
-    // z => a, x => y
+  return str.replace(/[a-z]/g, function(x){
+    // first, compute the index of the character
+    // within alphabet
+    // a = 0, b = 1, c = 2,..., z = 25
+    var index = x.charCodeAt(0) -  "a".charCodeAt();
+    // take modulo, because after adding, we need it to be
+    // in the range [0, 1, ..., 25]
+    var shiftedIndex = (index + amount) % 26;
+    // now, convert it back to the shifted character
+    var shiftedCharCode = (shiftedIndex + "a".charCodeAt())
+    return String.fromCharCode(shiftedCharCode)
   })
 }
 
-const population = {
+function getPopulation() {
+  return {
   'unit': 'Million',
   'data': [
     {
@@ -68,10 +70,20 @@ const population = {
     // TODO: this code has an error
     // will print undefined in a few places
     // first, think of the fix
+    //
     // Then try with arrow function and remove the fix
     // Finally, refactor with object destructuring
-    this.data.forEach(function(element){
-      console.log(`The population in ${element.city} is ${element.value} ${this.unit}`)
-    })
+    return this.data.map(function(element){
+      return `Population in ${element.city} is ${element.value} ${this.unit}`
+    }); // hint: pass this as second argument to bind properly
   }
-}
+}}
+
+
+
+console.log(
+  // curryAdd(2)(4)(6)
+  // genSeries(7, 100)
+  // shift("havin pasta for brunch")
+  // getPopulation().display()
+)
