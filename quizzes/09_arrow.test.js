@@ -11,8 +11,8 @@ console.log(
 function curryAdd(a) {
   // TODO: refactor this function
   // rewrite with arrow syntax
-  return function(b) {
-    return function(c) {
+  return function(b) { // eslint-disable-line func-names
+    return function(c) { // eslint-disable-line func-names
       return a + b + c
     }
   }
@@ -34,13 +34,12 @@ function genSeries(n = 10, limit = 10) {
   return arr
 }
 
-/**
- * This is a complex example,
- * mostly to show that arrow refactoring
- * doesn't need to hurt readability
- * You may use () => () or () => {}
- * based on how complex you think the code can be
- */
+
+ // This is a complex example,
+ // mostly to show that arrow refactoring
+ // doesn't need to hurt readability
+ // You may use () => () or () => {}
+ // based on how complex you think the code can be
 function shift(str, amount = 1) {
   return str.replace(/[a-z]/g, x => {
     // first, compute the index of the character
@@ -74,11 +73,11 @@ function getPopulation() {
       },
     ],
 
-    display: function() {
+    display: function() { // eslint-disable-line func-names
     // TODO: refactor with arrow function
     // shorten with method shorthand
     // Finally, refactor with object destructuring
-      return this.data.map(function(element) {
+      return this.data.map(function(element) { // eslint-disable-line func-names
         return `Population in ${element.city} is ${element.value} ${this.unit}`
       }, this) // passing `this` as second argument to bind properly
     },
