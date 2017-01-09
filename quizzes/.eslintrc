@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "../.eslintrc",
+    "kentcdodds/best-practices",
+    "kentcdodds/stylistic",
+    "kentcdodds/es6/best-practices",
+    "kentcdodds/es6/stylistic",
+  ],
+  "rules": {
+    "no-constant-condition": "off",
+    "no-unused-vars": "off",
+  }
+}

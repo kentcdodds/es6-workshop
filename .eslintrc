@@ -1,0 +1,10 @@
+{
+  "extends": [
+    "kentcdodds/possible-errors",
+    "kentcdodds/es6/possible-errors",
+    "kentcdodds/jest",
+  ],
+  "rules": {
+    "no-console": "off",
+  }
+}
