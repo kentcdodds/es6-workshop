@@ -2,15 +2,15 @@ console.log(
   // display(),
   // prime(),
   // fibonacci(),
-  // combinatorial()
-);
+  // combinatorial(),
+)
 
 
 function display() {
-  const m = new Map();
-  m.set(); // TODO: add "a" as key, 3 as value
-  m.set(); // TODO: key is {v: 5, j: 7}, value is 7
-  m.set(); // TODO: key is a nop function, value is 8
+  const m = new Map()
+  m.set() // TODO: add "a" as key, 3 as value
+  m.set() // TODO: key is {v: 5, j: 7}, value is 7
+  m.set() // TODO: key is a nop function, value is 8
   return m
 }
 
@@ -36,7 +36,9 @@ function prime() {
 // the following deals with mysteries of fibonacci number
 function fibonacci() {
   // this is the definition of fibonacci number
-  const fib = (n) => n <= 2 ? 1 : fib(n - 1) + fib(n - 2);
+  function fib(n) {
+    return n <= 2 ? 1 : fib(n - 1) + fib(n - 2)
+  }
 
   // TODO: change the following to fib(40), fib(43), fib(45), fib(47) etc.
   // It will demonstrate how it gets real slow, real fast
@@ -66,25 +68,25 @@ function fibonacci() {
    * This technique is an example of memoization
    */
   // TODO: Define your map here
-  const fibMemoized = (n) => {
-    if(n <= 2) {
+  function fibMemoized(n) {
+    if (n <= 2) {
       // you may memoize values of fibMemoized(1) and fibMemoized(2)
       // though it's not necessary
 
-      return 1;
+      return 1
     }
     // check if already exists in cache
     // TODO: add check
-    if(false) {
+    if (false) {
       // TODO: found in cache, retrieve and return
     }
     // not found in cache
     // compute recursively
-    const value = fibMemoized(n - 1) + fibMemoized(n - 2);
+    const value = fibMemoized(n - 1) + fibMemoized(n - 2)
     // TODO: add it to cache so when we come here through another path
     // we don't have to compute again
 
-    return value;
+    return value
   }
 
   return fibMemoized(500) // TODO: Now increase to 1000, 2000
@@ -113,12 +115,14 @@ function fibonacci() {
  */
 function combinatorial() {
   // The naive implementation
-  const C = (n, k) => (n === 1 || k === n || k === 0) ? 1 : C(n - 1, k) + C(n - 1, k - 1)
+  function choose(n, k) {
+    return (n === 1 || k === n || k === 0) ? 1 : choose(n - 1, k) + choose(n - 1, k - 1)
+  }
 
   // TODO: first increase the number to get a feel
   // of how slow it gets as n increases
   // keep k ~ n/2
-  return C(30, 15) // don't go beyond (34, 17)
+  return choose(30, 15) // don't go beyond (34, 17)
   // TODO: Now comment out the above return statement
 
   /**
@@ -141,40 +145,39 @@ function combinatorial() {
    // hint: how about a map in a map!
 
    // TODO: define the map here
-   const C_memoized = (n, k) => {
-     if(n === 1 || k === n || k === 0) {
+  function chooseMemoized(n, k) {
+    if (n === 1 || k === n || k === 0) {
        // you won't get any benefit caching things here
-       return 1;
-     }
-     else {
+      return 1
+    } else {
        // TODO: check that Map has an entry for n
        // if not, set a new Map as its value
-       if(false) {
+      if (false) {
          // TODO: Set a new Map as its value
-       }
+      }
        // TODO: check if Map(n)
        // which is a map
        // has key k
-       if(false) {
+      if (false) {
          // TODO: return it
-       }
+      }
        // TODO: this is another clever optimization
        // C(n, k) = C(n - k)
        // Hence, we should also check if Map(n) has a key n - k
-       if (false) {
+      if (false) {
          // TODO: If found C(n, n -k) return it
-       }
-     }
+      }
+    }
      // we are here because it was not in cache
      // so we are computing it
-     const value = C(n - 1, k - 1) + C(n - 1, k);
+    const value = chooseMemoized(n - 1, k - 1) + chooseMemoized(n - 1, k)
      // TODO: Also store in cache
      // Map(n) should have a new entry with key k
      // value C(n, k)
-     return value;
-   }
+    return value
+  }
 
-   return C_memoized(100, 50) // TODO: Increase these values and see how fast it is!
+  return chooseMemoized(100, 50) // TODO: Increase these values and see how fast it is!
 
 
 }
@@ -213,10 +216,10 @@ function combinatorial() {
 
 
 function displaySOLUTION() {
-  const m = new Map();
-  m.set('a', 3);
-  m.set({v: 5, j: 7}, 7);
-  m.set(() => {}, 8);
+  const m = new Map()
+  m.set('a', 3)
+  m.set({v: 5, j: 7}, 7)
+  m.set(() => {}, 8)
   return m
 }
 
@@ -231,20 +234,20 @@ function primeSOLUTION() {
   // Map { 2 => [4, 8], 3 => [6, 9], 5 => [10], 7 => []}
 
   const m = new Map()
-  let primeArray, j;
+  let primeArray, j
   // iterate over 2 to 100 and do this
   // Both 2 and 100 are included
-  for(let i = 2; i <= 100; i += 1) {
+  for (let i = 2; i <= 100; i += 1) {
     primeArray = [...m.keys()]
-    for(j = 0; j < primeArray.length; j++) {
-      if(i % primeArray[j] === 0) {
+    for (j = 0; j < primeArray.length; j++) {
+      if (i % primeArray[j] === 0) {
         // composite number
         m.set(primeArray[j], [...m.get(primeArray[j]), i])
-        break;
+        break
       }
     }
     // if prime number - create the key
-    if(j === primeArray.length) {
+    if (j === primeArray.length) {
       m.set(i, [])
     }
   }
@@ -255,7 +258,9 @@ function primeSOLUTION() {
 // the following deals with mysteries of fibonacci number
 function fibonacciSOLUTION() {
   // this is the definition of fibonacci number
-  const fib = (n) => n <= 2 ? 1 : fib(n - 1) + fib(n - 2);
+  function fib(n) {
+    return n <= 2 ? 1 : fib(n - 1) + fib(n - 2)
+  }
 
   // change the following to fib(40), fib(43), fib(45), fib(47) etc.
   // It will demonstrate how it gets real slow, real fast
@@ -287,26 +292,26 @@ function fibonacciSOLUTION() {
   // Define your map here
   const cache = new Map()
 
-  const fibMemoized = (n) => {
-    if(n <= 2) {
+  function fibMemoized(n) {
+    if (n <= 2) {
       // you may memoize values of fibMemoized(1) and fibMemoized(2)
       // though it's not necessary
-      return 1;
+      return 1
     }
     // check if already exists in cache
     // add check
-    if(cache.has(n)) {
+    if (cache.has(n)) {
       // found in cache, retrieve and return
       return cache.get(n)
     }
     // not found in cache
     // compute recursively
-    const value = fibMemoized(n - 1) + fibMemoized(n - 2);
+    const value = fibMemoized(n - 1) + fibMemoized(n - 2)
     // add it to cache so when we come here through another path
     // we don't have to compute again
-    cache.set(n, value);
+    cache.set(n, value)
 
-    return value;
+    return value
   }
 
   return fibMemoized(1000) // Now increase to 1000, 2000
@@ -335,12 +340,14 @@ function fibonacciSOLUTION() {
  */
 function combinatorialSOLUTION() {
   // The naive implementation
-  const C = (n, k) => (n === 1 || k === n || k === 0) ? 1 : C(n - 1, k) + C(n - 1, k - 1)
+  function choose(n, k) {
+    return (n === 1 || k === n || k === 0) ? 1 : choose(n - 1, k) + choose(n - 1, k - 1)
+  }
 
   // first increase the number to get a feel
   // of how slow it gets as n increases
   // keep k ~ n/2
-  // return C(30, 15) // don't go beyond (34, 17)
+  // return choose(30, 15) // don't go beyond (34, 17)
   // Now comment out the above return statement
 
   /**
@@ -363,29 +370,33 @@ function combinatorialSOLUTION() {
    // hint: how about a map in a map!
 
    // define the map here
-   const cache = new Map()
+  const cache = new Map()
 
-   const C_memoized = (n, k) => {
-     if(n === 1 || k === n || k === 0) {
-       return 1;
+  function chooseMemoized(n, k) {
+    if (n === 1 || k === n || k === 0) {
+      return 1
+    } else {
+      if (!cache.has(n)) {
+        cache.set(n, new Map())
       }
-      else {
-        if(!cache.has(n)) {
-          cache.set(n, new Map());
-        }
-        if(cache.get(n).has(k)) {
-          return cache.get(n).get(k);
-        }
-        if (cache.get(n).has(n - k)) {
-          return cache.get(n).get(n - k);
-        }
+      if (cache.get(n).has(k)) {
+        return cache.get(n).get(k)
       }
-      const value = C_memoized(n - 1, k - 1) + C_memoized(n - 1, k);
-      cache.get(n).set(k, value);
-      return value;
-   }
+      if (cache.get(n).has(n - k)) {
+        return cache.get(n).get(n - k)
+      }
+    }
+    const value = chooseMemoized(n - 1, k - 1) + chooseMemoized(n - 1, k)
+    cache.get(n).set(k, value)
+    return value
+  }
 
-   return C_memoized(100, 50) // Increase these values and see how fast it is!
+  return chooseMemoized(100, 50) // Increase these values and see how fast it is!
 
 
 }
+
+
+/* eslint no-unreachable:0 */
+/* eslint valid-jsdoc:0 */
+/* eslint complexity: ["error", 7] */
