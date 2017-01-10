@@ -9,8 +9,8 @@ function curryAdd() {
   // TODO: refactor the function curryAddition
   // rewrite with arrow syntax
   function curryAddition(a) {
-    return function(b) { // eslint-disable-line func-names
-      return function(c) { // eslint-disable-line func-names
+    return function(b) {
+      return function(c) {
         return a + b + c
       }
     }
@@ -44,10 +44,10 @@ function genSeries() {
  // You may use () => () or () => {}
  // based on how complex you think the code can be
 function shift() {
-  const str="aeiou" // str can have punctuations and spaces
+  const str = 'aeiou' // str can have punctuations and spaces
   const amount = 1 // for fun, change it to 26
 
-  return str.replace(/[a-z]/g, function(x){
+  return str.replace(/[a-z]/g, function(x) {
     // first, compute the index of the character
     // within alphabet
     // a = 0, b = 1, c = 2,..., z = 25
@@ -112,7 +112,7 @@ function getPopulation() {
 
 
 function curryAddSOLUTION() {
-  function curryAddition(a){
+  function curryAddition(a) {
     return b => c => a + b + c
   }
   return curryAddition(9)(3)(5)
@@ -152,3 +152,6 @@ function getPopulationSOLUTION() {
     },
   }
 }
+
+/* eslint func-names:0 */
+/* eslint prefer-arrow-callback:0 */
