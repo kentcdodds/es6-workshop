@@ -2,8 +2,8 @@ console.log(
   // randGen(),
   // randGen(0),
   // randGen(45),
-  // weatherOnDemand(getCities(), 'Bali', 'London'),
   // defaultParamsAsExpressions(),
+  // weatherOnDemand(getCities(), 'Bali', 'London'),
 )
 
 function randGen(n) {
@@ -11,18 +11,6 @@ function randGen(n) {
   n = n || 10
 
   return Math.floor(n * Math.random())
-}
-
-function weatherOnDemand(args) {
-  // Use default parameters, argument destructuring
-  // and other Array methods, to refactor this
-  const allArgs = Array.prototype.slice.call(arguments)
-  const weatherArray = allArgs[0]
-  const cities = allArgs.slice(1)
-  
-  return weatherArray.filter(cityData => {
-    return cities.indexOf(cityData.city) !== -1
-  })
 }
 
 function defaultParamsAsExpressions() {
@@ -45,6 +33,19 @@ function defaultParamsAsExpressions() {
     }
   }
 }
+
+function weatherOnDemand(args) {
+  // Use default parameters, argument destructuring
+  // and other Array methods, to refactor this
+  const allArgs = Array.prototype.slice.call(arguments)
+  const weatherArray = allArgs[0]
+  const cities = allArgs.slice(1)
+  
+  return weatherArray.filter(cityData => {
+    return cities.indexOf(cityData.city) !== -1
+  })
+}
+
 
 
 
@@ -81,14 +82,6 @@ function randGenSOLUTION(n = 10) {
   return Math.floor(n * Math.random())
 }
 
-
-function weatherOnDemandSOLUTION(weatherArray, ...cities) {
-  return weatherArray.filter(cityData => {
-    return cities.indexOf(cityData.city) !== -1
-  })
-}
-
-
 function defaultParamsAsExpressionsSOLUTION() {
   return getCandy('twix', 'king')
 
@@ -106,6 +99,12 @@ function defaultParamsAsExpressionsSOLUTION() {
   function requiredParam(argName) {
     throw new Error(`${argName} is required`)
   }
+}
+
+function weatherOnDemandSOLUTION(weatherArray, ...cities) {
+  return weatherArray.filter(cityData => {
+    return cities.indexOf(cityData.city) !== -1
+  })
 }
 
 

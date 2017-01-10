@@ -1,23 +1,19 @@
 console.log(
-  // getMax(),
-  // flatten(),
-  // updateObject()
+  // spreadFunctionCall(),
+  // concatArrays(),
+  // mergeObjects(),
+  // spreadString(),
+  // restString(),
 )
 
-function getMax() {
+function spreadFunctionCall() {
   // TODO: return the maximum value in an array of integers
   // use spread operator and Math.max() in refactoring
-  //
-  // A simpler solution is to loop over the array
-  // and keep track of the maximum
-  // finally returning it
-  //
-  // A shorter solution is to take advantage of apply()
   const arr = [5, 6, 8, 4, 9]
   return Math.max.apply(null, arr)
 }
 
-function flatten() {
+function concatArrays() {
   // TODO: flatten nested arrays of arbitrary levels of nesting
   // arr can be typically like this: [8, 9, [6, [5, [7], [45, 34, [2]]]]]
   // output shold be [8, 9, 6, 5, 7, 45, 34, 2]
@@ -34,7 +30,7 @@ function flatten() {
   return flatter(arr)
 }
 
-function updateObject() {
+function mergeObjects() {
   // TODO: obj is the original object
   // updateSpec is an object with new values for various fields in obj
   // it might even contain values for fields that don't exist in obj
@@ -45,7 +41,19 @@ function updateObject() {
   return Object.assign({}, obj, updateSpec)
 }
 
+function spreadString() {
+  return join('--', 'PayPal')
+  function join(delimiter, string) {
+    return [...string].join(delimiter)
+  }
+}
 
+function restString() {
+  // what does this return?
+  const greeting = 'Hello world'
+  const [h, e, l, l2, o, space, ...splitGreeting] = greeting
+  return splitGreeting
+}
 
 
 
@@ -72,12 +80,12 @@ function updateObject() {
 
 
 
-function getMaxSOLUTION() {
+function spreadFunctionCallSOLUTION() {
   const arr = [5, 6, 8, 4, 9]
   return Math.max(...arr)
 }
 
-function flattenSOLUTION() {
+function concatArraysSOLUTION() {
   const arr = [8, 9, [6, [5, [7], [45, 34, [[[2]]], [[[[[[[[7]]]]], 90]]]]]]]
   function flatter(arg) {
     return arg.reduce((acc, item) => {
@@ -87,7 +95,7 @@ function flattenSOLUTION() {
   return flatter(arr)
 }
 
-function updateObjectSOLUTION() {
+function mergeObjectsSOLUTION() {
   const obj = {a: 1, b: 3, c: 4}
   const updateSpec = {b: 5, c: 3, d: 7}
   return {

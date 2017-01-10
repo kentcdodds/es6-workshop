@@ -1,8 +1,5 @@
-/* eslint object-shorthand:0 */
-
 console.log(
   // getAverage(),
-  // getAngle(),
   // getLanguage(),
   // getAvgTemp(),
   // getTopTwo(),
@@ -13,21 +10,16 @@ console.log(
 
 function getAverage() {
   // refactor with object destructuring
-  const obj = getVoxel()
-
+  const obj = {x: 3.6, y: 7.8, z: 4.3}
   return Math.floor((obj.x + obj.y + obj.z) / 3.0)
-}
-
-function getAngle() {
-  // refactor with object destructuring
-  const obj = getVoxel()
-
-  return obj.angle
 }
 
 function getLanguage() {
   // refactor with aliasing destructured variable
-  const greeting = greet()
+  const greeting = {
+    text: 'dattebayo',
+    locale: 'Japanese',
+  }
   const language = greeting.locale
 
   return language
@@ -52,7 +44,7 @@ function getAvgTemp() {
 
 function getTopTwo() {
   // refactor with array destructuring
-  const arr = getArray()
+  const arr = [0, 1, 2, 3, 4, 5, 6, 7]
   const firstItem = arr[0]
   const secondItem = arr[1]
 
@@ -65,7 +57,7 @@ function getTopTwo() {
 function getElements() {
   // returns 1st, 2nd and last element from an array
   // refactor with skipped destructuring for arrays
-  const arr = getArray()
+  const arr = [0, 1, 2, 3, 4, 5, 6, 7]
   const first = arr[0]
   const second = arr[1]
   const fifth = arr[4]
@@ -105,38 +97,13 @@ function nestedArrayAndObject() {
 
 // helper methods
 
-function getVoxel() {
-  return {
-    x: 3.6,
-    y: 7.8,
-    z: 4.3,
-  }
-}
-
-function greet() {
-  return {
-    text: 'dattebayo',
-    locale: 'Japanese',
-  }
-}
-
 function getWeather() {
   return {
     location: 'Toronto',
     unit: 'Celsius',
-    today: {
-      max: 2.6,
-      min: -6.3,
-    },
-    tomorrow: {
-      max: 3.2,
-      min: -5.8,
-    },
+    today: {max: 2.6, min: -6.3},
+    tomorrow: {max: 3.2, min: -5.8},
   }
-}
-
-function getArray() {
-  return [...Array(8).keys()]
 }
 
 function getFood() {
@@ -153,22 +120,10 @@ function getTVSeriesInfo() {
     protagonist: {
       name: 'Emma Swan',
       enemies: [
-        {
-          name: 'Regina Mills',
-          title: 'Evil Queen',
-        },
-        {
-          name: 'Cora Mills',
-          title: 'Queen of Hearts',
-        },
-        {
-          name: 'Peter Pan',
-          title: `The boy who wouldn't grow up`,
-        },
-        {
-          name: 'Zelena',
-          title: 'The Wicked Witch',
-        },
+        {name: 'Regina Mills', title: 'Evil Queen'},
+        {name: 'Cora Mills', title: 'Queen of Hearts'},
+        {name: 'Peter Pan', title: `The boy who wouldn't grow up`},
+        {name: 'Zelena', title: 'The Wicked Witch'},
       ],
     },
   }
@@ -194,17 +149,16 @@ function getTVSeriesInfo() {
 
 
 function getAverageSOLUTION() {
-  const {x, y, z} = getVoxel()
+  const obj = {x: 3.6, y: 7.8, z: 4.3}
+  const {x, y, z} = obj
   return Math.floor((x + y + z) / 3.0)
 }
 
-function getAngleSOLUTION() {
-  const {angle} = getVoxel()
-  return angle
-}
-
 function getLanguageSOLUTION() {
-  const {locale: language} = greet()
+  const {locale: language} = {
+    text: 'dattebayo',
+    locale: 'Japanese',
+  }
   return language
 }
 
@@ -223,7 +177,7 @@ function getAvgTempSOLUTION() {
 }
 
 function getTopTwoSOLUTION() {
-  const arr = getArray()
+  const arr = [0, 1, 2, 3, 4, 5, 6, 7]
   const [first, second] = arr
 
   return {
@@ -233,7 +187,7 @@ function getTopTwoSOLUTION() {
 }
 
 function getElementsSOLUTION() {
-  const arr = getArray()
+  const arr = [0, 1, 2, 3, 4, 5, 6, 7]
   const [first, second,,, fifth] = arr
 
   return {
@@ -259,3 +213,5 @@ function nestedArrayAndObjectSOLUTION() {
   const {title, protagonist: {name: protagonistName, enemies: [,,, {title: enemyTitle, name: enemyName}]}} = info
   return `${enemyName} (${enemyTitle}) is an enemy to ${protagonistName} in "${title}"`
 }
+
+/* eslint object-shorthand:0 */
