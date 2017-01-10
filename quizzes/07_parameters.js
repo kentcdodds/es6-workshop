@@ -1,11 +1,14 @@
 console.log(
   // randGen(),
+  // randGen(0),
   // randGen(45),
   // weatherOnDemand(getCities(), 'Bali', 'London'),
+  // defaultParamsAsExpressions(),
 )
 
 function randGen(n) {
   // refactor with default parameter to handle n = undefined
+  n = n || 10
 
   return Math.floor(n * Math.random())
 }
@@ -21,6 +24,28 @@ function weatherOnDemand(args) {
     return cities.indexOf(cityData.city) !== -1
   })
 }
+
+function defaultParamsAsExpressions() {
+  return getCandy('twix', 'king')
+
+  function getCandy(kind, size, upperKind, callback) {
+    requiredParam('kind', kind)
+    requiredParam('size', size)
+    upperKind = upperKind === undefined ? kind.toUpperCase() : upperKind
+    callback = callback === undefined ? function noop() {} : callback
+
+    const result = {kind, size, upperKind}
+    callback(result)
+    return result
+  }
+
+  function requiredParam(argName, arg) {
+    if (arg === undefined) {
+      throw new Error(`${argName} is required`)
+    }
+  }
+}
+
 
 
 // helpers
@@ -62,5 +87,26 @@ function weatherOnDemandSOLUTION(weatherArray, ...cities) {
     return cities.indexOf(cityData.city) !== -1
   })
 }
+
+
+function defaultParamsAsExpressionsSOLUTION() {
+  return getCandy('twix', 'king')
+
+  function getCandy(
+    kind = requiredParam('kind'),
+    size = requiredParam('size'),
+    upperKind = kind.toUpperCase(),
+    callback = function noop() {},
+  ) {
+    const result = {kind, size, upperKind}
+    callback(result)
+    return result
+  }
+
+  function requiredParam(argName) {
+    throw new Error(`${argName} is required`)
+  }
+}
+
 
 /* eslint prefer-rest-params:0 */
