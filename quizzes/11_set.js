@@ -1,85 +1,157 @@
-const obj = {"a": 45, "b": 50};
-const s = new Set();
-s.add(obj)
-s.add({"a": 45, "b": 50});
-
-const u = new MagicSet();
-const v = new MagicSet();
-
-u.add(1);
-u.add(2);
-v.add(2);
-v.add(3);
-u.add(3);
-u.add(4);
-
 console.log(
-  // s.size
-  // u.union(v)
-  // u.isSuper(v)
-  // u.difference(v)
-  // u.intersection(v)
-  // u.union(v).isIdentical(u)
-  // u.union(v).isSuper(v)
+  testObjectSet(),
+  testArraySet(),
+  testRemoveDuplicates(),
+  testSetMap(),
+  testSetOperations(),
 )
 
-// TODO: create a new class called MagicSet extending Set
-// MagicSet will have all behaviours of a typical set
-// and some more
-class MagicSet extends Set {
-  // TODO: implement constructor
-  constructor() {
+function testObjectSet() {
+  // TODO: Just read the function and understand
+  // Just because two objects have exact same values
+  // doesn't mean they are the same objects
+  const obj = {a: 45, b: 50}
+  const s = new Set()
+  s.add(obj)
+  s.add({a: 45, b: 50})
+  return s
+}
 
-  }
-  /**
-   * performs union between two magic sets
-   * Should be invoked as S.union(T)
-   * @returns a new MagicSet which has elements from both S and T
-   */
-  union(T) {
-    // TODO: implement this
-  }
+function testArraySet() {
+  const arr = [1, 5, 7, 2, 9, 4]
+  // TODO: change the following line
+  // so that the Set t has array's contents
+  const t = new Set()
+  // change the above line
+  return t
+}
 
-  /**
-   * performs intersection between two magic sets
-   * intersection set is a set of all common elements in A and B
-   * If A = {1, 2, 3} and B = { 2, 3, 4}, then intersection = {2, 3}
-   * should be invoked as S.intersection(T)
-   */
-  intersection(T) {
-    // TODO: implement this
-  }
+function testRemoveDuplicates() {
+  // given an array
+  // we have to remove duplicate entries
+  const arr = [6, 8, 3, 9, 6, 5, 8, 2, 3, 9, 7, 7, 2, 1, 0, 8]
 
-  /**
-   * performs difference between two sets
-   * difference is a union of two magic sets
-   * 1) a magic set of all elements in A not in B
-   * 2) a magic set of all elements in B not in A
-   * should be invoked as A.difference(B)
-   * if A = {1, 2, 3} and B = { 2, 3, 4}; difference = { 1, 4}
-   */
-  difference() {
-    // TODO: implement this
-    // use the union function defined above
-  }
+  // TODO: use a Set to do this
+  // refactor the following
+  const uniqueArr = arr.filter((elem, index) => arr.indexOf(elem) === index)
 
-  /**
-   * @returns true if A is a superset of B
-   * to be invoked as A.isSuper(B)
-   * A.isSuper(B) is true if A has all elements of B
-   * A may or may not have more elements than B
-   */
-  isSuper() {
-    // TODO: implement this
-  }
-
-  /**
-   * @returns true if A and B are identical
-   * A.isIdentical(B) is true if A is superset of B
-   * and A and B have same size
-   */
-  isIdentical() {
-    // TODO: implement this
+  return {
+    original: arr,
+    deduped: uniqueArr,
   }
 
 }
+
+function testSetMap() {
+  // ES6 sets have no map method
+  // So we will try to write a utility that allows you to do that
+  // It would be invoked as mapSet(s1, fn) and will return s2
+  // Assume fn is a synchronous function, for now
+  const s = [7, 4, 90, 54, 23] // TODO: make 's' a Set
+  function fn(x, i) {
+    return x * i
+  }// the callback
+
+  // TODO: refactor to return mapped set
+  const final = s.map(fn, null)
+  return final
+}
+
+function testSetOperations() {
+  // the interconversion between Sets and Arrays are really handy
+  // Especially when you can use spread operator to convert a Set
+  // to an Array
+  // And Set constructor to make an Array into a Set
+  const original1 = [1, 3, 5, 9] // TODO: Make this a Set
+  const original2 = [1, 2, 3, 4] // TODO: Make this a Set
+
+  // TODO: refactor the following with spread operator
+  // and ensure that intersection is a Set, not an Array
+  const intersection = original1.filter(x => original2.indexOf(x) !== -1)
+  const diff = [...original1.filter(x => original2.indexOf(x) === -1),
+    ...original2.filter(x => original1.indexOf(x) === -1)]
+
+  return {
+    intersection,
+    diff,
+  }
+}
+
+
+
+
+
+
+
+
+// SOLUTION BELOW
+// No peeking!
+
+
+
+
+
+
+
+
+
+
+function testArraySetSOLUTION() {
+  const arr = [1, 5, 7, 2, 9, 4]
+  const t = new Set(arr)
+  return t
+}
+
+
+function testRemoveDuplicatesSOLUTION() {
+  // given an array
+  // we have to remove duplicate entries
+  const arr = [6, 8, 3, 9, 6, 5, 8, 2, 3, 9, 7, 7, 2, 1, 0, 8]
+
+  // TODO: use a Set to do this
+  // refactor the following
+  const uniqueArr = arr.filter((elem, index) => arr.indexOf(elem) === index)
+
+  return {
+    original: arr,
+    deduped: uniqueArr,
+  }
+}
+
+
+function testSetMapSOLUTION() {
+  // ES6 sets have no map method
+  // So we will try to write a utility that allows you to do that
+  // Assume fn is a synchronous function, for now
+  const s = new Set([7, 4, 90, 54, 23])
+  function fn(x, i) {
+    return x * i
+  }// the callback
+
+  // we could have also used Array.from(s)
+  const final = new Set([...s].map(fn, null))
+  return final
+}
+
+function testSetOperationsSOLUTION() {
+  // the interconversion between Sets and Arrays are really handy
+  // Especially when you can use spread operator to convert a Set
+  // to an Array
+  // And Set constructor to make an Array into a Set
+  const original1 = new Set([1, 3, 5, 9])
+  const original2 = new Set([1, 2, 3, 4])
+
+  // refactor the following with spread operator
+  // and ensure that intersection is a Set, not an Array
+  const intersection = new Set([...original1].filter(x => original2.has(x)))
+  const diff = new Set([...[...original1].filter(x => !original2.has(x)),
+    ...[...original2].filter(x => !original1.has(x))])
+
+  return {
+    intersection,
+    diff,
+  }
+}
+
+
+/* */
