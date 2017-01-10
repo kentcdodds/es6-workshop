@@ -1,28 +1,18 @@
 console.log(
   // getAverage(),
-  // getLanguage(),
   // getAvgTemp(),
   // getTopTwo(),
   // getElements(),
   // getSecondItem(),
   // nestedArrayAndObject(),
+  // defaultValues(),
+  // ontoAnObject(),
 )
 
 function getAverage() {
   // refactor with object destructuring
   const obj = {x: 3.6, y: 7.8, z: 4.3}
   return Math.floor((obj.x + obj.y + obj.z) / 3.0)
-}
-
-function getLanguage() {
-  // refactor with aliasing destructured variable
-  const greeting = {
-    text: 'dattebayo',
-    locale: 'Japanese',
-  }
-  const language = greeting.locale
-
-  return language
 }
 
 function getAvgTemp() {
@@ -95,6 +85,27 @@ function nestedArrayAndObject() {
   return `${enemyName} (${enemyTitle}) is an enemy to ${protagonistName} in "${title}"`
 }
 
+function defaultValues() {
+  const bench = {type: 'Piano', adjustable: false}
+  const legCount = bench.legs === undefined ? getDefaultLegCount() : bench.legs
+  return legCount
+
+  function getDefaultLegCount() {
+    return 4
+  }
+}
+
+function ontoAnObject() {
+  // refactor this to destructuring
+  const array = [1, 2, 3, 4, 5, 6]
+  const object = {}
+  object.one = array[0]
+  object.two = array[1]
+  object.three = array[2]
+  object.rest = array.slice(3)
+  return object
+}
+
 // helper methods
 
 function getWeather() {
@@ -154,14 +165,6 @@ function getAverageSOLUTION() {
   return Math.floor((x + y + z) / 3.0)
 }
 
-function getLanguageSOLUTION() {
-  const {locale: language} = {
-    text: 'dattebayo',
-    locale: 'Japanese',
-  }
-  return language
-}
-
 function getAvgTempSOLUTION() {
   const {
     unit,
@@ -212,6 +215,23 @@ function nestedArrayAndObjectSOLUTION() {
   const info = getTVSeriesInfo()
   const {title, protagonist: {name: protagonistName, enemies: [,,, {title: enemyTitle, name: enemyName}]}} = info
   return `${enemyName} (${enemyTitle}) is an enemy to ${protagonistName} in "${title}"`
+}
+
+function defaultValuesSOLUTION() {
+  const bench = {type: 'Piano', adjustable: false}
+  const {legs: legCount = getDefaultLegCount()} = bench
+  return legCount
+
+  function getDefaultLegCount() {
+    return 4
+  }
+}
+
+function ontoAnObjectSOLUTION() {
+  const array = [1, 2, 3, 4, 5, 6]
+  const object = {}; // <-- one place a semicolon is required
+  [object.one, object.two, object.three, ...object.rest] = array
+  return object
 }
 
 /* eslint object-shorthand:0 */
