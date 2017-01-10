@@ -1,9 +1,12 @@
 console.log(
   // basic(),
+  // immutable(),
+  // immutableReference(),
   // ifBlock(),
   // block(),
   // scoped(),
   // veryScoped(),
+  // temporalDeadZone(),
   // semiPractical(),
 )
 
@@ -13,6 +16,23 @@ function basic() {
   let x = 100
   const y = 200
   return {x: x, y: y}
+}
+
+function immutable() {
+  // what is returned?
+  const object = {a: 'b'}
+  const array = [1, 2, 3, 4]
+
+  object.a = 'q'
+  array.splice(1, 1)
+  return {object: object, array: array}
+}
+
+function immutableReference() {
+  // what is returned?
+  const object = {a: 'b'}
+  object = {a: 'q'}
+  return object
 }
 
 function ifBlock() {
@@ -55,6 +75,17 @@ function veryScoped() {
   return x
 }
 
+function temporalDeadZone() {
+  console.log(myVar)
+  console.log(myLet)
+  console.log(myConst)
+  
+  var myVar = 'var'
+  let myLet = 'let'
+  const myConst = 'const'
+  return {myVar: myVar, myLet: myLet, myConst: myConst}
+}
+
 function semiPractical() {
   // what is returned from this function?
   const myThings = ['thing1', 'thing2', 'red fish', 'blue fish']
@@ -66,6 +97,7 @@ function semiPractical() {
   }
   return callbacks.map(callback => callback())
 }
+
 
 
 
@@ -85,6 +117,13 @@ function semiPractical() {
 
 
 
+
+function immutableReferenceSOLUTION() {
+  // what is returned?
+  let object = {a: 'b'}
+  object = {a: 'q'}
+  return object
+}
 
 function semiPracticalSOLUTION() {
   const myThings = ['thing1', 'thing2', 'red fish', 'blue fish']
@@ -108,5 +147,7 @@ function semiPracticalSOLUTION() {
   object-shorthand:0,
   vars-on-top:0,
   no-var:0,
-  no-loop-func:0
+  no-loop-func:0,
+  no-const-assign:0,
+  no-use-before-define:0
 */
