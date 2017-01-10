@@ -55,6 +55,16 @@ test('means that we can start using block statements', () => {
   expect(() => noop('d', d)).toThrow('d is not defined')
 })
 
+//////// Elaboration /////////
+// Please write, in your own words
+// a few of the core concepts from
+// the feature(s) in this exercise
+//
+// 1.
+// 2.
+// 3.
+////////////////////////////////
+
 //////// EXTRA CREDIT ////////
 
 test.skip('means that we can declare constant with the same name in block statement', () => {

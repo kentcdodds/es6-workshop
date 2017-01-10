@@ -119,6 +119,7 @@ test.skip('can be used to do some fancy stuff with arrays', () => {
   expect(proxy[-4]).toBe('Nevel Longbottom')
 })
 
+
 // If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
 // Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development
 // Here's the MDN page for this feature: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy

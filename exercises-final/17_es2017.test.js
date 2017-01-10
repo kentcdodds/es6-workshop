@@ -106,6 +106,7 @@ test('Trailing commas in function parameter lists and calls help us with git', (
   `).toBeValidSyntax()
 })
 
+
 //////// EXTRA CREDIT ////////
 
 // If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!

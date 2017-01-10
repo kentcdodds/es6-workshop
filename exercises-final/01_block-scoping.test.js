@@ -50,6 +50,7 @@ test('means that we can start using block statements', () => {
   expect(() => noop('d', d)).toThrow('d is not defined')
 })
 
+
 //////// EXTRA CREDIT ////////
 
 test.skip('means that we can declare constant with the same name in block statement', () => {

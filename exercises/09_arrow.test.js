@@ -68,6 +68,16 @@ test('can make array filter chains more managable', () => {
   expect(shoppingList.shift()).toBe('JT Best Hits')
 })
 
+//////// Elaboration /////////
+// Please write, in your own words
+// a few of the core concepts from
+// the feature(s) in this exercise
+//
+// 1.
+// 2.
+// 3.
+////////////////////////////////
+
 //////// EXTRA CREDIT ////////
 
 // If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!

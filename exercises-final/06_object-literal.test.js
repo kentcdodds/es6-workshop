@@ -35,6 +35,7 @@ test('can use expressions as property names', () => {
   expect(snickers.TWIX4).toBe(twixDescription)
 })
 
+
 //////// EXTRA CREDIT ////////
 
 // If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!

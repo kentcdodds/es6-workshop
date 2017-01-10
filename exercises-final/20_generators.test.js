@@ -38,6 +38,7 @@ test(`can be iterated over`, () => {
   expect(sum).toBe(20)
 })
 
+
 //////// EXTRA CREDIT ////////
 
 // If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
