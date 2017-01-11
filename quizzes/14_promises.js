@@ -1,90 +1,167 @@
-// perform a coin toss
-const coinToss = () => new Promise((resolve) => {
-  setTimeout(() => {
-     const r = Math.random()
-     if (r < 0.5) {
-       resolve('head')
-     } else {
-       resolve('tail')
-     }
-  }, 200)
-}
 
-// TODO: Print the output of the coin toss
-coinToss()
+// callbacks()
+promises()
 
-// TODO: Reimplement coin toss to handle rejection
-// so that the following works
-// You have to implement coinTossModified()
-// which is slightly different than coinToss()
-coinTossModified()
-  .then(
-    (outcome) => {
-      console.log('Yay! we got a head');
-    },
-    (error) => {
-      console.error('Ohh no! We lost')
+function callbacks() {
+  // refactor to promises
+
+  // successful
+  logResult(cb => {
+    timeout(100, false, (error, result) => {
+      // ignore handle error
+      cb(null, `success: ${result}`)
+    })
+  })
+
+  // failing
+  logResult(cb => {
+    timeout(100, true, (error, result) => {
+      cb(`failure: ${error}`)
+      // ignore success
+    })
+  })
+
+  // error recovery
+  logResult(cb => {
+    timeout(200, true, (error, result) => {
+      if (error) {
+        // recoving from an error
+        return cb(null, `Recovered from error: ${error}`)
+      }
+      cb(null, `${result} with stuff`)
+    })
+  })
+
+  // wild example...
+  logResult(cb => {
+    timeout(100, false, (error1, result1) => {
+      if (error1) {
+        return catcher(error1)
+      }
+      timeout(200, false, (error2, result2) => {
+        if (error2) {
+          return catcher(error2)
+        }
+        catcher(new Error('hmm'))
+      })
+    })
+    function catcher(ignoredError) {
+      const combinedCallback = waitForAll(2, cb)
+      timeout(200, false, combinedCallback)
+      timeout(100, false, combinedCallback)
     }
-  )
 
-/**
- * TODO:
- * Refactoring callback style code to promises
- * Inspired by examples from getify/You-Dont-Know-JS
- *
- * We are trying to get two values
- * and compare them
- * They can return in any order, after a delay
- *
- * Just try to see how difficult to read
- * the code is
- */
-const getNum = (cb) => {
-  const { floor, random } = Math;
-  // let's fake the delay with a timeout
-  setTimeout(() => {
-    cb(floor(random() * 100));
-  }, floor(random() * 300))
-}
-
-const display = (a, b) => {
-  console.log(`
-    a = ${a}
-    b = ${b}
-    Max(a, b) = ${Math.max(a, b)}
-    `
-  );
-};
-
-const compare = (getFunc, cb) => {
-  // a and b would be assigned
-  // can happen in any order
-  let a, b;
-  getFunc((aValue) => {
-    a = aValue;
-    // has b been set?
-    if(b !== undefined) {
-      cb(a, b)
-    }
-  });
-  getFunc((bValue) => {
-    b = bValue;
-
-    // has a been set?
-    if(a !== undefined) {
-      cb(a, b)
+    function waitForAll(number, finalCallback) {
+      const allResults = []
+      let errored = false
+      return function callback(error, result) {
+        if (error) {
+          // TODO: handle this...
+          finalCallback(error)
+          errored = true
+        }
+        if (errored) {
+          return
+        }
+        allResults.push(result)
+        if (allResults.length === number) {
+          finalCallback(null, allResults)
+        }
+      }
     }
   })
+
+  function logResult(fn) {
+    fn((error, result) => {
+      if (error) {
+        logError(error)
+      } else if (result) {
+        log(result)
+      }
+    })
+  }
+
+  function timeout(duration, shouldError, callback) {
+    setTimeout(() => {
+      if (shouldError) {
+        callback(`rejected after ${duration}ms`)
+      } else {
+        callback(null, `resolved after ${duration}ms`)
+      }
+    }, duration)
+  }
 }
 
-compare(getNum, display);
+
+
+function log(...args) {
+  console.log(...args)
+}
+
+function logError(...args) {
+  console.error(...args)
+}
 
 
 
-/**
- * So far, we've only dealt with simple, synthetic promises
- * Let's use some real life Promises
- * Network requests
- * File system access
- * Waiting for an element to be visible in webpage
- */
+
+
+
+// SOLUTIONS ARE BELOW THIS LINE!
+
+
+
+
+
+
+
+
+
+
+
+function promises() {
+  const successfulPromise = timeout(100)
+    .then(result => {
+      return `success: ${result}`
+    })
+
+  const failingPromise = timeout(100, true)
+    .then(null, error => {
+      return Promise.reject(`failure: ${error}`)
+    })
+
+  const caughtPromise = timeout(200, true)
+    .then(result => {
+      return `${result} with stuff`
+    }, error => {
+      return Promise.resolve(`Recovered from error: ${error}`)
+    })
+
+  const otherStuffPromise = timeout(100)
+    .then(() => {
+      return timeout(200)
+    }).then(() => {
+      throw new Error('hmm')
+    }).catch(() => {
+      return Promise.all([timeout(100), timeout(200)])
+    })
+
+  successfulPromise.then(log, logError)
+  failingPromise.then(log, logError)
+  caughtPromise.then(log, logError)
+  otherStuffPromise.then(log, logError)
+
+  function timeout(duration = 0, shouldReject = false) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        if (shouldReject) {
+          reject(`rejected after ${duration}ms`)
+        } else {
+          resolve(`resolved after ${duration}ms`)
+        }
+      }, duration)
+    })
+  }
+}
+
+/* eslint consistent-return:0 */
