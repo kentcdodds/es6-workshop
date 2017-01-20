@@ -1,6 +1,4 @@
-console.log(
-  getSymbolsFromObject(),
-)
+import log from './pretty-log'
 
 function getSymbolsFromObject() {
   // what will this return?
@@ -11,3 +9,4 @@ function getSymbolsFromObject() {
   }
   return Object.keys(object)
 }
+// log(getSymbolsFromObject())

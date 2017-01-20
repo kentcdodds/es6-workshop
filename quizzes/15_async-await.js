@@ -1,8 +1,7 @@
-promises()
+// promises()
 // asyncAwaits()
 
 
-// resolve reject here -- don't modify
 function log(...args) {
   console.log(...args)
 }
@@ -15,17 +14,23 @@ function logError(...args) {
 // Define and use promise style asynchronous operations
 function promises() {
   // TODO: Rewrite as async
-  const successfulPromise = timeout(Math.random() * 200)
+  const successfulPromise = timeout(100)
     .then(result => `success: ${result}`)
 
   // TODO: Rewrite as async
-  const failingPromise = timeout(Math.random() * 100, true)
+  const failingPromise = timeout(200, true)
     .then(null, error => (
       Promise.reject(`failure: ${error}`)
+    ))
+  
+  const recoveredPromise = timeout(300, true)
+    .then(null, error => (
+      Promise.resolve(`failed and recovered: ${error}`)
     ))
 
   successfulPromise.then(log, logError)
   failingPromise.then(log, logError)
+  recoveredPromise.then(log, logError)
 }
 
 // This is the mothership of all things asynchronous
@@ -54,26 +59,26 @@ function timeout(duration = 0, shouldReject = false) {
 
 
 function asyncAwaits() {
-  async function successfulAsyncAwait(logger, errorLogger) {
-    const result = await timeout(Math.random() * 100 + 100)
-    logger(`success: ${result}`)
+  async function successfulAsyncAwait() {
+    const result = await timeout(100)
+    return `success: ${result}`
   }
 
-  async function failedAsyncAwait(logger, errorLogger) {
-    const result = await timeout(Math.random() * 100 + 200, true)
-    logger(`failed: ${result}`) // will result in unhandledPromiseRejectionWarning
+  async function failedAsyncAwait() {
+    const result = await timeout(200, true)
+    return `failed: ${result}`
   }
 
-  async function recoveredAsyncAwait(logger, errorLogger) {
+  async function recoveredAsyncAwait() {
     let result
     try {
-      result = await timeout(Math.random() * 100 + 200, true)
-      logger(`failed: ${result}`) // this would not be executed
-    } catch (e) {
-      errorLogger(`failed and recovered: ${e}`)
+      result = await timeout(300, true)
+      return `failed: ${result}` // this would not be executed
+    } catch (error) {
+      return `failed and recovered: ${error}`
     }
   }
-  successfulAsyncAwait(log, logError)
-  failedAsyncAwait(log, logError)
-  recoveredAsyncAwait(log, logError)
+  successfulAsyncAwait().then(log, logError)
+  failedAsyncAwait().then(log, logError)
+  recoveredAsyncAwait().then(log, logError)
 }

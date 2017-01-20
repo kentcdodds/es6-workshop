@@ -1,11 +1,4 @@
-/* eslint object-shorthand:0 */
-console.log(
-  // shorthandPropertyNames(),
-  // proto(),
-  // methodShorthand(),
-  // methodSuperCalls(),
-  // computedPropertyNames(),
-)
+import log from './pretty-log'
 
 function shorthandPropertyNames() {
   // refactor with shortening the object literal
@@ -20,6 +13,7 @@ function shorthandPropertyNames() {
     blue: blue,
   }
 }
+// log(shorthandPropertyNames())
 
 function proto() {
   // refactor using __proto__ :)
@@ -41,8 +35,11 @@ function proto() {
       writable: true,
     },
   })
+  // getAllPropsInObject returns an object with
+  // `inheritedProps` and `ownProps` objects.
   return getAllPropsInObject(child)
 }
+// log(proto())
 
 function methodShorthand() {
   // refactor using method shorthand
@@ -53,6 +50,7 @@ function methodShorthand() {
   }
   return greeter.sayHi('Nancy')
 }
+// log(methodShorthand())
 
 function methodSuperCalls() {
   // refactor fileTaxes on the child using method shorthand and use `super` instead
@@ -75,6 +73,7 @@ function methodSuperCalls() {
   const taxesResult = child.fileTaxes()
   return {taxesResult, taxesFiledCount: child.taxesFiledCount}
 }
+// log(methodSuperCalls())
 
 function computedPropertyNames() {
   function getCar(make, model) {
@@ -84,6 +83,12 @@ function computedPropertyNames() {
   }
   return getCar('Hyundai', 'Accent')
 }
+// log(computedPropertyNames())
+
+
+
+
+
 
 // helpers
 
@@ -98,6 +103,9 @@ function getAllPropsInObject(obj) {
   }
   return allPropsObj
 }
+
+
+
 
 
 
@@ -121,6 +129,7 @@ function shorthandPropertyNamesSOLUTION() {
 
   return {red, green, blue}
 }
+// log(shorthandPropertyNamesSOLUTION())
 
 function protoSOLUTION() {
   const parent = {
@@ -134,6 +143,7 @@ function protoSOLUTION() {
   }
   return getAllPropsInObject(child)
 }
+// log(protoSOLUTION())
 
 function methodShorthandSOLUTION() {
   const greeter = {
@@ -143,7 +153,7 @@ function methodShorthandSOLUTION() {
   }
   return greeter.sayHi('Nancy')
 }
-
+// log(methodShorthandSOLUTION())
 
 function methodSuperCallsSOLUTION() {
   const parent = {
@@ -165,6 +175,7 @@ function methodSuperCallsSOLUTION() {
   const taxesResult = child.fileTaxes()
   return {taxesResult, taxesFiledCount: child.taxesFiledCount}
 }
+// log(methodSuperCallsSOLUTION())
 
 function computedPropertyNamesSOLUTION() {
   function getCar(make, model) {
@@ -174,4 +185,10 @@ function computedPropertyNamesSOLUTION() {
   }
   return getCar('Hyundai', 'Accent')
 }
+// log(computedPropertyNamesSOLUTION())
 
+
+
+
+
+/* eslint object-shorthand:0 */

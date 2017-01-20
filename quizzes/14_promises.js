@@ -1,6 +1,6 @@
 
 // callbacks()
-promises()
+// promises()
 
 function callbacks() {
   // refactor to promises

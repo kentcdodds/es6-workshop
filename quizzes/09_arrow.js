@@ -1,15 +1,4 @@
-console.log(
-  // multiArgument(),
-  // noArgument(),
-  // singleArgument(),
-  // spreadWithArrow(),
-  // withStatements(),
-  // withObject(),
-  // withMultiLineExpression(),
-  // curryAdd(),
-  // context(),
-  // noBind(),
-)
+import log from './pretty-log'
 
 function multiArgument() {
   // refactor to an arrow function
@@ -18,6 +7,7 @@ function multiArgument() {
   }
   return divide(40, 10)
 }
+// log(multiArgument())
 
 function noArgument() {
   // refactor to an arrow function
@@ -26,6 +16,7 @@ function noArgument() {
   }
   return getFive()
 }
+// log(noArgument())
 
 function singleArgument() {
   // refactor to an arrow function
@@ -34,6 +25,7 @@ function singleArgument() {
   }
   return identity(350)
 }
+// log(singleArgument())
 
 function spreadWithArrow() {
   // refactor to an arrow function
@@ -42,6 +34,7 @@ function spreadWithArrow() {
   }
   return asArray(1, 2, 3, 4)
 }
+// log(spreadWithArrow())
 
 function withStatements() {
   // refactor to an arrow function
@@ -54,6 +47,7 @@ function withStatements() {
   }
   return tryInvoke(Math, 'pow', 2, 3)
 }
+// log(withStatements())
 
 function withObject() {
   // refactor to an arrow function
@@ -62,6 +56,7 @@ function withObject() {
   }
   return getObject('twix')
 }
+// log(withObject())
 
 function withMultiLineExpression() {
   const getString = function(name) {
@@ -74,9 +69,12 @@ function withMultiLineExpression() {
   }
   return getString('Ryan')
 }
+// log(withMultiLineExpression())
 
 function curryAdd() {
   // refactor to a arrow functions
+  return curryAddition(9)(3)(5)
+
   function curryAddition(a) {
     return function(b) {
       return function(c) {
@@ -84,8 +82,8 @@ function curryAdd() {
       }
     }
   }
-  return curryAddition(9)(3)(5)
 }
+// log(curryAdd())
 
 function context() {
   const population = {
@@ -104,6 +102,7 @@ function context() {
   }
   return population.display()
 }
+// log(context())
 
 function noBind() {
   // what will this function return?
@@ -117,6 +116,11 @@ function noBind() {
   const idGetter24 = idGetter.bind({id: 24})
   return idGetter24()
 }
+// log(noBind())
+
+
+
+
 
 
 
@@ -126,7 +130,14 @@ function noBind() {
 
 
 // SOLUTIONS ARE BELOW THIS LINE!
-// No Peeking!
+
+
+
+
+
+
+
+
 
 
 
@@ -135,22 +146,26 @@ function multiArgumentSOLUTION() {
   const divide = (a, b) => a / b
   return divide(40, 10)
 }
+// log(multiArgumentSOLUTION())
 
 function noArgumentSOLUTION() {
   const getFive = () => 5
   return getFive()
 }
+// log(noArgumentSOLUTION())
 
 function singleArgumentSOLUTION() {
   const identity = i => i
   return identity(350)
 }
+// log(singleArgumentSOLUTION())
 
 function spreadWithArrowSOLUTION() {
   // refactor to an arrow function
   const asArray = (...args) => args
   return asArray(1, 2, 3, 4)
 }
+// log(spreadWithArrowSOLUTION())
 
 function withStatementsSOLUTION() {
   const tryInvoke = (obj, fn, ...args) => {
@@ -162,12 +177,14 @@ function withStatementsSOLUTION() {
   }
   return tryInvoke(Math, 'pow', 2, 3)
 }
+// log(withStatementsSOLUTION())
 
 function withObjectSOLUTION() {
   // refactor to an arrow function
   const getObject = favoriteCandy => ({favoriteCandy})
   return getObject('twix')
 }
+// log(withObjectSOLUTION())
 
 function withMultiLineExpressionSOLUTION() {
   const getString = name => (
@@ -178,12 +195,13 @@ function withMultiLineExpressionSOLUTION() {
   )
   return getString('Ryan')
 }
-
+// log(withMultiLineExpressionSOLUTION())
 
 function curryAddSOLUTION() {
   const curryAddition = a => b => c => a + b + c
   return curryAddition(9)(3)(5)
 }
+// log(curryAddSOLUTION())
 
 function contextSOLUTION() {
   const population = {
@@ -201,5 +219,6 @@ function contextSOLUTION() {
   }
   return population.display()
 }
+// log(contextSOLUTION())
 
 /* eslint func-names:0, func-style:0 */

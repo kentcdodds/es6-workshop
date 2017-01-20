@@ -1,3 +1,5 @@
+import log from './pretty-log'
+
 // TODO: refactor into class syntax
 function Pixel(x = 0, y = 0) {
   this.x = x
@@ -77,7 +79,7 @@ Voxel.fromObj = function(obj) {
 
 // ----- Quiz Functions ----
 
-console.log(
+log(
   // testDistance(),
   // testMidpoint(),
   // testDistanceVoxel(),
@@ -190,7 +192,7 @@ class VoxelSOLUTION extends PixelSOLUTION {
 }
 
 
-console.log(
+log(
   // testDistanceSOLUTION(),
   // testMidpointSOLUTION(),
   // testDistanceVoxelSOLUTION(),
