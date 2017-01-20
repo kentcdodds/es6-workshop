@@ -30,6 +30,25 @@ function initialzeSet() {
 }
 // console.log(initialzeSet())
 
+
+
+
+
+function setInfo() {
+  const obj = {a: 42}
+  const set = new Set([1, 2, obj, 3, 4])
+  // how do you get the size of the set?
+  // how can you determine whether the set has a value?
+  return {
+    // fill these values in...
+    size: set.length,
+    hasObj: set.indexOf(obj) !== -1,
+    hasFive: set.indexOf(5) !== -1,
+    thirdItem: set[2],
+  }
+}
+// log(setInfo())
+
 function removeDuplicates() {
   // given an array
   // we have to remove duplicate entries
@@ -90,6 +109,20 @@ function initialzeSetSOLUTION() {
   return t
 }
 // console.log(initialzeSet())
+
+
+function setInfoSOLUTION() {
+  const obj = {a: 42}
+  const set = new Set([1, 2, obj, 3, 4])
+  const [,, thirdItem] = set
+  return {
+    size: set.size,
+    hasObj: set.has(obj),
+    hasFive: set.has(5),
+    thirdItem,
+  }
+}
+// log(setInfoSOLUTION())
 
 function removeDuplicatesSOLUTION() {
   // given an array
