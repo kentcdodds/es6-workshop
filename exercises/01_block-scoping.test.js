@@ -64,6 +64,12 @@ test('means that we can start using block statements', () => {
 // 2.
 // 3.
 ////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/ws=ES6+and+Beyond&e=Block+Scoping&em=
+*/
+////////////////////////////////
 
 //////// EXTRA CREDIT ////////
 

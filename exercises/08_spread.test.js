@@ -40,6 +40,12 @@ test(`should be able to merge properties from objects`, () => {
 // 2.
 // 3.
 ////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/ws=ES6+and+Beyond&e=Spread&em=
+*/
+////////////////////////////////
 
 //////// EXTRA CREDIT ////////
 

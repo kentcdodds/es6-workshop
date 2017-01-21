@@ -39,6 +39,12 @@ test(`should enable private members in classes`, () => {
 // 2.
 // 3.
 ////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/ws=ES6+and+Beyond&e=WeakMaps&em=
+*/
+////////////////////////////////
 
 //////// EXTRA CREDIT ////////
 

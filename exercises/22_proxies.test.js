@@ -88,6 +88,12 @@ test.skip('can be used to do some fancy stuff with arrays', () => {
 // 2.
 // 3.
 ////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/ws=ES6+and+Beyond&e=Proxies&em=
+*/
+////////////////////////////////
 
 // If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
 // Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development

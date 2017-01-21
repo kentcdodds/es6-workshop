@@ -30,6 +30,12 @@ test('can import from my node_modules', () => {
 // 2.
 // 3.
 ////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/ws=ES6+and+Beyond&e=Modules&em=
+*/
+////////////////////////////////
 
 //////// EXTRA CREDIT ////////
 
