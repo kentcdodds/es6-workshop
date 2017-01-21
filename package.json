@@ -30,6 +30,7 @@
     "onchange": "^3.2.0",
     "opt-cli": "^1.5.1",
     "pretty-format": "^18.1.0",
+    "replace-in-file": "^2.1.0",
     "split-guide": "^1.2.0"
   },
   "scripts": {
@@ -47,6 +48,7 @@
     "dev": "npm-run-all --parallel generate:watch test:final:watch",
     "generate:watch": "onchange \"templates/**/*.*\" --initial -- npm run generate",
     "generate": "split-guide generate --silent-success",
+    "autofill-email": "node ./scripts/autofill-feedback-email",
     "validate": "npm run lint && npm run test:final",
     "setup": "node ./scripts/verify && node ./scripts/install && npm run validate"
   },

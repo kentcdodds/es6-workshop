@@ -50,9 +50,13 @@ dependencies and validate that you're ready to go. From your terminal, type:
 git clone https://github.com/kentcdodds/es6-workshop.git
 cd es6-workshop
 yarn run setup
+yarn run autofill-email YOUR_EMAIL@DOMAIN.COM
 ```
 
+> Replace `YOUR_EMAIL@DOMAIN.COM` with your email address
+
 If this finishes without issues, great 👏! However, if you have problems, please file an issue on this repo [here](https://github.com/kentcdodds/es6-workshop/issues/new?title=Issues%20Setting%20Up&body=Here%27s%20my%20node/yarn%20version%20and%20the%20output%20when%20I%20run%20the%20commands:).
+
 
 ### Note on yarn
 
