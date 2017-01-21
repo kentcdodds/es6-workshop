@@ -63,6 +63,12 @@ test(`can be iterated over`, () => {
 // 2.
 // 3.
 ////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/ws=ES6+and+Beyond&e=Generators&em=
+*/
+////////////////////////////////
 // WORKSHOP_END
 
 //////// EXTRA CREDIT ////////
