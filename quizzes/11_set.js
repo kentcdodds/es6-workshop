@@ -1,6 +1,3 @@
-import log from './pretty-log'
-import format from 'pretty-format'
-
 function basicSet() {
   // What do you think this will return?
   const set = new Set()

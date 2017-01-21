@@ -1,5 +1,3 @@
-import log from './pretty-log'
-
 function basicMap() {
   const map = new Map()
   // TODO: add "a" as key, 3 as value
@@ -40,9 +38,28 @@ function mapInfo() {
     mapSize: Object.keys(map).length,
     hasTrue: map.hasOwnProperty(true),
     has32: map.hasOwnProperty(32),
+    keys: Object.keys(map),
+    values: Object.keys(map).map(key => map[key]),
+    entries: Object.keys(map).map(key => [key, map[key]]),
   }
 }
 // console.log(mapInfo())
+
+function removingItems() {
+  const objKey = {awesome: true}
+  const map = new Map([
+    [objKey, 42],
+    [{}, 'hey'],
+    [45, true],
+  ])
+  const firstSize = map.size
+  map.delete(objKey)
+  const afterDeleteSize = map.size
+  map.clear()
+  const afterClearSize = map.size
+  return {firstSize, afterDeleteSize, afterClearSize}
+}
+// console.log(removingItems())
 
 function iterateMaps() {
   const map = new Map([
@@ -149,7 +166,10 @@ function mapInfoSOLUTION() {
     mapSize: map.size,
     hasTrue: map.has(true),
     has32: map.has(32),
+    keys: map.keys(),
+    values: map.values(),
+    entries: map.entries(),
   }
 }
-// console.log(mapInfoSOLUTION())
+console.log(mapInfoSOLUTION())
 
