@@ -97,6 +97,15 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "alayek",
+      "name": "Arijit Layek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5607371?v=3",
+      "profile": "https://github.com/alayek",
+      "contributions": [
+        "code"
+      ]
     }
   ]
 }
