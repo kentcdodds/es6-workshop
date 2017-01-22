@@ -116,7 +116,7 @@ test(`should be easy to copy properties from one object to another`, () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=New+APIS&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=New+APIS&em=
 */
 ////////////////////////////////
 // WORKSHOP_END

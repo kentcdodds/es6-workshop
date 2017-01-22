@@ -49,7 +49,7 @@ test('can use expressions as property names', () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Object+Literals&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Object+Literals&em=
 */
 ////////////////////////////////
 

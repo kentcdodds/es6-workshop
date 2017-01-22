@@ -48,7 +48,7 @@ test(`can be iterated over`, () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Generators&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Generators&em=
 */
 ////////////////////////////////
 

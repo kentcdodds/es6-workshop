@@ -160,7 +160,7 @@ test('Trailing commas in function parameter lists and calls help us with git', (
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=ES2017&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=ES2017&em=
 */
 ////////////////////////////////
 // WORKSHOP_END

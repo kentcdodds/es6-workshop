@@ -112,7 +112,7 @@ test('it can default all arguments, optionally', () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Parameters&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Parameters&em=
 */
 ////////////////////////////////
 

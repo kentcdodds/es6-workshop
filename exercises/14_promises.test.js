@@ -77,7 +77,7 @@ function pickApple(ripeness) {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Promises&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Promises&em=
 */
 ////////////////////////////////
 

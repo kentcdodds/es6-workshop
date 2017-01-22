@@ -44,7 +44,7 @@ test('can import from my node_modules', () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Modules&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Modules&em=
 */
 ////////////////////////////////
 // WORKSHOP_END

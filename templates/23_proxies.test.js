@@ -152,7 +152,7 @@ test.skip('can be used to do some fancy stuff with arrays', () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Proxies&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Proxies&em=
 */
 ////////////////////////////////
 // WORKSHOP_END

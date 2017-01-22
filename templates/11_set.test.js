@@ -47,7 +47,7 @@ test('doesn`t allow duplicates', () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Sets&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Sets&em=
 */
 ////////////////////////////////
 // WORKSHOP_END

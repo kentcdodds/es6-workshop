@@ -45,7 +45,7 @@ test('public class fields help us avoid .bind-ing everything', () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Public+Class+Fields&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Public+Class+Fields&em=
 */
 ////////////////////////////////
 

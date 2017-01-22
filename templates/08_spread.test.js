@@ -62,7 +62,7 @@ test(`should be able to merge properties from objects`, () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Spread&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Spread&em=
 */
 ////////////////////////////////
 // WORKSHOP_END

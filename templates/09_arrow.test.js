@@ -114,7 +114,7 @@ test('can make array filter chains more managable', () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Arrow+Functions&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Arrow+Functions&em=
 */
 ////////////////////////////////
 // WORKSHOP_END

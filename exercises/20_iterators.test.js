@@ -90,7 +90,7 @@ test('can create a custom iterator with a generator', () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Iterators&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Iterators&em=
 */
 ////////////////////////////////
 

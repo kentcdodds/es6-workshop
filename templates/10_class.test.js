@@ -157,7 +157,7 @@ test('can use property setters and getters', () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Classes&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Classes&em=
 */
 ////////////////////////////////
 // WORKSHOP_END

@@ -57,7 +57,7 @@ test.skip(`should call the tagging function`, () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Template+Literals&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Template+Literals&em=
 */
 ////////////////////////////////
 

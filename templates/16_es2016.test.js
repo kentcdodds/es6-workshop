@@ -40,7 +40,7 @@ test('array.includes can be used to determine whether an item exists in an array
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=ES2016&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=ES2016&em=
 */
 ////////////////////////////////
 // WORKSHOP_END

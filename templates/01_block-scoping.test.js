@@ -104,7 +104,7 @@ test('means that we can start using block statements', () => {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Block+Scoping&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Block+Scoping&em=
 */
 ////////////////////////////////
 // WORKSHOP_END

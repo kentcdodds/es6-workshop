@@ -38,7 +38,7 @@ function doAsync(rejectPromise = false) {
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Async/Await&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Async/Await&em=
 */
 ////////////////////////////////
 

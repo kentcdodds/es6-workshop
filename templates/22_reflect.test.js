@@ -80,7 +80,7 @@ test(`Reflect.ownKeys returns the object's own (not inherited) keys (including s
 //
 /////////// Feedback ///////////
 /*
-http://ws.kcd.im/ws=ES6+and+Beyond&e=Reflect&em=
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Reflect&em=
 */
 ////////////////////////////////
 // WORKSHOP_END
