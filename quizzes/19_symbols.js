@@ -52,6 +52,12 @@ function getSymbolsFromObject() {
 
 
 
+
+
+
+
+
+
 function createSymbolSOLUTION() {
   const mySymbol = Symbol()
   return mySymbol
