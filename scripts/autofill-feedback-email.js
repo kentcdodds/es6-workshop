@@ -1,5 +1,6 @@
 const path = require('path')
 const replace = require('replace-in-file')
+
 const [, , email] = process.argv
 
 if (!email) {
@@ -8,13 +9,7 @@ if (!email) {
 
 const glob = path.join(__dirname, '..', 'exercises/*.js')
 
-const options = {
-  files: [
-    glob,
-  ],
-  replace: /&em=/,
-  with: `&em=${email}`,
-}
+const options = {files: [glob], replace: /&em=/, with: `&em=${email}`}
 
 replace(options).then(
   changedFiles => {
@@ -23,5 +18,5 @@ replace(options).then(
   error => {
     console.error('Failed to update files')
     console.error(error.stack)
-  }
+  },
 )

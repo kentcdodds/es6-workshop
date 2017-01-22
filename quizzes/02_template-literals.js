@@ -71,7 +71,7 @@ function escapingSOLUTION() {
   // refactor to a single template literal with multiple lines
   return `This is \`code\`\nand a new line`
 }
-log(escapingSOLUTION())
+// log(escapingSOLUTION())
 
 
 
