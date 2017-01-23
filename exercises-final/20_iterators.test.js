@@ -90,5 +90,19 @@ test('can create a custom iterator with a generator', () => {
 
 //////// EXTRA CREDIT ////////
 
+test('add custom iterator to built-in types', () => {
+  // got this trick from getify's "ES6, the best parts"
+  // on frontend masters. Pretty neat! (though, I wouldn't
+  // recommend actually doing it...)
+  Number.prototype[Symbol.iterator] = function* numberIterator() {
+    for (let i = 0; i < this; i++) {
+      yield i
+    }
+  }
+  const num = 5
+  const result = [...num]
+  expect(result).toEqual([0, 1, 2, 3, 4])
+})
+
 // If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
 // Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development
