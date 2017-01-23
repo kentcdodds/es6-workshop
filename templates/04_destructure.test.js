@@ -45,7 +45,7 @@ test('can destructure nested variables', () => {
   const {coords: {lat, long}} = getAddress()
   // FINAL_END
   // WORKSHOP_START
-  // Using destructuring, call `getAddress()` and create an 'address' variable.
+  // Using destructuring, call `getAddress()` and create `lat` and `long` variables.
   // WORKSHOP_END
   expect(lat).toBe(40.776608)
   expect(long).toBe(-111.920485)
