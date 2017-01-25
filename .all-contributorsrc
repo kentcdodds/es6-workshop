@@ -115,6 +115,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "bobbyw1994",
+      "name": "Bobby White",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15032926?v=3",
+      "profile": "https://github.com/bobbyw1994",
+      "contributions": [
+        "test"
+      ]
     }
   ]
 }

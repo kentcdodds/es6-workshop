@@ -9,7 +9,7 @@ test('can import Mathy', () => {
   expect(Mathy.diag).toBeDefined()
 })
 
-test('can destructure the import, to only retain pieces of the import', () => {
+test('can specify what to import, to only retain pieces of the import', () => {
   expect(mySqrt).toBeDefined()
   expect(mySquare).toBeDefined()
   expect(mySqrt).toBe(Mathy.sqrt)
