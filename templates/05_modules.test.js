@@ -14,7 +14,7 @@ test('can import Mathy', () => {
   expect(Mathy.diag).toBeDefined()
 })
 
-test('can destructure the import, to only retain pieces of the import', () => {
+test('can specify what to import, to only retain pieces of the import', () => {
   // WORKSHOP_START
   // Import `Mathy` again, but pull out only the `sqrt` as mySqrt, and `square` as mySquare
   // WORKSHOP_END
