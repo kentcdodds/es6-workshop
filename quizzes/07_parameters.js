@@ -60,27 +60,34 @@ function restParams() {
 }
 // log(restParams())
 
-// TODO: Make sure the function takes an object as input
-// This object, would ideally contain radius (r)
-// the x-coordinate (x), and y-coordinate(y)
-// Not all of these fields would always be provided
-// When not provided, r defaults to 1, while x and y defaults to 0
-function computeCircleArea(obj = {}) {
-  /* Uncomment this to test what you are actually passing to the function*/
-  // console.log(arguments);
+function destructureWithDefaultParams() {
+  return [
+    computeCircleArea(),
+    computeCircleArea({r: 2}),
+    computeCircleArea({r: 3, x: 8, y: 6}),
+  ]
+  // TODO: Make sure the function takes an object as input
+  // This object, would ideally contain radius (r)
+  // the x-coordinate (x), and y-coordinate(y)
+  // Not all of these fields would always be provided
+  // When not provided, r defaults to 1, while x and y defaults to 0
+  function computeCircleArea(obj = {}) {
+    /* Uncomment this to test what you are actually passing to the function*/
+    // console.log(arguments);
 
-  // TODO: Remove all references to obj,
-  // using param destructuring
-  const radius = obj.r || 1.0
-  const xCoordinate = obj.x || 0.0
-  const yCoordinate = obj.y || 0.0
+    // TODO: Remove all references to obj,
+    // using param destructuring
+    const radius = obj.r || 1.0
+    const xCoordinate = obj.x || 0.0
+    const yCoordinate = obj.y || 0.0
 
-  const area = Math.PI * radius * radius
+    const area = Math.PI * radius * radius
 
-  return `The circle centered at (${xCoordinate}, ${yCoordinate}), has area = ${area.toFixed(2)} square unit`
+    return `Circle at (${xCoordinate}, ${yCoordinate}), with radius ${radius}, has area = ${area.toFixed(2)}`
+  }
 }
 
-// log(computeCircleArea())
+// log(destructureWithDefaultParams())
 
 
 
@@ -154,15 +161,20 @@ function restParamsSOLUTION() {
 }
 // log(restParamsSOLUTION())
 
-function computeCircleAreaSOLUTION({r = 1.0, x = 0.0, y = 0.0} = {}) {
-  /* Uncomment this to test what you are actually passing to the function*/
-  // console.log(arguments);
-
-  const area = Math.PI * r * r
-  return `The circle centered at (${x}, ${y}), has area = ${area.toFixed(2)} square unit`
+function destructureWithDefaultParamsSOLUTION() {
+  return [
+    computeCircleArea(),
+    computeCircleArea({r: 2}),
+    computeCircleArea({r: 3, x: 8, y: 6}),
+  ]
+  function computeCircleArea({r = 1.0, x = 0.0, y = 0.0} = {}) {
+    const area = Math.PI * r * r
+    return `Circle at (${x}, ${y}), with radius ${r}, has area = ${area.toFixed(2)}`
+  }
 }
 
-// log(computeCircleAreaSOLUTION())
+
+// log(destructureWithDefaultParamsSOLUTION())
 
 
 /* eslint prefer-rest-params:0 */
