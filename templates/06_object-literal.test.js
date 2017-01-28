@@ -64,6 +64,12 @@ test('can use expressions as property names', () => {
 // 2.
 // 3.
 ////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Object+Literals&em=
+*/
+////////////////////////////////
 // WORKSHOP_END
 
 //////// EXTRA CREDIT ////////

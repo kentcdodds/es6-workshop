@@ -26,6 +26,12 @@ test('array.includes can be used to determine whether an item exists in an array
 // 2.
 // 3.
 ////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=ES2016&em=
+*/
+////////////////////////////////
 
 //////// EXTRA CREDIT ////////
 

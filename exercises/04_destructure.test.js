@@ -26,7 +26,7 @@ test('can alias destructured variables', () => {
 })
 
 test('can destructure nested variables', () => {
-  // Using destructuring, call `getAddress()` and create an 'address' variable.
+  // Using destructuring, call `getAddress()` and create `lat` and `long` variables.
   expect(lat).toBe(40.776608)
   expect(long).toBe(-111.920485)
   expect(() => noop(coords)).toThrow()
@@ -82,6 +82,12 @@ function getNestedNumbers() {
 // 1.
 // 2.
 // 3.
+////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Destructuring&em=
+*/
 ////////////////////////////////
 
 //////// EXTRA CREDIT ////////

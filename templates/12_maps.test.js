@@ -56,6 +56,12 @@ test(`doesn't coerce keys`, () => {
 // 2.
 // 3.
 ////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Maps&em=
+*/
+////////////////////////////////
 // WORKSHOP_END
 
 //////// EXTRA CREDIT ////////

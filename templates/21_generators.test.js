@@ -1,12 +1,24 @@
 test(`should yield objects with value and done properties`, () => {
   const odds = giveMeOneOddNumber()
 
+  // FINAL_START
+  expect(typeof odds).toBe('object')
+  expect(odds.next).toBeDefined()
+  expect(odds.next().value).toBe(1)
+  expect(odds.next().value).toBe(3)
+  expect(odds.next().done).toBe(false)
+  odds.next()
+  expect(odds.next().value).toBe(9)
+  expect(odds.next().done).toBe(true)
+  // FINAL_END
+  // WORKSHOP_START
   expect(odds.next().value).toBe(/* ENTER YOUR GUESS */)
   expect(odds.next().value).toBe(/* ENTER YOUR GUESS */)
   expect(odds.next().done).toBe(/* ENTER YOUR GUESS */)
   odds.next()
   expect(odds.next().value).toBe(/* ENTER YOUR GUESS */)
   expect(odds.next().done).toBe(/* ENTER YOUR GUESS */)
+  // WORKSHOP_END
 
   function* giveMeOneOddNumber() {
     yield 1
@@ -33,9 +45,15 @@ test(`can be iterated over`, () => {
     sum = sum + even
   }
 
+  // FINAL_START
+  expect(sum).toBe(20)
+  // FINAL_END
+  // WORKSHOP_START
   expect(sum).toBe(/* ENTER YOUR GUESS */)
+  // WORKSHOP_END
 })
 
+// WORKSHOP_START
 //////// Elaboration /////////
 // Please write, in your own words
 // a few of the core concepts from
@@ -45,6 +63,13 @@ test(`can be iterated over`, () => {
 // 2.
 // 3.
 ////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Generators&em=
+*/
+////////////////////////////////
+// WORKSHOP_END
 
 //////// EXTRA CREDIT ////////
 

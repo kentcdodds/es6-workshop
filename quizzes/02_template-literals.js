@@ -1,10 +1,4 @@
-/* eslint prefer-template:0, prefer-rest-params:0 */
-console.log(
-  // interpolation(),
-  // multiline(),
-  // escaping(),
-  // tagging(),
-)
+import log from './pretty-log'
 
 function interpolation() {
   // refactor this to a single template literal using interpolation
@@ -14,6 +8,7 @@ function interpolation() {
   const noun = 'World'
   return greeting.toUpperCase() + ', ' + noun + '!'
 }
+// log(interpolation())
 
 function multiline() {
   // refactor to a single template literal with multiple lines
@@ -21,11 +16,13 @@ function multiline() {
 '    this is on a new line\n' +
 '  ')
 }
+// log(multiline())
 
 function escaping() {
   // refactor to a single template literal with multiple lines
   return 'This is `code`\nand a new line'
 }
+// log(escaping())
 
 function tagging() {
   const greeting = 'Hey'
@@ -38,6 +35,7 @@ function tagging() {
     return arguments
   }
 }
+// log(tagging())
 
 
 
@@ -59,6 +57,7 @@ function interpolationSOLUTION() {
   const noun = 'World'
   return `${greeting.toUpperCase()}, ${noun}!`
 }
+// log(interpolationSOLUTION())
 
 function multilineSOLUTION() {
   // refactor to a single template literal with multiple lines
@@ -66,8 +65,15 @@ function multilineSOLUTION() {
     this is on a new line
   `)
 }
+// log(multilineSOLUTION())
 
 function escapingSOLUTION() {
   // refactor to a single template literal with multiple lines
   return `This is \`code\`\nand a new line`
 }
+// log(escapingSOLUTION())
+
+
+
+
+/* eslint prefer-template:0, prefer-rest-params:0 */

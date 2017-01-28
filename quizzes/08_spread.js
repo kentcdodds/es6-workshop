@@ -1,10 +1,4 @@
-console.log(
-  // spreadFunctionCall(),
-  // concatArrays(),
-  // mergeObjects(),
-  // spreadString(),
-  // restString(),
-)
+import log from './pretty-log'
 
 function spreadFunctionCall() {
   // TODO: return the maximum value in an array of integers
@@ -12,6 +6,7 @@ function spreadFunctionCall() {
   const arr = [5, 6, 8, 4, 9]
   return Math.max.apply(null, arr)
 }
+// log(spreadFunctionCall())
 
 function concatArrays() {
   // TODO: flatten nested arrays of arbitrary levels of nesting
@@ -19,6 +14,8 @@ function concatArrays() {
   // output shold be [8, 9, 6, 5, 7, 45, 34, 2]
   // use spread operator in place of Array.prototype.concat()
   const arr = [8, 9, [6, [5, [7], [45, 34, [[[2]]], [[[[[[[[7]]]]], 90]]]]]]]
+  return flatter(arr)
+
   function flatter(arg) {
     return arg.reduce((acc, item) => {
       if (Array.isArray(item)) {
@@ -27,26 +24,40 @@ function concatArrays() {
       return acc.concat([item])
     }, [])
   }
-  return flatter(arr)
 }
+// log(concatArrays())
 
 function mergeObjects() {
-  // TODO: obj is the original object
-  // updateSpec is an object with new values for various fields in obj
-  // it might even contain values for fields that don't exist in obj
-  // DO NOT alter obj
-  // create a new object with updated values and return it
-  const obj = {a: 1, b: 3, c: 4}
-  const updateSpec = {b: 5, c: 3, d: 7}
-  return Object.assign({}, obj, updateSpec)
+  // refactor to object spread
+  const obj1 = {
+    a: 'a from obj1',
+    b: 'b from obj1',
+    c: 'c from obj1',
+    d: {
+      e: 'e from obj1',
+      f: 'f from obj1',
+    },
+  }
+  const obj2 = {
+    b: 'b from obj2',
+    c: 'c from obj2',
+    d: {
+      g: 'g from obj2',
+      h: 'g from obj2',
+    },
+  }
+  return Object.assign({}, obj1, obj2)
 }
+// log(mergeObjects())
 
 function spreadString() {
   return join('--', 'PayPal')
+
   function join(delimiter, string) {
     return [...string].join(delimiter)
   }
 }
+// log(spreadString())
 
 function restString() {
   // what does this return?
@@ -54,6 +65,7 @@ function restString() {
   const [h, e, l, l2, o, space, ...splitGreeting] = greeting
   return splitGreeting
 }
+// log(restString())
 
 
 
@@ -84,22 +96,41 @@ function spreadFunctionCallSOLUTION() {
   const arr = [5, 6, 8, 4, 9]
   return Math.max(...arr)
 }
+// log(spreadFunctionCallSOLUTION())
 
 function concatArraysSOLUTION() {
   const arr = [8, 9, [6, [5, [7], [45, 34, [[[2]]], [[[[[[[[7]]]]], 90]]]]]]]
+  return flatter(arr)
+
   function flatter(arg) {
     return arg.reduce((acc, item) => {
       return Array.isArray(item) ? [...acc, ...flatter(item)] : [...acc, item]
     }, [])
   }
-  return flatter(arr)
 }
+// log(concatArraysSOLUTION())
 
 function mergeObjectsSOLUTION() {
-  const obj = {a: 1, b: 3, c: 4}
-  const updateSpec = {b: 5, c: 3, d: 7}
+  const obj1 = {
+    a: 'a from obj1',
+    b: 'b from obj1',
+    c: 'c from obj1',
+    d: {
+      e: 'e from obj1',
+      f: 'f from obj1',
+    },
+  }
+  const obj2 = {
+    b: 'b from obj2',
+    c: 'c from obj2',
+    d: {
+      g: 'g from obj2',
+      h: 'g from obj2',
+    },
+  }
   return {
-    ...obj,
-    ...updateSpec,
+    ...obj1,
+    ...obj2,
   }
 }
+// log(mergeObjectsSOLUTION())

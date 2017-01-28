@@ -97,6 +97,33 @@
         "code",
         "test"
       ]
+    },
+    {
+      "login": "alayek",
+      "name": "Arijit Layek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5607371?v=3",
+      "profile": "https://github.com/alayek",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "dhruvmishra",
+      "name": "Dhruv Mishra",
+      "avatar_url": "https://avatars.githubusercontent.com/u/3013322?v=3",
+      "profile": "https://github.com/dhruvmishra",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "bobbyw1994",
+      "name": "Bobby White",
+      "avatar_url": "https://avatars.githubusercontent.com/u/15032926?v=3",
+      "profile": "https://github.com/bobbyw1994",
+      "contributions": [
+        "test"
+      ]
     }
   ]
 }

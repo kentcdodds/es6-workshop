@@ -118,6 +118,12 @@ function pickApple(ripeness) {
 // 2.
 // 3.
 ////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Promises&em=
+*/
+////////////////////////////////
 // WORKSHOP_END
 
 //////// EXTRA CREDIT ////////

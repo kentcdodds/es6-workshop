@@ -72,6 +72,12 @@ test(`should help determine if a singleton has already been declared`, () => {
 // 2.
 // 3.
 ////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Symbols&em=
+*/
+////////////////////////////////
 
 //////// EXTRA CREDIT ////////
 

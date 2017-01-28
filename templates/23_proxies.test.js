@@ -20,7 +20,13 @@ function getCharacter() {
 
 test('can wrap an existing object', () => {
   const character = getCharacter()
+  // FINAL_START
+  const handler = {}
+  const proxy = new Proxy(character, handler)
+  // FINAL_END
+  // WORKSHOP_START
   const proxy = character
+  // WORKSHOP_END
   expect(proxy).not.toBe(character) // referential equality
   expect(proxy).toEqual(character) // deep equality
 })
@@ -28,7 +34,30 @@ test('can wrap an existing object', () => {
 test('handler can intercept gets, sets, and deletes', () => {
   const character = getCharacter()
 
+  // FINAL_START
+  const handler = {
+    get(target, name) {
+      return name.split('.').reduce(Reflect.get, target)
+    },
+    set(target, name, value) {
+      const splitNames = name.split('.')
+      const lastIndex = splitNames.length - 1
+      const finalTarget = splitNames
+        .filter((item, index) => index < lastIndex)
+        .reduce(Reflect.get, target)
+      return Reflect.set(finalTarget, splitNames[lastIndex], value)
+    },
+    deleteProperty(target, name) {
+      if (name.startsWith('_')) {
+        return true // must return `true` to indicate that things are OK
+      }
+      return Reflect.deleteProperty(target, name)
+    },
+  }
+  // FINAL_END
+  // WORKSHOP_START
   const handler = {}
+  // WORKSHOP_END
   const proxy = new Proxy(character, handler)
 
   // interact with the proxy
@@ -51,7 +80,23 @@ test('handler can intercept gets, sets, and deletes', () => {
 test.skip('can intercept function calls', () => {
   const character = getCharacter()
 
+  // FINAL_START
+  const handler = {
+    apply(target, thisArg, argumentsList) {
+      const result = Reflect.apply(target, thisArg, argumentsList)
+      if (typeof result === 'string') {
+        return result.replace(
+          new RegExp(`(${thisArg._id})|(${thisArg.password})`, 'g'),
+          'HIDDEN',
+        )
+      }
+      return result
+    },
+  }
+  // FINAL_END
+  // WORKSHOP_START
   const handler = {}
+  // WORKSHOP_END
   // notice that `apply` only works for proxies on functions!
   character.greet = new Proxy(character.greet, handler)
   character.getTeachers = new Proxy(character.getTeachers, handler)
@@ -72,13 +117,29 @@ test.skip('can be used to do some fancy stuff with arrays', () => {
     'Pigwidgeon',
   ]
 
+  // FINAL_START
+  const handler = {
+    get(target, name) {
+      console.log({target, name})
+      if (name in target) {
+        return Reflect.get(target, name)
+      } else {
+        const index = Number(name)
+        return Reflect.get(target, target.length + index)
+      }
+    }
+  }
+  // FINAL_END
+  // WORKSHOP_START
   const handler = {}
+  // WORKSHOP_END
   const proxy = new Proxy(characters, handler)
   expect(proxy[0]).toBe('Harry Potter')
   expect(proxy[-1]).toBe('Pigwidgeon')
   expect(proxy[-4]).toBe('Nevel Longbottom')
 })
 
+// WORKSHOP_START
 //////// Elaboration /////////
 // Please write, in your own words
 // a few of the core concepts from
@@ -88,6 +149,13 @@ test.skip('can be used to do some fancy stuff with arrays', () => {
 // 2.
 // 3.
 ////////////////////////////////
+//
+/////////// Feedback ///////////
+/*
+http://ws.kcd.im/?ws=ES6+and+Beyond&e=Proxies&em=
+*/
+////////////////////////////////
+// WORKSHOP_END
 
 // If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
 // Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development
