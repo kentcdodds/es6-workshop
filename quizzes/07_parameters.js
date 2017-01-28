@@ -3,6 +3,7 @@ console.log(
   // randGen(0),
   // randGen(45),
   // defaultParamsAsExpressions(),
+  // computeCircleArea(),
   // weatherOnDemand(getCities(), 'Bali', 'London'),
 )
 
@@ -34,13 +35,35 @@ function defaultParamsAsExpressions() {
   }
 }
 
+// TODO: Make sure the function takes an object as input
+// This object, would ideally contain radius (r)
+// the x-coordinate (x), and y-coordinate(y)
+// Not all of these fields would always be provided
+// When not provided, r defaults to 1, while x and y defaults to 0
+function computeCircleArea(obj = {}) {
+  /* Uncomment this to test what you are actually passing to the function*/
+  // console.log(arguments);
+
+  // TODO: Remove all references to obj,
+  // using param destructuring
+  const radius = obj.r || 1.0
+  const xCoordinate = obj.x || 0.0
+  const yCoordinate = obj.y || 0.0
+
+  const area = Math.PI * radius * radius
+
+  return `
+  The circle centered at (${xCoordinate}, ${yCoordinate}), has area = ${area.toFixed(2)} square unit
+  `
+}
+
 function weatherOnDemand(args) {
   // Use default parameters, argument destructuring
   // and other Array methods, to refactor this
   const allArgs = Array.prototype.slice.call(arguments)
   const weatherArray = allArgs[0]
   const cities = allArgs.slice(1)
-  
+
   return weatherArray.filter(cityData => {
     return cities.indexOf(cityData.city) !== -1
   })
@@ -99,6 +122,16 @@ function defaultParamsAsExpressionsSOLUTION() {
   function requiredParam(argName) {
     throw new Error(`${argName} is required`)
   }
+}
+
+function computeCircleAreaSOLUTION({r = 1.0, x = 0.0, y = 0.0} = {}) {
+  /* Uncomment this to test what you are actually passing to the function*/
+  // console.log(arguments);
+
+  const area = Math.PI * r * r
+  return `
+  The circle centered at (${x}, ${y}), has area = ${area.toFixed(2)} square unit
+  `
 }
 
 function weatherOnDemandSOLUTION(weatherArray, ...cities) {
