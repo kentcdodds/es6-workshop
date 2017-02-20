@@ -1,14 +1,35 @@
 const noop = () => {}
+
+const getAddress = function() {
+  return {
+    city: 'Salt Lake City',
+    state: 'UT',
+    zip: 84115,
+    coords: {
+      lat: 40.776608,
+      long: -111.920485,
+    },
+  }
+}
+
+const getNumbers = function() {
+  return [1, 2, 3, 4, 5, 6]
+}
+
+const getNestedNumbers = function() {
+  return [1, 2, [3, 4, [5, 6]]]
+}
+
 test('can be used to pull apart objects', () => {
   // FINAL_START
   const {city, state, zip} = getAddress()
   // FINAL_END
   // WORKSHOP_START
   // Using destructuring, call `getAddress()` and create a 'city', 'state' and 'zip' variable.
-  // var address = getAddress();
-  // var city = address.city;
-  // var state = address.state;
-  // var zip = address.zip;
+  // const address = getAddress();
+  // const city = address.city;
+  // const state = address.state;
+  // const zip = address.zip;
   // WORKSHOP_END
   expect(city).toBe('Salt Lake City')
   expect(state).toBe('UT')
@@ -68,7 +89,7 @@ test('can skip indexes in arrays', () => {
   const [one, , three] = getNumbers()
   // FINAL_END
   // WORKSHOP_START
-  // Call getNumbers and pull the first value out as `one` and the second as `two`
+  // Call getNumbers and pull the first value out as `one` and the third as `three`
   // WORKSHOP_END
   expect(one).toBe(1)
   expect(three).toBe(3)
@@ -86,26 +107,6 @@ test('can reach nested arrays', () => {
   expect(three).toBe(3)
   expect(six).toBe(6)
 })
-
-function getAddress() {
-  return {
-    city: 'Salt Lake City',
-    state: 'UT',
-    zip: 84115,
-    coords: {
-      lat: 40.776608,
-      long: -111.920485,
-    },
-  }
-}
-
-function getNumbers() {
-  return [1, 2, 3, 4, 5, 6]
-}
-
-function getNestedNumbers() {
-  return [1, 2, [3, 4, [5, 6]]]
-}
 
 // MORE AT http://www.2ality.com/2015/01/es6-destructuring.html
 
@@ -131,4 +132,3 @@ http://ws.kcd.im/?ws=ES6+and+Beyond&e=Destructuring&em=
 
 // If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
 // Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development
-
