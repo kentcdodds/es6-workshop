@@ -77,6 +77,12 @@ To run the tests, in your terminal run:
 yarn test
 ```
 
+To run a specific test file, in your terminal run:
+
+```
+yarn test -- exercises/01_block-scoping.test.js
+```
+
 If you want the tests to continue running as you make changes, run:
 
 ```
