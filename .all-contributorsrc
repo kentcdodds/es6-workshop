@@ -124,6 +124,16 @@
       "contributions": [
         "test"
       ]
+    },
+    {
+      "login": "benmvp",
+      "name": "Ben Ilegbodu",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5714478?v=3",
+      "profile": "http://www.benmvp.com",
+      "contributions": [
+        "doc",
+        "test"
+      ]
     }
   ]
 }
