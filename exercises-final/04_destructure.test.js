@@ -1,4 +1,25 @@
 const noop = () => {}
+
+const getAddress = function() {
+  return {
+    city: 'Salt Lake City',
+    state: 'UT',
+    zip: 84115,
+    coords: {
+      lat: 40.776608,
+      long: -111.920485,
+    },
+  }
+}
+
+const getNumbers = function() {
+  return [1, 2, 3, 4, 5, 6]
+}
+
+const getNestedNumbers = function() {
+  return [1, 2, [3, 4, [5, 6]]]
+}
+
 test('can be used to pull apart objects', () => {
   const {city, state, zip} = getAddress()
   expect(city).toBe('Salt Lake City')
@@ -48,26 +69,6 @@ test('can reach nested arrays', () => {
   expect(six).toBe(6)
 })
 
-function getAddress() {
-  return {
-    city: 'Salt Lake City',
-    state: 'UT',
-    zip: 84115,
-    coords: {
-      lat: 40.776608,
-      long: -111.920485,
-    },
-  }
-}
-
-function getNumbers() {
-  return [1, 2, 3, 4, 5, 6]
-}
-
-function getNestedNumbers() {
-  return [1, 2, [3, 4, [5, 6]]]
-}
-
 // MORE AT http://www.2ality.com/2015/01/es6-destructuring.html
 
 
@@ -75,4 +76,3 @@ function getNestedNumbers() {
 
 // If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
 // Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development
-
