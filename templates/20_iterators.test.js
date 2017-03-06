@@ -134,27 +134,26 @@ test('can create a custom iterator with a generator', () => {
   }
 })
 
+//////// Elaboration & Feedback /////////
 // WORKSHOP_START
-//////// Elaboration /////////
-// Please write, in your own words
-// a few of the core concepts from
-// the feature(s) in this exercise
-//
-// 1.
-// 2.
-// 3.
-////////////////////////////////
-//
-/////////// Feedback ///////////
 /*
 http://ws.kcd.im/?ws=ES6+and+Beyond&e=Iterators&em=
 */
-////////////////////////////////
 // WORKSHOP_END
+test('I submitted my elaboration and feedback', () => {
+  // WORKSHOP_START
+  const submitted = false // change this when you've submitted!
+  // WORKSHOP_END
+  // FINAL_START
+  const submitted = true
+  // FINAL_END
+  expect(true).toBe(submitted)
+})
+////////////////////////////////
 
 //////// EXTRA CREDIT ////////
 
-test('add custom iterator to built-in types', () => {
+test.skip('add custom iterator to built-in types', () => {
   // FINAL_START
   // got this trick from getify's "ES6, the best parts"
   // on frontend masters. Pretty neat! (though, I wouldn't
@@ -173,5 +172,6 @@ test('add custom iterator to built-in types', () => {
   expect(result).toEqual([0, 1, 2, 3, 4])
 })
 
-// If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
-// Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development
+// If you get this far, try adding a few more tests,
+// then file a pull request to add them to the extra credit!
+// Learn more here: http://kcd.im/es6-workshop-contributing

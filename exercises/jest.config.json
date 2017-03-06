@@ -1,6 +1,6 @@
 {
   "testEnvironment": "node",
-  "testPathDirs": [
+  "roots": [
     "exercises"
   ],
   "setupTestFrameworkScriptFile": "./common/helpers/expect-to-be-valid-syntax.js"

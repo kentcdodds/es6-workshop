@@ -6,5 +6,6 @@
   ],
   "rules": {
     "no-console": "off",
+    "jest/no-disabled-tests": "off",
   }
 }

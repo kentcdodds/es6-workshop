@@ -106,12 +106,20 @@ test('Trailing commas in function parameter lists and calls help us with git', (
   `).toBeValidSyntax()
 })
 
+//////// Elaboration & Feedback /////////
+test('I submitted my elaboration and feedback', () => {
+  const submitted = true
+  expect(true).toBe(submitted)
+})
+////////////////////////////////
 
 //////// EXTRA CREDIT ////////
 
-// If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
-// Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development
+// If you get this far, try adding a few more tests,
+// then file a pull request to add them to the extra credit!
+// Learn more here: http://kcd.im/es6-workshop-contributing
 
-// there's also this fancy Object.getOwnPropertyDescriptors thing, but you'll likely rarely
-// use that directly... https://github.com/tc39/proposal-object-getownpropertydescriptors
+// there's also this fancy Object.getOwnPropertyDescriptors thing,
+// but you'll likely rarely use that directly...
+// https://github.com/tc39/proposal-object-getownpropertydescriptors
 // Maybe you could make a PR to add a test for this?!

@@ -1,30 +1,30 @@
 test('can be triggered when the incoming argument is undefined', () => {
 
-  function test(name = 'Mercury') {
+  function getName(name = 'Mercury') {
     return name
   }
 
-  expect(test('Aaron')).toBe('Aaron')
-  expect(test()).toBe('Mercury')
-  expect(test(undefined)).toBe('Mercury')
-  expect(test(null)).toBe(null)
+  expect(getName('Aaron')).toBe('Aaron')
+  expect(getName()).toBe('Mercury')
+  expect(getName(undefined)).toBe('Mercury')
+  expect(getName(null)).toBe(null)
 })
 
 test(`aren't included in arguments`, () => {
 
-  function test(name = 'Mercury') {
+  function getName(name = 'Mercury') {
     return arguments.length
   }
 
-  expect(test('Aaron')).toBe(1)
-  expect(test(null)).toBe(1)
-  expect(test()).toBe(0)
+  expect(getName('Aaron')).toBe(1)
+  expect(getName(null)).toBe(1)
+  expect(getName()).toBe(0)
 })
 
 test('can trigger a function call', () => {
   let triggerCount = 0
 
-  function test(name = getDefault()) {
+  function getName(name = getDefault()) {
     return name
   }
 
@@ -34,9 +34,9 @@ test('can trigger a function call', () => {
   }
 
   expect(triggerCount).toBe(0)
-  expect(test('Aaron')).toBe('Aaron')
-  expect(test()).toBe('Mercury')
-  expect(test(undefined)).toBe('Mercury')
+  expect(getName('Aaron')).toBe('Aaron')
+  expect(getName()).toBe('Mercury')
+  expect(getName(undefined)).toBe('Mercury')
   expect(triggerCount).toBe(2)
 })
 
@@ -49,19 +49,24 @@ test('catch non-specified params', () => {
   expect(resty(1).length).toBe(0)
   expect(resty(1, 2).length).toBe(0)
   expect(resty(1, 2, 3).length).toBe(1)
-  expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10).length).toBe(8)
+  expect(
+    resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10).length,
+  ).toBe(8)
+
 })
 
 test('has a different length than `arguments`', () => {
   function resty(first, second, ...others) {
-    return others.length == arguments.length
+    return others.length === arguments.length
   }
 
-  // expect(resty()).toBe(true)
-  // expect(resty(1)).toBe(false)
-  // expect(resty(1, 2)).toBe(false)
-  // expect(resty(1, 2, 3)).toBe(false)
-  // expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10)).toBe(false)
+  expect(resty()).toBe(true)
+  expect(resty(1)).toBe(false)
+  expect(resty(1, 2)).toBe(false)
+  expect(resty(1, 2, 3)).toBe(false)
+  expect(
+    resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10),
+  ).toBe(false)
 })
 
 test('is an actual array, unlike arguments', () => {
@@ -73,12 +78,14 @@ test('is an actual array, unlike arguments', () => {
     return arguments
   }
 
-  var args = argy(1, 2, 3)
-  var rests = resty(1, 2, 3)
+  const args = argy(1, 2, 3)
+  const rests = resty(1, 2, 3)
 
-  expect(args.__proto__ == rests.__proto__).toBe(false)
+  expect(
+    Object.getPrototypeOf(args) === Object.getPrototypeOf(rests),
+  ).toBe(false)
   expect(args.splice).toBe(undefined)
-  expect(rests.__proto__).toBe(Array.prototype)
+  expect(Object.getPrototypeOf(rests)).toBe(Array.prototype)
   expect(rests.splice).toBeDefined()
   expect(rests.splice).toBe(Array.prototype.splice)
 })
@@ -99,8 +106,21 @@ test('it can default all arguments, optionally', () => {
   myFunction()
 })
 
+//////// Elaboration & Feedback /////////
+test('I submitted my elaboration and feedback', () => {
+  const submitted = true
+  expect(true).toBe(submitted)
+})
+////////////////////////////////
 
 //////// EXTRA CREDIT ////////
 
-// If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
-// Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development
+// If you get this far, try adding a few more tests,
+// then file a pull request to add them to the extra credit!
+// Learn more here: http://kcd.im/es6-workshop-contributing
+
+/*
+eslint
+  no-unused-vars:0
+  prefer-rest-params:0
+*/

@@ -1,30 +1,30 @@
 test('can be triggered when the incoming argument is undefined', () => {
 
-  function test(name = 'Mercury') {
+  function getName(name = 'Mercury') {
     return name
   }
 
-  expect(test('Aaron')).toBe(/*ENTER YOUR GUESS HERE*/)
-  expect(test(undefined)).toBe(/*ENTER YOUR GUESS HERE*/)
-  expect(test(null)).toBe(/*ENTER YOUR GUESS HERE*/)
-  expect(test()).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(getName('Aaron')).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(getName(undefined)).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(getName(null)).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(getName()).toBe(/*ENTER YOUR GUESS HERE*/)
 })
 
 test(`aren't included in arguments`, () => {
 
-  function test(name = 'Mercury') {
+  function getName(name = 'Mercury') {
     return arguments.length
   }
 
-  expect(test('Aaron')).toBe(/*ENTER YOUR GUESS HERE*/)
-  expect(test(null)).toBe(/*ENTER YOUR GUESS HERE*/)
-  expect(test()).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(getName('Aaron')).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(getName(null)).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(getName()).toBe(/*ENTER YOUR GUESS HERE*/)
 })
 
 test('can trigger a function call', () => {
   let triggerCount = 0
 
-  function test(name = getDefault()) {
+  function getName(name = getDefault()) {
     return name
   }
 
@@ -34,9 +34,9 @@ test('can trigger a function call', () => {
   }
 
   expect(triggerCount).toBe(/*ENTER YOUR GUESS HERE*/)
-  expect(test('Aaron')).toBe(/*ENTER YOUR GUESS HERE*/)
-  expect(test()).toBe(/*ENTER YOUR GUESS HERE*/)
-  expect(test(undefined)).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(getName('Aaron')).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(getName()).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(getName(undefined)).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(triggerCount).toBe(/*ENTER YOUR GUESS HERE*/)
 })
 
@@ -49,19 +49,23 @@ test('catch non-specified params', () => {
   expect(resty(1).length).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(resty(1, 2).length).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(resty(1, 2, 3).length).toBe(/*ENTER YOUR GUESS HERE*/)
-  expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10).length).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(
+    resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10).length,
+  ).toBe(/*ENTER YOUR GUESS HERE*/)
 })
 
 test('has a different length than `arguments`', () => {
   function resty(first, second, ...others) {
-    return others.length == arguments.length
+    return others.length === arguments.length
   }
 
   expect(resty()).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(resty(1)).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(resty(1, 2)).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(resty(1, 2, 3)).toBe(/*ENTER YOUR GUESS HERE*/)
-  expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10)).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(
+    resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10),
+  ).toBe(/*ENTER YOUR GUESS HERE*/)
 })
 
 test('is an actual array, unlike arguments', () => {
@@ -73,19 +77,22 @@ test('is an actual array, unlike arguments', () => {
     return arguments
   }
 
-  var args = argy(1, 2, 3)
-  var rests = resty(1, 2, 3)
+  const args = argy(1, 2, 3)
+  const rests = resty(1, 2, 3)
 
-  expect(args.__proto__ == rests.__proto__).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(
+    Object.getPrototypeOf(args) === Object.getPrototypeOf(rests),
+  ).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(args.splice).toBe(/*ENTER YOUR GUESS HERE*/)
-  expect(rests.__proto__).toBe(/*ENTER YOUR GUESS HERE*/)
+  expect(Object.getPrototypeOf(rests)).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(rests.splice).toBeDefined()
   expect(rests.splice).toBe(Array.prototype.splice)
 })
 
 
 test('it can default all arguments, optionally', () => {
-  // Modify the method signature of `myFunction` to allow for all args to be optional
+  // Modify the method signature of `myFunction` to allow for
+  // all args to be optional
 
   function myFunction({name, age, favoriteBand}) {
     expect(name).toBeDefined()
@@ -100,23 +107,24 @@ test('it can default all arguments, optionally', () => {
   myFunction()
 })
 
-//////// Elaboration /////////
-// Please write, in your own words
-// a few of the core concepts from
-// the feature(s) in this exercise
-//
-// 1.
-// 2.
-// 3.
-////////////////////////////////
-//
-/////////// Feedback ///////////
+//////// Elaboration & Feedback /////////
 /*
 http://ws.kcd.im/?ws=ES6+and+Beyond&e=Parameters&em=
 */
+test('I submitted my elaboration and feedback', () => {
+  const submitted = false // change this when you've submitted!
+  expect(true).toBe(submitted)
+})
 ////////////////////////////////
 
 //////// EXTRA CREDIT ////////
 
-// If you get this far, try adding a few more tests, then file a pull request to add them to the extra credit!
-// Learn more here: https://github.com/kentcdodds/es6-workshop/blob/master/CONTRIBUTING.md#development
+// If you get this far, try adding a few more tests,
+// then file a pull request to add them to the extra credit!
+// Learn more here: http://kcd.im/es6-workshop-contributing
+
+/*
+eslint
+  no-unused-vars:0
+  prefer-rest-params:0
+*/
