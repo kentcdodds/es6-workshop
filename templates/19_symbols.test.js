@@ -1,79 +1,66 @@
-test(`should ensure a variable is unique reference`, () => {
-  // FINAL_START
-  const SKY_COLOR_BLUE = Symbol()
-  const OCEAN_COLOR_BLUE = Symbol()
-  // FINAL_END
+test('creating symbols', () => {
   // WORKSHOP_START
-  // The sky's blue and the ocean's blue are both, well, blue.
-  // But the shade of blue changes over time based on light and
-  // atmosphere.
-  //
-  // Let's assume that both the sky's blue and ocean's blue are
-  // strings and both have the value of the string 'blue'. In this
-  // scenario, how could we know if we'd been passed a reference of
-  // sky's blue vs a reference of ocean's blue.
-
-  // If we want to compare these identities and not their values
-  // then we need symbol.
-
-  // Rewrite the following variables to be symbols
-  // Hint: remember DO NOT use the 'new' keyword
-  // const SKY_COLOR_BLUE = 'BLUE';
-  // const OCEAN_COLOR_BLUE = 'BLUE';
+  const symbol = 'I wanna be a symbol one day'
   // WORKSHOP_END
-
-  expect(SKY_COLOR_BLUE).not.toBe(OCEAN_COLOR_BLUE)
-  expect(typeof SKY_COLOR_BLUE).toBe('symbol')
-  expect(typeof SKY_COLOR_BLUE).toBe('symbol')
+  // FINAL_START
+  const symbol = Symbol()
+  // FINAL_END
+  expect(typeof symbol).toBe('symbol')
 })
 
-test(`should help determine if a singleton has already been declared`, () => {
+test('giving a symbol a description', () => {
   // WORKSHOP_START
-  // Singleton functions should return the same instance each time
-  // they are called.
-
-  // Create a symbol called toRuleThemAll with the ion of:
-  // One ring, to rule them all.
-
-  // Create 2 variables: myRing and myPrecious
-  // Both should be have their values set to OneRing()
+  const symbol = Symbol() // give me a label
   // WORKSHOP_END
   // FINAL_START
-  const toRuleThemAll = Symbol('One ring, to rule them all.')
-  const myRing = OneRing()
-  const myPrecious = OneRing()
+  const symbol = Symbol('use the force')
+  // FINAL_END
+  expect(String(symbol)).toBe('Symbol(use the force)')
+})
+
+test('symbols are unique', () => {
+  const s1 = Symbol()
+  const s2 = Symbol()
+  // WORKSHOP_START
+  expect(s1 === s2).toBe(/* enter your guess here */)
+  // WORKSHOP_END
+  // FINAL_START
+  expect(s1 === s2).toBe(false)
   // FINAL_END
 
-  function OneRing() {
+  const s3 = Symbol('I am a symbol')
+  const s4 = Symbol('I am a symbol')
+  // WORKSHOP_START
+  expect(s3 === s4).toBe(/* enter your guess here */)
+  // WORKSHOP_END
+  // FINAL_START
+  expect(s3 === s4).toBe(false)
+  // FINAL_END
+})
 
-    // Check if we already have an instance of OneRing
-    // If so, return it
-    if (OneRing[toRuleThemAll]) return OneRing[toRuleThemAll]
-
-    // If not, set up a new instance.
-    let destroy = function() {
-      return 'Ring destroyed!'
-    }
-
-    // Return the new instance and assign it to a symbol
-    return OneRing[toRuleThemAll] = {
-      destroy,
+test('symbols on objects', () => {
+  const symbol = Symbol('metadata')
+  // WORKSHOP_START
+  // make an object called `game` that
+  // makes this test pass
+  // WORKSHOP_END
+  // FINAL_START
+  const game = {
+    name: 'The Legend of Zelda',
+    releaseDate: 'February 21, 1986',
+    [symbol]: {
+      fans: 'about a billion',
     }
   }
+  // FINAL_END
 
-  // Rings should be defined
-  expect(myRing).toBeDefined()
-  expect(myPrecious).toBeDefined()
-
-  // We should have a symbol to hold a reference to the singleton
-  expect(typeof toRuleThemAll).toBe('symbol')
-
-  // Both variables should reference the same instance
-  expect(myRing).toBe(myPrecious)
-
-  // Both should be properly created instances
-  expect(myRing.destroy()).toBe('Ring destroyed!')
-  expect(myPrecious.destroy()).toBe('Ring destroyed!')
+  expect(JSON.parse(JSON.stringify(game))).toEqual({
+    name: 'The Legend of Zelda',
+    releaseDate: 'February 21, 1986',
+  })
+  expect(game[symbol]).toEqual({
+    fans: 'about a billion',
+  })
 })
 
 //////// Elaboration & Feedback /////////
