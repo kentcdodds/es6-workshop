@@ -9,7 +9,7 @@ if (!email) {
 
 const glob = path.join(__dirname, '..', 'exercises/*.js')
 
-const options = {files: [glob], replace: /&em=/, with: `&em=${email}`}
+const options = {files: [glob], from: /&em=/, to: `&em=${email}`}
 
 replace(options).then(
   changedFiles => {
