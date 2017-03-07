@@ -51,6 +51,7 @@ git clone https://github.com/kentcdodds/es6-workshop.git
 cd es6-workshop
 yarn run setup
 yarn run autofill-email YOUR_EMAIL@DOMAIN.COM
+git commit -am "setup"
 ```
 
 > Replace `YOUR_EMAIL@DOMAIN.COM` with your email address
@@ -66,6 +67,7 @@ break for you). May be a good idea to still run `node ./scripts/verify` to verif
 things too.
 
 # How To Run Tests
+
 Once you have everything installed, you are ready to run some tests. There are two directories with tests in them:
 `exercises` and `exercises-final`. The `exercises-final` directory is like a cheat sheet. All of the tests contain the
 required ES6 code to make the tests pass. You will need to edit the tests in the `exercises` directory, and make the
@@ -93,6 +95,11 @@ This will start `jest` in its interactive watch mode ([learn more][watch-mode]).
 sure you're in "only changed" mode by clicking the `o` key. There should not be any tests run at this point. Your
 job is to go into each test file in `exercises` and make the tests pass. As you make changes, jest will run the file's
 tests. Once you have written the required ES6 code, the tests will pass, and you can move on.
+
+Also, during watch mode you can press the `p` key to filter for only the test file you want to run. You can even press the `t`
+key to filter for only the tests you want to run (by their
+test name). Note, that for these to work, you need to run all
+the tests first. Hit the `a` key to do that.
 
 **Note:** You may prefer to run the `test:changed` script which will run the tests only once. This will allow you to
 avoid the "learning crutch" of immediate feedback that you get from the watch mode. But it's up to you!
