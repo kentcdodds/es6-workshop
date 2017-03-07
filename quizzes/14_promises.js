@@ -165,3 +165,24 @@ function promises() {
 }
 
 /* eslint consistent-return:0 */
+
+/*
+Concepts to cover:
+- .then(successHandler)
+- .then(successHandler, errorHandler)
+- .catch(errorHandler)
+- Promise Tree (chaining)
+- state
+  - pending
+  - resolved
+  - rejected
+- Promise.resolve
+- Promise.reject
+- returning a promise in successHandler
+  - passing a promise to Promise.resolve
+- returning anything in an errorHandler
+  - passing a promise to Promise.reject
+- error in successHandler
+- non-error in errorHandler
+- recovering from .catch
+ */
