@@ -134,6 +134,15 @@
         "doc",
         "test"
       ]
+    },
+    {
+      "login": "tgreenhalgh",
+      "name": "Thomas Greenhalgh",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/5298300?v=3",
+      "profile": "https://github.com/tgreenhalgh",
+      "contributions": [
+        "code"
+      ]
     }
   ]
 }
