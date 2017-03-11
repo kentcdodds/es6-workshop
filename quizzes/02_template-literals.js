@@ -2,7 +2,7 @@ import log from './pretty-log'
 
 function interpolation() {
   // refactor this to a single template literal using interpolation
-  // template literals use backtics instead of double/single quote
+  // template literals use backticks instead of double/single quote
   // interpolation is done with ${variable}
   const greeting = 'Hello'
   const noun = 'World'
@@ -51,7 +51,7 @@ function tagging() {
 
 function interpolationSOLUTION() {
   // refactor this to a single template literal using interpolation
-  // template literals use backtics instead of double/single quote
+  // template literals use backticks instead of double/single quote
   // interpolation is done with ${variable}
   const greeting = 'Hello'
   const noun = 'World'

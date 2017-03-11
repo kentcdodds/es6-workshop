@@ -143,6 +143,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "aaronang",
+      "name": "Aaron Ang",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7579804?v=3",
+      "profile": "https://github.com/aaronang",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ]
 }

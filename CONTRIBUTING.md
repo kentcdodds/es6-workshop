@@ -33,7 +33,7 @@ it again and select the added contribution type.
 This project uses [`split-guide`](https://github.com/kentcdodds/split-guide) to make maintaining the `exercises` and
 `exercises-final` files easier. The `exercises` and `exercise-final` folders are actually generated code via the
 `generate` script. So any changes you make should go in a `templates` directory. When you've made your changes,
-please run `yarn run split` to regenerate the exercises and commit those changes as part of your pull request.
+please run `yarn run generate` to regenerate the exercises and commit those changes as part of your pull request.
 
 > Learn more about `split-guide` and contributing to this project with [this video](https://youtu.be/CSVOPw_5OT0)
 
