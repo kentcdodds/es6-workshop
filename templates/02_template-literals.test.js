@@ -39,12 +39,12 @@ test(`should support multi-line strings`, () => {
 test(`should support string escaping`, () => {
   // FINAL_START
   expect(`Hi\nthere!`).toBe('Hi\nthere!')
-  expect(`This is \`escaped\` backtics`).toBe('This is `escaped` backtics')
+  expect(`This is \`escaped\` backticks`).toBe('This is `escaped` backticks')
   // FINAL_END
   // WORKSHOP_START
   // properly escape a string in a template literal for each of these
   expect(``).toBe('Hi\nthere!')
-  expect(``).toBe('This is `escaped` backtics')
+  expect(``).toBe('This is `escaped` backticks')
   // WORKSHOP_END
 })
 
