@@ -171,5 +171,4 @@ function mapInfoSOLUTION() {
     entries: map.entries(),
   }
 }
-console.log(mapInfoSOLUTION())
-
+// console.log(mapInfoSOLUTION())
