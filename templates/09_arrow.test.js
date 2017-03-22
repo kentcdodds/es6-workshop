@@ -45,7 +45,8 @@ test('binds `this` to the eval scope, not the runtime scope', () => {
   }
   // FINAL_END
   // WORKSHOP_START
-  // Change the person object. One of the functions should become an arrow to allow for 'this' to retain context correctly
+  // Change the person object. One of the functions should become an arrow to
+  // allow for 'this' to retain context correctly
   const person = {
     name: 'Aaron',
     greetFriends: function(friends) {
@@ -81,7 +82,7 @@ test('can make array filter chains more managable', () => {
     .map(d => d.name)                // Pull just the name from each item
   // FINAL_END
   // WORKSHOP_START
-  // REPLACE ALL REGULAR FUNCTION WITH ARROW FUNCTIONS
+  // REPLACE ALL REGULAR FUNCTIONS WITH ARROW FUNCTIONS
   const shoppingList = data
     .filter(function(d) {
       return d.type != 'Widget'

@@ -1,6 +1,11 @@
 // COMMENT_START eslint trickery :)
 /* eslint no-unreachable:0 */
 // COMMENT_END
+// WORKSHOP_START
+// For each then() or catch() block, pick whether it should run or not
+// If it should run, tell which value it will receive in `result` or `error`
+// If it should not run, uncomment the error throwing statement
+// WORKSHOP_END
 test(`should resolve`, () => {
   return pickApple('ripe')
     .then(result => {

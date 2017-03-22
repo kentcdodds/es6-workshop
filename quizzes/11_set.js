@@ -18,14 +18,14 @@ function unique() {
 }
 // console.log(unique())
 
-function initialzeSet() {
+function initializeSet() {
   const arr = [1, 5, 7, 2, 9, 4]
   // TODO: change the following line
   // so that the Set t has array's contents
   const set = new Set()
   return set
 }
-// console.log(initialzeSet())
+// console.log(initializeSet())
 
 
 
@@ -100,13 +100,12 @@ function restSet() {
 
 
 
-function initialzeSetSOLUTION() {
+function initializeSetSOLUTION() {
   const arr = [1, 5, 7, 2, 9, 4]
   const t = new Set(arr)
   return t
 }
-// console.log(initialzeSet())
-
+// console.log(initializeSetSOLUTION())
 
 function setInfoSOLUTION() {
   const obj = {a: 42}
@@ -133,4 +132,3 @@ function removeDuplicatesSOLUTION() {
   return uniqueArr
 }
 // console.log(removeDuplicatesSOLUTION())
-
