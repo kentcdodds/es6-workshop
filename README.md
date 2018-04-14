@@ -13,8 +13,6 @@
 [![Star on GitHub][github-star-badge]][github-star]
 [![Tweet][twitter-badge]][twitter]
 
-<a href="https://app.codesponsor.io/link/PKGFLnhDiFvsUA5P4kAXfiPs/kentcdodds/es6-workshop" rel="nofollow"><img src="https://app.codesponsor.io/embed/PKGFLnhDiFvsUA5P4kAXfiPs/kentcdodds/es6-workshop.svg" style="width: 888px; height: 68px;" alt="Sponsor" /></a>
-
 ## Welcome
 
 Welcome to this ES6 workshop. Our goal is to help everyone make strides towards learning the newest ES6 syntax, and
