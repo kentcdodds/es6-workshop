@@ -3,8 +3,7 @@
 [![slides-badge][slides-badge]][slides]
 [![chat-badge][chat-badge]][chat]
 [![Build Status][build-badge]][build]
-[![Dependencies][dependencyci-badge]][dependencyci]
-[![MIT License][license-badge]][license]
+[![License][license-badge]][license]
 [![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors)
 
 [![PRs Welcome][prs-badge]][prs]
@@ -154,8 +153,6 @@ at kent@doddsfamily.us
 [chat-badge]: https://img.shields.io/gitter/room/nwjs/nw.js.svg?style=flat-square
 [build-badge]: https://img.shields.io/travis/kentcdodds/es6-workshop.svg?style=flat-square
 [build]: https://travis-ci.org/kentcdodds/es6-workshop
-[dependencyci-badge]: https://dependencyci.com/github/kentcdodds/es6-workshop/badge?style=flat-square
-[dependencyci]: https://dependencyci.com/github/kentcdodds/es6-workshop
 [license-badge]: https://img.shields.io/badge/license-GPL%203.0%20License-blue.svg?style=flat-square
 [license]: https://github.com/kentcdodds/es6-workshop/blob/master/README.md#license
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
