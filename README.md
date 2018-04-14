@@ -138,7 +138,10 @@ This project follows the [all-contributors](https://github.com/kentcdodds/all-co
 
 # LICENSE
 
-MIT
+This material is available for private, non-commercial use under the
+[GPL version 3](http://www.gnu.org/licenses/gpl-3.0-standalone.html). If you
+would like to use this material to conduct your own workshop, please contact me
+at kent@doddsfamily.us
 
 [npm]: https://www.npmjs.com/
 [yarn]: https://yarnpkg.com/
@@ -152,8 +155,8 @@ MIT
 [build]: https://travis-ci.org/kentcdodds/es6-workshop
 [dependencyci-badge]: https://dependencyci.com/github/kentcdodds/es6-workshop/badge?style=flat-square
 [dependencyci]: https://dependencyci.com/github/kentcdodds/es6-workshop
-[license-badge]: https://img.shields.io/badge/license-MIT%20License-blue.svg?style=flat-square
-[license]: https://github.com/kentcdodds/es6-workshop/blob/master/other/LICENSE
+[license-badge]: https://img.shields.io/badge/license-GPL%203.0%20License-blue.svg?style=flat-square
+[license]: https://github.com/kentcdodds/es6-workshop/blob/master/README.md#license
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com
 [donate-badge]: https://img.shields.io/badge/$-support-green.svg?style=flat-square
