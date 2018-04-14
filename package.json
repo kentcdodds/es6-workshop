@@ -37,7 +37,7 @@
     "add-contributor": "kcd-scripts contributors add",
     "start": "npm run test:watch",
     "lint": "kcd-scripts lint",
-    "precommit": "kcd-scripts precommit && npm run generate && npm run test:final -- --no-watch && git add exercises exercises-final",
+    "precommit": "kcd-scripts precommit && npm run generate && kcd-scripts format && npm run lint && npm run test:final -- --no-watch && git add exercises exercises-final",
     "quiz": "babel-node quizzes/run.js",
     "test": "kcd-scripts test --config exercises/jest.config.js",
     "test:final": "kcd-scripts test --config exercises-final/jest.config.js",

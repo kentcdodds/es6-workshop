@@ -50,7 +50,6 @@ test('catch non-specified params', () => {
   expect(
     resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10).length,
   ).toBe(8)
-
 })
 
 test('has a different length than `arguments`', () => {
@@ -89,7 +88,6 @@ test('is an actual array, unlike arguments', () => {
 })
 
 test('it can default all arguments, optionally', () => {
-
   function myFunction({name = 'Aaron', age = 35, favoriteBand = 'Queen'} = {}) {
     expect(name).toBeDefined()
     expect(age).toBeDefined()
