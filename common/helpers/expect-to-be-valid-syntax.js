@@ -15,18 +15,20 @@ expect.extend({
     const {message, stack} = separateMessageFromStack(error.stack)
     return {
       pass: false,
-      message: (
-        this.utils.matcherHint('.toBeValidSyntax', 'codeString', '') + '\n\n' +
+      message:
+        this.utils.matcherHint('.toBeValidSyntax', 'codeString', '') +
+        '\n\n' +
         `Expected valid syntax. But it was not.\n` +
         `Parsing the code in the string threw:\n` +
         this.utils.RECEIVED_COLOR(
-          '  ' + message + formatStackTrace(stack, {
-            noStackTrace: true,
-            rootDir: process.cwd(),
-            testRegex: '',
-          })
-        )
-      )
+          '  ' +
+            message +
+            formatStackTrace(stack, {
+              noStackTrace: true,
+              rootDir: process.cwd(),
+              testRegex: '',
+            }),
+        ),
     }
-  }
+  },
 })

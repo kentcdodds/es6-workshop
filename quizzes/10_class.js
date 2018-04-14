@@ -10,7 +10,7 @@ function Pixel(x = 0, y = 0) {
 // TODO: fit into class syntax
 Pixel.prototype.distance = function(p) {
   const {pow, sqrt} = Math
-  return sqrt(pow((this.x - p.x), 2) + pow((this.y - p.y), 2))
+  return sqrt(pow(this.x - p.x, 2) + pow(this.y - p.y, 2))
 }
 
 // TODO: fit into class syntax
@@ -39,7 +39,6 @@ Object.defineProperty(Pixel.prototype, 'id', {
     this._id = val
   },
 })
-
 
 // TODO: create a Voxel class extending Pixel class
 function Voxel(x, y, z = 0) {
@@ -76,15 +75,13 @@ Voxel.fromObj = function(obj) {
   return new Voxel(obj.x, obj.y, obj.z)
 }
 
-
 // ----- Quiz Functions ----
 
-log(
-  // testDistance(),
-  // testMidpoint(),
-  // testDistanceVoxel(),
-  // testMidpointVoxel(),
-)
+log()
+// testDistance(),
+// testMidpoint(),
+// testDistanceVoxel(),
+// testMidpointVoxel(),
 
 function testDistance() {
   const p = new Pixel(5, 12)
@@ -110,30 +107,8 @@ function testMidpointVoxel() {
   return v.midpoint(w).toString()
 }
 
-
-
-
-
-
-
-
 // SOLUTION BELOW THIS LINE
 // No peeking!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 class PixelSOLUTION {
   constructor(x = 0, y = 0) {
@@ -149,7 +124,7 @@ class PixelSOLUTION {
   }
   distance(p) {
     const {pow, sqrt} = Math
-    return sqrt(pow((this.x - p.x), 2) + pow((this.y - p.y), 2))
+    return sqrt(pow(this.x - p.x, 2) + pow(this.y - p.y, 2))
   }
   midpoint(p) {
     const x = (this.x + p.x) / 2.0
@@ -191,13 +166,11 @@ class VoxelSOLUTION extends PixelSOLUTION {
   }
 }
 
-
-log(
-  // testDistanceSOLUTION(),
-  // testMidpointSOLUTION(),
-  // testDistanceVoxelSOLUTION(),
-  // testMidpointVoxelSOLUTION(),
-)
+log()
+// testDistanceSOLUTION(),
+// testMidpointSOLUTION(),
+// testDistanceVoxelSOLUTION(),
+// testMidpointVoxelSOLUTION(),
 
 // Solution Quiz functions
 
@@ -224,6 +197,5 @@ function testMidpointVoxelSOLUTION() {
   const w = VoxelSOLUTION.fromObj({x: 2, y: 3.4, z: 7.9})
   return v.midpoint(w).toString()
 }
-
 
 /* eslint func-names:0*/

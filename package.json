@@ -2,56 +2,72 @@
   "name": "ES6-Workshop",
   "version": "0.0.0",
   "private": true,
+  "description": "[![slides-badge][slides-badge]][slides] [![chat-badge][chat-badge]][chat] [![Build Status][build-badge]][build] [![Dependencies][dependencyci-badge]][dependencyci] [![MIT License][license-badge]][license] [![All Contributors](https://img.shields.io/badge/all_contributors-16-orange.svg?style=flat-square)](#contributors)",
+  "bugs": {
+    "url": "https://github.com/kentcdodds/es6-workshop/issues"
+  },
+  "main": "index.js",
+  "keywords": [
+    "workshop",
+    "es6"
+  ],
+  "author": "Kent C. Dodds <kent@doddsfamily.us> (http://kentcdodds.com/)",
+  "license": "GPL-3.0",
   "homepage": "https://github.com/kentcdodds/es6-workshop",
   "repository": {
     "type": "git",
     "url": "git://github.com/kentcdodds/es6-workshop.git"
   },
+  "dependencies": {},
   "devDependencies": {
-    "all-contributors-cli": "^4.0.1",
-    "babel-cli": "^6.23.0",
-    "babel-core": "^6.23.1",
-    "babel-eslint": "^7.1.1",
-    "babel-jest": "^19.0.0",
-    "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.2.0",
-    "babel-preset-stage-2": "^6.22.0",
-    "babel-register": "^6.23.0",
-    "chalk": "^1.1.3",
-    "chokidar": "^1.6.1",
-    "eslint": "^3.17.0",
-    "eslint-config-kentcdodds": "^12.1.0",
-    "eslint-plugin-babel": "^4.1.1",
-    "glob": "^7.1.1",
-    "husky": "^0.13.2",
-    "jest-cli": "^19.0.2",
-    "lodash": "^4.17.4",
-    "npm-run-all": "^4.0.2",
-    "onchange": "^3.2.1",
-    "opt-cli": "^1.5.1",
-    "prettier-eslint-cli": "^3.1.2",
-    "pretty-format": "^19.0.0",
-    "replace-in-file": "^2.4.1",
-    "split-guide": "^1.2.1"
+    "babel-cli": "^6.26.0",
+    "chalk": "^2.3.2",
+    "chokidar": "^2.0.3",
+    "concurrently": "^3.5.1",
+    "eslint": "^4.19.1",
+    "glob": "^7.1.2",
+    "kcd-scripts": "^0.37.0",
+    "lodash": "^4.17.5",
+    "onchange": "^3.3.0",
+    "pretty-format": "^22.4.3",
+    "replace-in-file": "^3.4.0",
+    "split-guide": "^3.0.0"
   },
   "scripts": {
-    "add-contributor": "all-contributors add",
-    "generate-contributors": "all-contributors generate",
+    "add-contributor": "kcd-scripts contributors add",
     "start": "npm run test:watch",
-    "lint": "eslint exercises-final common quizzes",
-    "precommit": "opt --in precommit --exec \"npm run lint && npm run generate && npm run test:final && git add exercises exercises-final\"",
+    "lint": "kcd-scripts lint",
+    "precommit": "kcd-scripts precommit && npm run generate && npm run test:final -- --no-watch && git add exercises exercises-final",
     "quiz": "babel-node quizzes/run.js",
-    "test": "jest --config=exercises/jest.config.json",
-    "test:changed": "npm run test --silent -- --onlyChanged",
-    "test:watch": "npm test -- --watch",
-    "test:final": "jest --config=exercises-final/jest.config.json",
-    "test:final:watch": "npm run test:final -- --watch",
-    "dev": "npm-run-all --parallel generate:watch test:final:watch",
-    "generate:watch": "onchange \"templates/**/*.*\" --initial -- npm run generate",
+    "test": "kcd-scripts test --config exercises/jest.config.js",
+    "test:final": "kcd-scripts test --config exercises-final/jest.config.js",
+    "dev": "concurrently --names \"generate,test:final\" --prefix \"[{name}]\" --prefix-colors \"bgGreen.reset.bodl,bgBlue.reset.bold\" \"npm run generate:watch --silent\" \"npm run test:final --silent\"",
     "generate": "split-guide generate --silent-success",
-    "autofill-email": "node ./scripts/autofill-feedback-email",
-    "validate": "npm run lint && npm run test:final",
-    "setup": "node ./scripts/verify && node ./scripts/install && npm run validate"
+    "generate:watch": "onchange \"templates/**/*.*\" --initial -- npm run generate",
+    "validate": "concurrently --names \"lint,test:final\" --prefix \"[{name}]\" --prefix-colors \"bgGreen.reset.bold,bgBlue.reset.bold\" \"npm run lint --silent\" \"npm run test:final --silent -- --no-watch\"",
+    "setup": "node ./scripts/verify && node ./scripts/install && npm run validate && node ./scripts/autofill-feedback-email"
   },
-  "LICENSE": "MIT"
+  "babel": {
+    "presets": [
+      "kcd-scripts/babel"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "kentcdodds/possible-errors",
+      "kentcdodds/es6/possible-errors",
+      "kentcdodds/jest"
+    ],
+    "rules": {
+      "no-console": "off",
+      "jest/no-disabled-tests": "off"
+    }
+  },
+  "eslintIgnore": [
+    "exercises",
+    "scripts",
+    "other",
+    "node_modules",
+    "templates"
+  ]
 }

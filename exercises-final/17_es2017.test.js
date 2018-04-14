@@ -36,7 +36,7 @@ test('Object.values gets just the values of an object', () => {
       'Hank Henshaw',
       'Winn Schott',
       'Alex Danvers',
-    ]
+    ],
   ])
 })
 
@@ -56,17 +56,20 @@ test('Object.entries gives an array of arrays as [key, value]', () => {
   }
   const result = Object.entries(show)
   expect(result).toEqual([
-    [ 'title', 'The Flash' ],
-    [ 'seasons', 2.2 ],
-    [ 'characters', [
-      'The Flash',
-      'Iris West',
-      'Caitlin Snow',
-      'Eddie Thawne',
-      'Cisco Ramon',
-      'Harrison Wells',
-      'Joe West',
-    ]]
+    ['title', 'The Flash'],
+    ['seasons', 2.2],
+    [
+      'characters',
+      [
+        'The Flash',
+        'Iris West',
+        'Caitlin Snow',
+        'Eddie Thawne',
+        'Cisco Ramon',
+        'Harrison Wells',
+        'Joe West',
+      ],
+    ],
   ])
 })
 

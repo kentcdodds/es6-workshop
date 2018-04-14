@@ -10,9 +10,11 @@ test('should support string interpolation', () => {
       'Ryan Florence',
     ],
   }
-  const personsFriends = `${person.name} has ${person.friends.length} friends: ${person.friends.join(', ')}`
+  const personsFriends = `${person.name} has ${
+    person.friends.length
+  } friends: ${person.friends.join(', ')}`
   expect(personsFriends).toBe(
-    'Kent C. Dodds has 6 friends: Brooke Dodds, Matt Zabriskie, Aaron Frost, Dave Geddes, Joe Eames, Ryan Florence'
+    'Kent C. Dodds has 6 friends: Brooke Dodds, Matt Zabriskie, Aaron Frost, Dave Geddes, Joe Eames, Ryan Florence',
   )
 })
 
@@ -29,7 +31,6 @@ test(`should support string escaping`, () => {
   expect(`This is \`escaped\` backticks`).toBe('This is `escaped` backticks')
 })
 
-
 //////// EXTRA CREDIT ////////
 
 // you likely won't often use tagging, but it can be handy!
@@ -37,11 +38,15 @@ test.skip(`should call the tagging function`, () => {
   const noun = 'World'
   const emotion = 'happy'
   const result = tagIt`Hello ${noun}! Are you feeling ${emotion} today?`
-  expect(result).toBe('Hello super-cool World! Are you feeling really happy today?')
+  expect(result).toBe(
+    'Hello super-cool World! Are you feeling really happy today?',
+  )
 
   function tagIt(literalString, ...interpolatedParts) {
     const firstPart = `${literalString[0]}super-cool ${interpolatedParts[0]}`
-    const lastPart = `${literalString[1]}really ${interpolatedParts[1]}${literalString[2]}`
+    const lastPart = `${literalString[1]}really ${interpolatedParts[1]}${
+      literalString[2]
+    }`
     return `${firstPart}${lastPart}`
   }
 })
@@ -52,7 +57,6 @@ test('I submitted my elaboration and feedback', () => {
   expect(true).toBe(submitted)
 })
 ////////////////////////////////
-
 
 //////// EXTRA CREDIT ////////
 

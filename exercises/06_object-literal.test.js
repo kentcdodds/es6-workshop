@@ -28,7 +28,8 @@ test('can use expressions as property names', () => {
     }
   }
 
-  const twixDescription = 'Twix is a chocolate bar made by Mars, Inc., consisting of biscuit applied with other ' +
+  const twixDescription =
+    'Twix is a chocolate bar made by Mars, Inc., consisting of biscuit applied with other ' +
     'confectionery toppings and coatings. Twix bars are packaged in pairs, although smaller single bars are available.'
   const twixType = 'twix'
   const snickers = createCandy('twix', twixDescription)

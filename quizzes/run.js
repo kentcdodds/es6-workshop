@@ -14,9 +14,11 @@ sayCommands()
 listenForInput()
 
 function watchFiles() {
-  return chokidar.watch('*_*.js', {cwd, ignoreInitial: true}).on('change', relativePath => {
-    rerunFile(relativePath)
-  })
+  return chokidar
+    .watch('*_*.js', {cwd, ignoreInitial: true})
+    .on('change', relativePath => {
+      rerunFile(relativePath)
+    })
 }
 
 function listenForInput() {
@@ -24,7 +26,7 @@ function listenForInput() {
   process.stdin.on('data', text => {
     /* eslint complexity:0 */
     const input = text.trim()
-    
+
     switch (input) {
       case 'clear':
       case 'c':
@@ -40,7 +42,11 @@ function listenForInput() {
         if (lastFileRun) {
           rerunFile(lastFileRun)
         } else {
-          console.log(chalk.gray('No quiz file has been run yet. Enter a glob pattern or change a file first.'))
+          console.log(
+            chalk.gray(
+              'No quiz file has been run yet. Enter a glob pattern or change a file first.',
+            ),
+          )
         }
         break
       default:
@@ -60,7 +66,7 @@ function rerunFile(relativePath) {
     delete require.cache[fullPath]
     require(fullPath) // eslint-disable-line global-require
   } catch (e) {
-    console.error(chalk.red(getRelevantStackTrace(e)))
+    console.log(getRelevantStackTrace(e))
   }
 }
 
@@ -73,11 +79,13 @@ function sayWatching() {
 }
 
 function sayCommands() {
-  console.log(chalk.gray(`You can enter a few handy commands here:
+  console.log(
+    chalk.gray(`You can enter a few handy commands here:
     q, quit     Quit the quizzes
     c, clear    Clear the console
     filename    Run the first file that matches your pattern
-    <enter>     Re-run the last run file\n`))
+    <enter>     Re-run the last run file\n`),
+  )
 }
 
 function getRelevantStackTrace({stack}) {
@@ -85,8 +93,10 @@ function getRelevantStackTrace({stack}) {
   const newStack = [splitStack[0]] // skip the first line which is the error message
   for (let i = 1; i < splitStack.length; i++) {
     const line = splitStack[i]
-    if (line.includes(cwd)) {
-      newStack.push(line)
+    const isCodeFrame = line.includes('|')
+    // if it starts with a number then it's part of a code frame and we want that.
+    if (line.includes(cwd) || isCodeFrame) {
+      newStack.push(isCodeFrame ? line : chalk.red(line))
     } else {
       newStack.push('    etc...')
       break

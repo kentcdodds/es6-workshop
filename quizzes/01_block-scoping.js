@@ -22,7 +22,7 @@ function immutable() {
 function immutableReference() {
   // what is returned?
   const object = {a: 'b'}
-  object = {a: 'q'}
+  // object = {a: 'q'}
   return object
 }
 // log(immutableReference())
@@ -39,7 +39,8 @@ function ifBlock() {
 
 function block() {
   // what is returned?
-  { // this is called a "block" ✨
+  {
+    // this is called a "block" ✨
     const x = 42
     let y = 24
   }
@@ -75,7 +76,7 @@ function temporalDeadZone() {
   console.log(myVar)
   console.log(myLet)
   console.log(myConst)
-  
+
   var myVar = 'var'
   let myLet = 'let'
   const myConst = 'const'
@@ -96,6 +97,7 @@ function semiPractical() {
 }
 // log(semiPractical())
 
+/*
 
 
 
@@ -103,7 +105,7 @@ function semiPractical() {
 
 
 
-// SOLUTIONS ARE BELOW THIS LINE!
+SOLUTIONS ARE BELOW
 
 
 
@@ -113,8 +115,7 @@ function semiPractical() {
 
 
 
-
-
+ */
 
 function immutableReferenceSOLUTION() {
   // what is returned?
@@ -135,8 +136,6 @@ function semiPracticalSOLUTION() {
   return callbacks.map(callback => callback())
 }
 // log(semiPracticalSOLUTION())
-
-
 
 /*
   eslint

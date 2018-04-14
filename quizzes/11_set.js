@@ -27,10 +27,6 @@ function initializeSet() {
 }
 // console.log(initializeSet())
 
-
-
-
-
 function setInfo() {
   const obj = {a: 42}
   const set = new Set([1, 2, obj, 3, 4])
@@ -83,22 +79,8 @@ function restSet() {
 }
 // console.log(restSet())
 
-
-
-
-
-
 // SOLUTION BELOW
 // No peeking!
-
-
-
-
-
-
-
-
-
 
 function initializeSetSOLUTION() {
   const arr = [1, 5, 7, 2, 9, 4]
@@ -110,7 +92,7 @@ function initializeSetSOLUTION() {
 function setInfoSOLUTION() {
   const obj = {a: 42}
   const set = new Set([1, 2, obj, 3, 4])
-  const [,, thirdItem] = set
+  const [, , thirdItem] = set
   return {
     size: set.size,
     hasObj: set.has(obj),

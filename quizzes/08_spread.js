@@ -67,30 +67,8 @@ function restString() {
 }
 // log(restString())
 
-
-
-
-
-
-
-
-
-
-
 // SOLUTIONS ARE GIVEN BELOW
 // No peeking!
-
-
-
-
-
-
-
-
-
-
-
-
 
 function spreadFunctionCallSOLUTION() {
   const arr = [5, 6, 8, 4, 9]

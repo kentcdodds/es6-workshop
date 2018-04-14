@@ -26,7 +26,8 @@ test('cannot modify the value of a `const` variable', () => {
 })
 
 test('is trapped inside of an `if` statement', () => {
-  if (true) { // eslint-disable-line no-constant-condition
+  if (true) {
+    // eslint-disable-line no-constant-condition
     // Change to `var` to `let`, so that b is scoped inside of the if-statement
     var b = 1
   }

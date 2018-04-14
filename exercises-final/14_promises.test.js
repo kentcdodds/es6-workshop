@@ -1,10 +1,13 @@
 test(`should resolve`, () => {
   return pickApple('ripe')
-    .then(result => {
-      expect(result).toBe('ripe apple')
-    }, error => {
-      throw new Error('this should not run')
-    })
+    .then(
+      result => {
+        expect(result).toBe('ripe apple')
+      },
+      error => {
+        throw new Error('this should not run')
+      },
+    )
     .catch(error => {
       throw new Error('this should not run')
     })
@@ -12,11 +15,14 @@ test(`should resolve`, () => {
 
 test(`should reject`, () => {
   return pickApple('unripe')
-    .then(result => {
-      throw new Error('this should not run')
-    }, error => {
-      expect(error).toBe('unripe apple')
-    })
+    .then(
+      result => {
+        throw new Error('this should not run')
+      },
+      error => {
+        expect(error).toBe('unripe apple')
+      },
+    )
     .catch(error => {
       throw new Error('this should not run')
     })

@@ -1,6 +1,5 @@
 {
   "extends": [
-    "../.eslintrc",
     "kentcdodds/best-practices",
     "kentcdodds/stylistic",
     "kentcdodds/es6/best-practices",

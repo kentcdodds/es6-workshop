@@ -37,6 +37,15 @@ const theAnswer = 42
 // './module-b' and re-export it with a different
 // name in our own module?
 
+/*
+
+
+
+
+
+
+
+SOLUTIONS ARE BELOW
 
 
 
@@ -46,28 +55,9 @@ const theAnswer = 42
 
 
 
+ */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// SOLUTIONS ARE BELOW THIS LINE!
 // But they're commented out because JavaScript
-
-
-
-
 
 // 1.
 // export default add

@@ -12,9 +12,7 @@ function interpolation() {
 
 function multiline() {
   // refactor to a single template literal with multiple lines
-  return ('\n' +
-'    this is on a new line\n' +
-'  ')
+  return '\n' + '    this is on a new line\n' + '  '
 }
 // log(multiline())
 
@@ -37,10 +35,7 @@ function tagging() {
 }
 // log(tagging())
 
-
-
-
-// SOLUTIONS ARE BELOW THIS LINE!
+/*
 
 
 
@@ -48,6 +43,17 @@ function tagging() {
 
 
 
+SOLUTIONS ARE BELOW
+
+
+
+
+
+
+
+
+
+ */
 
 function interpolationSOLUTION() {
   // refactor this to a single template literal using interpolation
@@ -61,9 +67,9 @@ function interpolationSOLUTION() {
 
 function multilineSOLUTION() {
   // refactor to a single template literal with multiple lines
-  return (`
+  return `
     this is on a new line
-  `)
+  `
 }
 // log(multilineSOLUTION())
 
@@ -73,7 +79,4 @@ function escapingSOLUTION() {
 }
 // log(escapingSOLUTION())
 
-
-
-
-/* eslint prefer-template:0, prefer-rest-params:0 */
+/* eslint prefer-template:0, prefer-rest-params:0, no-useless-concat:0 */

@@ -6,11 +6,6 @@ function createSymbol() {
 }
 // log(createSymbol())
 
-
-
-
-
-
 function symbolDescription() {
   // how would we give this symbol an identifier
   // for debugging purposes?
@@ -18,9 +13,6 @@ function symbolDescription() {
   return mySymbol
 }
 // log(symbolDescription())
-
-
-
 
 function getSymbolsFromObject() {
   // what will this return?
@@ -33,37 +25,16 @@ function getSymbolsFromObject() {
 }
 // log(getSymbolsFromObject())
 
-
 // More about Symbols:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
 
-
-
-
-
-
-
-
 // SOLUTIONS BELOW!
-
-
-
-
-
-
-
-
-
-
-
-
 
 function createSymbolSOLUTION() {
   const mySymbol = Symbol()
   return mySymbol
 }
 // log(createSymbolSOLUTION())
-
 
 function symbolDescriptionSOLUTION() {
   // how would we give this symbol an identifier
@@ -72,7 +43,6 @@ function symbolDescriptionSOLUTION() {
   return mySymbol
 }
 // log(symbolDescriptionSOLUTION())
-
 
 function getSymbolsFromObjectSOLUTION() {
   // what will this return?
@@ -84,7 +54,6 @@ function getSymbolsFromObjectSOLUTION() {
   return Object.getOwnPropertySymbols(object)
 }
 // log(getSymbolsFromObjectSOLUTION())
-
 
 /*
 eslint

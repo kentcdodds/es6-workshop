@@ -39,9 +39,16 @@ test(`Reflect.ownKeys returns the object's own (not inherited) keys (including s
     enumerable: false,
   })
   expect(Object.keys(kyle)).toEqual(['awesome'])
-  expect(Object.getOwnPropertyNames(kyle)).toEqual(['awesome', 'favoriteLanguage'])
+  expect(Object.getOwnPropertyNames(kyle)).toEqual([
+    'awesome',
+    'favoriteLanguage',
+  ])
   expect(Object.getOwnPropertySymbols(kyle)).toEqual([favoriteFeature])
-  expect(Reflect.ownKeys(kyle)).toEqual(['awesome', 'favoriteLanguage', favoriteFeature])
+  expect(Reflect.ownKeys(kyle)).toEqual([
+    'awesome',
+    'favoriteLanguage',
+    favoriteFeature,
+  ])
 })
 
 //////// Elaboration & Feedback /////////

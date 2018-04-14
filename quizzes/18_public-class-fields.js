@@ -31,25 +31,7 @@ function basicExample() {
 }
 // log(basicExample())
 
-
-
-
-
-
-
-
-
 // SOLUTIONS BELOW!
-
-
-
-
-
-
-
-
-
-
 
 function basicExampleSOLUTION() {
   class Greeter {

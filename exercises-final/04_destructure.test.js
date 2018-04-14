@@ -43,7 +43,9 @@ test('can alias destructured variables', () => {
 })
 
 test('can destructure nested variables', () => {
-  const {coords: {lat, long}} = getAddress()
+  const {
+    coords: {lat, long},
+  } = getAddress()
   expect(lat).toBe(40.776608)
   expect(long).toBe(-111.920485)
   expect(() => noop(coords)).toThrow()

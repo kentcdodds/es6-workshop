@@ -62,7 +62,6 @@ test('can have instance methods', () => {
   expect(animal.sayName()).toBe('My name is: Honey Badger')
 })
 
-
 test('can have static methods', () => {
   // FINAL_START
   class Animal {

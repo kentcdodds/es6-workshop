@@ -10,7 +10,7 @@ function log(...objs) {
   }
   let thingToDir = objs
   if (objs.length === 1) {
-    [thingToDir] = objs
+    ;[thingToDir] = objs
   }
   if (typeof thingToDir === 'string') {
     formatLog(chalk.green(thingToDir))

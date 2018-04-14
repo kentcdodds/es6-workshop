@@ -4,7 +4,7 @@ test('the exponentiation operation can be used to raise a number to a power of a
   const result = Math.pow(3, 2)
   // WORKSHOP_END
   // FINAL_START
-  const result = 3**2
+  const result = 3 ** 2
   // FINAL_END
   expect(result).toBe(9)
 })

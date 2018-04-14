@@ -8,25 +8,28 @@
 // WORKSHOP_END
 test(`should resolve`, () => {
   return pickApple('ripe')
-    .then(result => {
-      // FINAL_START
-      expect(result).toBe('ripe apple')
-      // FINAL_END
-      // WORKSHOP_START
-      // throw new Error('this should not run')
-      // expect(result).toBe(/*ENTER GUESS HERE*/)
-      throw new Error('assert or throw here')
-      // WORKSHOP_END
-    }, error => {
-      // FINAL_START
-      throw new Error('this should not run')
-      // FINAL_END
-      // WORKSHOP_START
-      // throw new Error('this should not run')
-      // expect(error).toBe(/*ENTER GUESS HERE*/)
-      throw new Error('assert or throw here')
-      // WORKSHOP_END
-    })
+    .then(
+      result => {
+        // FINAL_START
+        expect(result).toBe('ripe apple')
+        // FINAL_END
+        // WORKSHOP_START
+        // throw new Error('this should not run')
+        // expect(result).toBe(/*ENTER GUESS HERE*/)
+        throw new Error('assert or throw here')
+        // WORKSHOP_END
+      },
+      error => {
+        // FINAL_START
+        throw new Error('this should not run')
+        // FINAL_END
+        // WORKSHOP_START
+        // throw new Error('this should not run')
+        // expect(error).toBe(/*ENTER GUESS HERE*/)
+        throw new Error('assert or throw here')
+        // WORKSHOP_END
+      },
+    )
     .catch(error => {
       // FINAL_START
       throw new Error('this should not run')
@@ -41,25 +44,28 @@ test(`should resolve`, () => {
 
 test(`should reject`, () => {
   return pickApple('unripe')
-    .then(result => {
-      // FINAL_START
-      throw new Error('this should not run')
-      // FINAL_END
-      // WORKSHOP_START
-      // throw new Error('this should not run')
-      // expect(result).toBe(/*ENTER GUESS HERE*/)
-      throw new Error('assert or throw here')
-      // WORKSHOP_END
-    }, error => {
-      // FINAL_START
-      expect(error).toBe('unripe apple')
-      // FINAL_END
-      // WORKSHOP_START
-      // throw new Error('this should not run')
-      // expect(error).toBe(/*ENTER GUESS HERE*/)
-      throw new Error('assert or throw here')
-      // WORKSHOP_END
-    })
+    .then(
+      result => {
+        // FINAL_START
+        throw new Error('this should not run')
+        // FINAL_END
+        // WORKSHOP_START
+        // throw new Error('this should not run')
+        // expect(result).toBe(/*ENTER GUESS HERE*/)
+        throw new Error('assert or throw here')
+        // WORKSHOP_END
+      },
+      error => {
+        // FINAL_START
+        expect(error).toBe('unripe apple')
+        // FINAL_END
+        // WORKSHOP_START
+        // throw new Error('this should not run')
+        // expect(error).toBe(/*ENTER GUESS HERE*/)
+        throw new Error('assert or throw here')
+        // WORKSHOP_END
+      },
+    )
     .catch(error => {
       // FINAL_START
       throw new Error('this should not run')

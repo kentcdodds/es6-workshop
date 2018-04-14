@@ -85,11 +85,6 @@ function computedPropertyNames() {
 }
 // log(computedPropertyNames())
 
-
-
-
-
-
 // helpers
 
 function getAllPropsInObject(obj) {
@@ -104,6 +99,7 @@ function getAllPropsInObject(obj) {
   return allPropsObj
 }
 
+/*
 
 
 
@@ -111,7 +107,7 @@ function getAllPropsInObject(obj) {
 
 
 
-// SOLUTIONS ARE BELOW THIS LINE!
+SOLUTIONS ARE BELOW
 
 
 
@@ -121,6 +117,7 @@ function getAllPropsInObject(obj) {
 
 
 
+ */
 
 function shorthandPropertyNamesSOLUTION() {
   const red = Math.floor(Math.random() * 256)
@@ -186,9 +183,5 @@ function computedPropertyNamesSOLUTION() {
   return getCar('Hyundai', 'Accent')
 }
 // log(computedPropertyNamesSOLUTION())
-
-
-
-
 
 /* eslint object-shorthand:0 */

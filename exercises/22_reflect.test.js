@@ -42,10 +42,18 @@ test(`Reflect.ownKeys returns the object's own (not inherited) keys (including s
   // hint, the keys will be in the order that they're added to the object
   // this will be the case for most environments, though it's generally not
   // a good idea to rely on this fact as it's not specified in the spec.
-  expect(Object.keys(kyle)).toEqual([/* ENTER YOUR GUESS */])
-  expect(Object.getOwnPropertyNames(kyle)).toEqual([/* ENTER YOUR GUESS */])
-  expect(Object.getOwnPropertySymbols(kyle)).toEqual([/* ENTER YOUR GUESS */])
-  expect(Reflect.ownKeys(kyle)).toEqual([/* ENTER YOUR GUESS */])
+  expect(Object.keys(kyle)).toEqual([
+    /* ENTER YOUR GUESS */
+  ])
+  expect(Object.getOwnPropertyNames(kyle)).toEqual([
+    /* ENTER YOUR GUESS */
+  ])
+  expect(Object.getOwnPropertySymbols(kyle)).toEqual([
+    /* ENTER YOUR GUESS */
+  ])
+  expect(Reflect.ownKeys(kyle)).toEqual([
+    /* ENTER YOUR GUESS */
+  ])
 })
 
 //////// Elaboration & Feedback /////////

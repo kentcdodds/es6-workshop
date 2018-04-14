@@ -60,12 +60,10 @@ function withObject() {
 
 function withMultiLineExpression() {
   const getString = function(name) {
-    return (
-      `
+    return `
         Hello there ${name}
         How are you doing today?
       `
-    )
   }
   return getString('Ryan')
 }
@@ -118,6 +116,15 @@ function noBind() {
 }
 // log(noBind())
 
+/*
+
+
+
+
+
+
+
+SOLUTIONS ARE BELOW
 
 
 
@@ -127,20 +134,7 @@ function noBind() {
 
 
 
-
-
-// SOLUTIONS ARE BELOW THIS LINE!
-
-
-
-
-
-
-
-
-
-
-
+ */
 
 function multiArgumentSOLUTION() {
   const divide = (a, b) => a / b
@@ -187,12 +181,11 @@ function withObjectSOLUTION() {
 // log(withObjectSOLUTION())
 
 function withMultiLineExpressionSOLUTION() {
-  const getString = name => (
+  const getString = name =>
     `
       Hello there ${name}
       How are you doing today?
     `
-  )
   return getString('Ryan')
 }
 // log(withMultiLineExpressionSOLUTION())
@@ -212,9 +205,10 @@ function contextSOLUTION() {
       {city: 'New Delhi', value: 24.953},
     ],
     display() {
-      return this.data.map(element => (
-        `Population in ${element.city} is ${element.value} ${this.unit}`
-      ))
+      return this.data.map(
+        element =>
+          `Population in ${element.city} is ${element.value} ${this.unit}`,
+      )
     },
   }
   return population.display()

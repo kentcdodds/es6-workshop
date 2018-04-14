@@ -9,13 +9,6 @@ function padString() {
 }
 // log(padString())
 
-
-
-
-
-
-
-
 function padStringWithPadString() {
   const string = 'hallo'
   // make the padString be 'sup '
@@ -23,7 +16,6 @@ function padStringWithPadString() {
   return result
 }
 // log(padStringWithPadString())
-
 
 function objectValues() {
   // what does this return?
@@ -41,7 +33,6 @@ function objectValues() {
 }
 // log(objectValues())
 
-
 function objectEntries() {
   // what does this return?
   const object = {
@@ -58,45 +49,16 @@ function objectEntries() {
 }
 // log(objectEntries())
 
-
 function trailingCommas() {
-  function totesLegit(
-    a,
-    b,
-    c,
-  ) {
+  function totesLegit(a, b, c) {
     return [a, b, c]
   }
 
-  return totesLegit(
-    'a',
-    'b',
-    'c',
-  )
+  return totesLegit('a', 'b', 'c')
 }
 // log(trailingCommas())
 
-
-
-
-
-
-
 // SOLUTIONS BELOW!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function padStringSOLUTION() {
   const string = 'hello'
@@ -105,8 +67,6 @@ function padStringSOLUTION() {
   return endPadded === '  hello  '
 }
 // log(padStringSOLUTION())
-
-
 
 function padStringWithPadStringSOLUTION() {
   const string = 'hallo'

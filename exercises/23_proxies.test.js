@@ -10,7 +10,9 @@ function getCharacter() {
     ],
     greet(greeting = 'Hi') {
       const {first, last} = this.name
-      return `${greeting}! My name is ${first} ${last} and my ID is ${this._id} and my password is ${this.password}!`
+      return `${greeting}! My name is ${first} ${last} and my ID is ${
+        this._id
+      } and my password is ${this.password}!`
     },
     getTeachers() {
       return this.classes.map(({teacher}) => teacher)
@@ -58,7 +60,10 @@ test.skip('can intercept function calls', () => {
   const result = character.greet('Hey there')
   expect(result).not.toContain(character.password)
   expect(result).not.toContain(character._id)
-  expect(character.getTeachers()).toEqual(['Sybill Trelawney', 'Dolores Umbridge'])
+  expect(character.getTeachers()).toEqual([
+    'Sybill Trelawney',
+    'Dolores Umbridge',
+  ])
 })
 
 test.skip('can be used to do some fancy stuff with arrays', () => {

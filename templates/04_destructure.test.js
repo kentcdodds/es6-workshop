@@ -63,7 +63,9 @@ test('can alias destructured variables', () => {
 
 test('can destructure nested variables', () => {
   // FINAL_START
-  const {coords: {lat, long}} = getAddress()
+  const {
+    coords: {lat, long},
+  } = getAddress()
   // FINAL_END
   // WORKSHOP_START
   // Using destructuring, call `getAddress()` and create `lat` and `long` variables.

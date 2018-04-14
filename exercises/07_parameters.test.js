@@ -1,5 +1,4 @@
 test('can be triggered when the incoming argument is undefined', () => {
-
   function getName(name = 'Mercury') {
     return name
   }
@@ -11,7 +10,6 @@ test('can be triggered when the incoming argument is undefined', () => {
 })
 
 test(`aren't included in arguments`, () => {
-
   function getName(name = 'Mercury') {
     return arguments.length
   }
@@ -88,7 +86,6 @@ test('is an actual array, unlike arguments', () => {
   expect(rests.splice).toBeDefined()
   expect(rests.splice).toBe(Array.prototype.splice)
 })
-
 
 test('it can default all arguments, optionally', () => {
   // Modify the method signature of `myFunction` to allow for

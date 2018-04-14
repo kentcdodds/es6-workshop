@@ -11,14 +11,16 @@ test('should support string interpolation', () => {
     ],
   }
   // FINAL_START
-  const personsFriends = `${person.name} has ${person.friends.length} friends: ${person.friends.join(', ')}`
+  const personsFriends = `${person.name} has ${
+    person.friends.length
+  } friends: ${person.friends.join(', ')}`
   // FINAL_END
   // WORKSHOP_START
   // construct a string using template literal string interpolation
   const personsFriends = ``
   // WORKSHOP_END
   expect(personsFriends).toBe(
-    'Kent C. Dodds has 6 friends: Brooke Dodds, Matt Zabriskie, Aaron Frost, Dave Geddes, Joe Eames, Ryan Florence'
+    'Kent C. Dodds has 6 friends: Brooke Dodds, Matt Zabriskie, Aaron Frost, Dave Geddes, Joe Eames, Ryan Florence',
   )
 })
 
@@ -48,7 +50,6 @@ test(`should support string escaping`, () => {
   // WORKSHOP_END
 })
 
-
 //////// EXTRA CREDIT ////////
 
 // you likely won't often use tagging, but it can be handy!
@@ -56,12 +57,16 @@ test.skip(`should call the tagging function`, () => {
   const noun = 'World'
   const emotion = 'happy'
   const result = tagIt`Hello ${noun}! Are you feeling ${emotion} today?`
-  expect(result).toBe('Hello super-cool World! Are you feeling really happy today?')
+  expect(result).toBe(
+    'Hello super-cool World! Are you feeling really happy today?',
+  )
 
   function tagIt(literalString, ...interpolatedParts) {
     // FINAL_START
     const firstPart = `${literalString[0]}super-cool ${interpolatedParts[0]}`
-    const lastPart = `${literalString[1]}really ${interpolatedParts[1]}${literalString[2]}`
+    const lastPart = `${literalString[1]}really ${interpolatedParts[1]}${
+      literalString[2]
+    }`
     return `${firstPart}${lastPart}`
     // FINAL_END
     // COMMENT_START eslint trickery
@@ -90,7 +95,6 @@ test('I submitted my elaboration and feedback', () => {
   expect(true).toBe(submitted)
 })
 ////////////////////////////////
-
 
 //////// EXTRA CREDIT ////////
 

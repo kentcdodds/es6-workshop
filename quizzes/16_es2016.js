@@ -21,40 +21,8 @@ function exponentiationOperator() {
 // run into often...
 // https://www.nczonline.net/blog/2016/10/the-ecmascript-2016-change-you-probably-dont-know/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // SOLUTION BELOW
 // No peeking!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function arrayIncludesSOLUTION() {
   const array = [1, 2, 3]

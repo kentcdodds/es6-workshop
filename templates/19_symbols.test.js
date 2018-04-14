@@ -50,7 +50,7 @@ test('symbols on objects', () => {
     releaseDate: 'February 21, 1986',
     [symbol]: {
       fans: 'about a billion',
-    }
+    },
   }
   // FINAL_END
 

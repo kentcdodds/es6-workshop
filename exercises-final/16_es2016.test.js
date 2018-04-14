@@ -1,5 +1,5 @@
 test('the exponentiation operation can be used to raise a number to a power of another number', () => {
-  const result = 3**2
+  const result = 3 ** 2
   expect(result).toBe(9)
 })
 

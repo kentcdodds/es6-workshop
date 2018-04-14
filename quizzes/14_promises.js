@@ -1,4 +1,3 @@
-
 // callbacks()
 // promises()
 
@@ -92,8 +91,6 @@ function callbacks() {
   }
 }
 
-
-
 function log(...args) {
   console.log(...args)
 }
@@ -102,13 +99,7 @@ function logError(...args) {
   console.error(...args)
 }
 
-
-
-
-
-
-// SOLUTIONS ARE BELOW THIS LINE!
-
+/*
 
 
 
@@ -116,33 +107,44 @@ function logError(...args) {
 
 
 
+SOLUTIONS ARE BELOW
 
 
+
+
+
+
+
+
+
+ */
 
 function promises() {
-  const successfulPromise = timeout(100)
-    .then(result => {
-      return `success: ${result}`
-    })
+  const successfulPromise = timeout(100).then(result => {
+    return `success: ${result}`
+  })
 
-  const failingPromise = timeout(100, true)
-    .then(null, error => {
-      return Promise.reject(`failure: ${error}`)
-    })
+  const failingPromise = timeout(100, true).then(null, error => {
+    return Promise.reject(`failure: ${error}`)
+  })
 
-  const caughtPromise = timeout(200, true)
-    .then(result => {
+  const caughtPromise = timeout(200, true).then(
+    result => {
       return `${result} with stuff`
-    }, error => {
+    },
+    error => {
       return Promise.resolve(`Recovered from error: ${error}`)
-    })
+    },
+  )
 
   const otherStuffPromise = timeout(100)
     .then(() => {
       return timeout(200)
-    }).then(() => {
+    })
+    .then(() => {
       throw new Error('hmm')
-    }).catch(() => {
+    })
+    .catch(() => {
       return Promise.all([timeout(100), timeout(200)])
     })
 

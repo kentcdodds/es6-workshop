@@ -36,7 +36,8 @@ test('can create a custom iterator', () => {
     max: 20,
     min: 10,
     [Symbol.iterator]() {
-      const random = () => Math.floor(Math.random() * (this.max - this.min)) + this.min
+      const random = () =>
+        Math.floor(Math.random() * (this.max - this.min)) + this.min
       const randomNumbers = random()
       let index = 0
       return {
@@ -66,8 +67,9 @@ test('can create a custom iterator with a generator', () => {
   const randomRandomNumbersGenerator = {
     max: 20,
     min: 10,
-    * [Symbol.iterator]() {
-      const random = () => Math.floor(Math.random() * (this.max - this.min)) + this.min
+    *[Symbol.iterator]() {
+      const random = () =>
+        Math.floor(Math.random() * (this.max - this.min)) + this.min
       const randomNumbers = random()
       for (var i = 0; i < randomNumbers; i++) {
         yield random()

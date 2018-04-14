@@ -1,5 +1,4 @@
 test('can be triggered when the incoming argument is undefined', () => {
-
   function getName(name = 'Mercury') {
     return name
   }
@@ -11,7 +10,6 @@ test('can be triggered when the incoming argument is undefined', () => {
 })
 
 test(`aren't included in arguments`, () => {
-
   function getName(name = 'Mercury') {
     return arguments.length
   }
@@ -64,9 +62,9 @@ test('has a different length than `arguments`', () => {
   expect(resty(1)).toBe(false)
   expect(resty(1, 2)).toBe(false)
   expect(resty(1, 2, 3)).toBe(false)
-  expect(
-    resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10),
-  ).toBe(false)
+  expect(resty(1, 2, 3, undefined, 5, undefined, 7, undefined, 9, 10)).toBe(
+    false,
+  )
 })
 
 test('is an actual array, unlike arguments', () => {
@@ -81,15 +79,14 @@ test('is an actual array, unlike arguments', () => {
   const args = argy(1, 2, 3)
   const rests = resty(1, 2, 3)
 
-  expect(
-    Object.getPrototypeOf(args) === Object.getPrototypeOf(rests),
-  ).toBe(false)
+  expect(Object.getPrototypeOf(args) === Object.getPrototypeOf(rests)).toBe(
+    false,
+  )
   expect(args.splice).toBe(undefined)
   expect(Object.getPrototypeOf(rests)).toBe(Array.prototype)
   expect(rests.splice).toBeDefined()
   expect(rests.splice).toBe(Array.prototype.splice)
 })
-
 
 test('it can default all arguments, optionally', () => {
 

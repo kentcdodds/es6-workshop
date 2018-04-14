@@ -26,7 +26,6 @@ test('can use objects as a key', () => {
 
   expect(myMap.has(user)).toBe(true)
   expect(myMap.get(user)).toBe(value)
-
 })
 
 test(`doesn't coerce keys`, () => {

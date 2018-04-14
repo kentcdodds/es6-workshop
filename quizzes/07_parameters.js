@@ -1,11 +1,7 @@
 import log from './pretty-log'
 
 function basicDefaultParam() {
-  return [
-    randGen(),
-    randGen(4),
-    randGen(0),
-  ]
+  return [randGen(), randGen(4), randGen(0)]
   function randGen(n) {
     // refactor with default parameter to handle n = undefined
     n = n || 10
@@ -83,12 +79,23 @@ function destructureWithDefaultParams() {
 
     const area = Math.PI * radius * radius
 
-    return `Circle at (${xCoordinate}, ${yCoordinate}), with radius ${radius}, has area = ${area.toFixed(2)}`
+    return `Circle at (${xCoordinate}, ${yCoordinate}), with radius ${radius}, has area = ${area.toFixed(
+      2,
+    )}`
   }
 }
 
 // log(destructureWithDefaultParams())
 
+/*
+
+
+
+
+
+
+
+SOLUTIONS ARE BELOW
 
 
 
@@ -98,26 +105,10 @@ function destructureWithDefaultParams() {
 
 
 
-
-// SOLUTIONS ARE BELOW THIS LINE!
-
-
-
-
-
-
-
-
-
-
-
+ */
 
 function basicDefaultParamSOLUTION() {
-  return [
-    randGen(),
-    randGen(4),
-    randGen(0),
-  ]
+  return [randGen(), randGen(4), randGen(0)]
   function randGen(n = 10) {
     return Math.floor(n * Math.random())
   }
@@ -169,12 +160,12 @@ function destructureWithDefaultParamsSOLUTION() {
   ]
   function computeCircleArea({r = 1.0, x = 0.0, y = 0.0} = {}) {
     const area = Math.PI * r * r
-    return `Circle at (${x}, ${y}), with radius ${r}, has area = ${area.toFixed(2)}`
+    return `Circle at (${x}, ${y}), with radius ${r}, has area = ${area.toFixed(
+      2,
+    )}`
   }
 }
 
-
 // log(destructureWithDefaultParamsSOLUTION())
-
 
 /* eslint prefer-rest-params:0 */

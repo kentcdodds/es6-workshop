@@ -32,7 +32,7 @@ function builtInIterables() {
   }
 
   function* myGenerator() {}
-  
+
   function isIterable(thing) {
     return Boolean(thing[Symbol.iterator])
   }
@@ -62,12 +62,6 @@ function customIterator() {
   return [...cars]
 }
 // log(customIterator())
-
-
-
-
-
-
 
 function customIteratorWithGenerator() {
   const cars = {
@@ -106,7 +100,7 @@ function customIteratorWithArguments() {
     ford: 'Focus',
     nissan: 'Sentra',
     toyota: 'Corolla',
-    * [Symbol.iterator]() {
+    *[Symbol.iterator]() {
       const keys = Object.keys(this)
       for (let i = 0; i < keys.length; i++) {
         const value = this[keys[i]]
@@ -121,32 +115,7 @@ function customIteratorWithArguments() {
 }
 // log(customIteratorWithArguments())
 
-
-
-
-
-
-
-
-
-
-
 // SOLUTIONS BELOW!
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 function customIteratorSOLUTION() {
   const cars = {
@@ -175,8 +144,6 @@ function customIteratorSOLUTION() {
 }
 // log(customIteratorSOLUTION())
 
-
-
 function customIteratorWithGeneratorSOLUTION() {
   const cars = {
     honda: 'Civic',
@@ -187,7 +154,7 @@ function customIteratorWithGeneratorSOLUTION() {
     ford: 'Focus',
     nissan: 'Sentra',
     toyota: 'Corolla',
-    * [Symbol.iterator]() {
+    *[Symbol.iterator]() {
       const keys = Object.keys(this)
       for (let i = 0; i < keys.length; i++) {
         const value = this[keys[i]]
@@ -209,7 +176,7 @@ function customIteratorWithArgumentsSOLUTION() {
     ford: 'Focus',
     nissan: 'Sentra',
     toyota: 'Corolla',
-    * [Symbol.iterator](included = '') {
+    *[Symbol.iterator](included = '') {
       const keys = Object.keys(this)
       for (let i = 0; i < keys.length; i++) {
         const value = this[keys[i]]
@@ -222,4 +189,3 @@ function customIteratorWithArgumentsSOLUTION() {
   return [...cars[Symbol.iterator]('e')]
 }
 // log(customIteratorWithArgumentsSOLUTION())
-

@@ -1,7 +1,0 @@
-{
-  "testEnvironment": "node",
-  "roots": [
-    "exercises-final"
-  ],
-  "setupTestFrameworkScriptFile": "./common/helpers/expect-to-be-valid-syntax.js"
-}

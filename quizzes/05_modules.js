@@ -20,6 +20,15 @@
 // 7. how could we import everything onto a single
 // object called `allTheThings`
 
+/*
+
+
+
+
+
+
+
+SOLUTIONS ARE BELOW
 
 
 
@@ -29,22 +38,9 @@
 
 
 
+ */
 
-
-
-
-
-// SOLUTIONS ARE BELOW THIS LINE!
 // But they're commented out because JavaScript
-
-
-
-
-
-
-
-
-
 
 // 1.
 // import './helpers/module-a'

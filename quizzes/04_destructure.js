@@ -123,6 +123,15 @@ function ontoAnObject() {
 }
 // log(ontoAnObject())
 
+/*
+
+
+
+
+
+
+
+SOLUTIONS ARE BELOW
 
 
 
@@ -132,20 +141,7 @@ function ontoAnObject() {
 
 
 
-
-
-// SOLUTIONS ARE BELOW THIS LINE!
-
-
-
-
-
-
-
-
-
-
-
+ */
 
 function getAverageSOLUTION() {
   const obj = {x: 3.6, y: 7.8, z: 4.3}
@@ -188,7 +184,7 @@ function getFirstTwoSOLUTION() {
 
 function getElementsSOLUTION() {
   const arr = [0, 1, 2, 3, 4, 5, 6, 7]
-  const [first, second,,, fifth] = arr
+  const [first, second, , , fifth] = arr
 
   return {
     first: first,
@@ -231,12 +227,7 @@ function nestedArrayAndObjectSOLUTION() {
     title,
     protagonist: {
       name: protagonistName,
-      enemies: [,,,
-        {
-          title: enemyTitle,
-          name: enemyName,
-        },
-      ],
+      enemies: [, , , {title: enemyTitle, name: enemyName}],
     },
   } = info
   return `${enemyName} (${enemyTitle}) is an enemy to ${protagonistName} in "${title}"`
@@ -256,8 +247,8 @@ function defaultValuesSOLUTION() {
 
 function ontoAnObjectSOLUTION() {
   const array = [1, 2, 3, 4, 5, 6]
-  const object = {}; // <-- one place a semicolon is required
-  [object.one, object.two, object.three, ...object.rest] = array
+  const object = {} // <-- one place a semicolon is required
+  ;[object.one, object.two, object.three, ...object.rest] = array
   return object
 }
 // log(ontoAnObjectSOLUTION())
