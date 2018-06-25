@@ -37,8 +37,8 @@ By the time that the workshop is over (time permitting), all of your tests will 
 ## System Requirements
 
 * [git][git]
-* [Node][node] (at least version 6)
-* [yarn][yarn] (at least version 0.17.0)
+* [Node][node] (at least version 8.9.4)
+* [npm][npm] (at least version 5.6.0)
 
 ## Setup
 
@@ -56,13 +56,6 @@ git commit -am "setup"
 > Replace `YOUR_EMAIL@DOMAIN.COM` with your email address
 
 If this finishes without issues, great 👏! However, if you have problems, please file an issue on this repo [here](https://github.com/kentcdodds/es6-workshop/issues/new?title=Issues%20Setting%20Up&body=Here%27s%20my%20node/yarn%20version%20and%20the%20output%20when%20I%20run%20the%20commands:).
-
-### Note on yarn
-
-If you don't have `yarn` installed and don't want to use it for some reason, you can use [`npm`][npm] as well. Instead
-of `yarn run setup`, run `node ./scripts/install && npm run validate` and enjoy waiting (and hopefully things don't
-break for you). May be a good idea to still run `node ./scripts/verify` to verify you have the right version of other
-things too.
 
 # How To Run Tests
 
