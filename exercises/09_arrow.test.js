@@ -58,9 +58,9 @@ test('can make array filter chains more managable', () => {
     .filter(function(d) {
       return d.price < 5
     }) // Find only remaining items with price < 5
-    .sort(function(d) {
-      return d.qty * -1
-    }) // Sort by price, desc
+    .sort(function(a, b) {
+      return a.qty - b.qty
+    }) // Sort by quantity, desc
     .map(function(d) {
       return d.name
     }) // Pull just the name from each item
