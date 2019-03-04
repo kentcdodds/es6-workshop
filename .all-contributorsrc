@@ -162,6 +162,17 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "kyle-west",
+      "name": "Kyle West",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/18150457?v=4",
+      "profile": "https://github.com/kyle-west",
+      "contributions": [
+        "code",
+        "test"
+      ]
     }
-  ]
+  ],
+  "repoType": "github"
 }
