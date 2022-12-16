@@ -44,9 +44,7 @@ test.skip(`should call the tagging function`, () => {
 
   function tagIt(literalString, ...interpolatedParts) {
     const firstPart = `${literalString[0]}super-cool ${interpolatedParts[0]}`
-    const lastPart = `${literalString[1]}really ${interpolatedParts[1]}${
-      literalString[2]
-    }`
+    const lastPart = `${literalString[1]}really ${interpolatedParts[1]}${literalString[2]}`
     return `${firstPart}${lastPart}`
   }
 })

@@ -10,9 +10,7 @@ function getCharacter() {
     ],
     greet(greeting = 'Hi') {
       const {first, last} = this.name
-      return `${greeting}! My name is ${first} ${last} and my ID is ${
-        this._id
-      } and my password is ${this.password}!`
+      return `${greeting}! My name is ${first} ${last} and my ID is ${this._id} and my password is ${this.password}!`
     },
     getTeachers() {
       return this.classes.map(({teacher}) => teacher)

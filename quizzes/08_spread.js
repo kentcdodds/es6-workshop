@@ -11,7 +11,7 @@ function spreadFunctionCall() {
 function concatArrays() {
   // TODO: flatten nested arrays of arbitrary levels of nesting
   // arr can be typically like this: [8, 9, [6, [5, [7], [45, 34, [2]]]]]
-  // output shold be [8, 9, 6, 5, 7, 45, 34, 2]
+  // output should be [8, 9, 6, 5, 7, 45, 34, 2]
   // use spread operator in place of Array.prototype.concat()
   const arr = [8, 9, [6, [5, [7], [45, 34, [[[2]]], [[[[[[[[7]]]]], 90]]]]]]]
   return flatter(arr)

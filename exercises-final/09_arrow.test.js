@@ -31,7 +31,7 @@ test('binds `this` to the eval scope, not the runtime scope', () => {
   expect(() => person.greetFriends(friendsArray)).not.toThrow()
 })
 
-test('can make array filter chains more managable', () => {
+test('can make array filter chains more manageable', () => {
   const data = [
     {type: 'Widget', name: 'Sprocket', price: 10.0, qty: 3},
     {type: 'Widget', name: 'Bracket', price: 1.0, qty: 5},
