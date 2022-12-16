@@ -49,7 +49,7 @@ SOLUTIONS ARE BELOW
 // import add from './helpers/module-a'
 
 // 3.
-// import {theAnswer} from './helpers/module-a'
+// import {theAnswer,theQuestion} from './helpers/module-a'
 
 // 4.
 // import {theAnswer as fourtyTwo} from './helpers/module-a'

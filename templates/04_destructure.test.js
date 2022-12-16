@@ -103,7 +103,7 @@ test('can reach nested arrays', () => {
   const [one, , [three, , [, six]]] = getNestedNumbers()
   // FINAL_END
   // WORKSHOP_START
-  // Call getNestedNumbers and pull the first value out as `one`, the 3 as `three` and 6 as `sixth`.
+  // Call getNestedNumbers and pull the first value out as `one`, the 3 as `three` and 6 as `six`.
   // WORKSHOP_END
   expect(one).toBe(1)
   expect(three).toBe(3)
