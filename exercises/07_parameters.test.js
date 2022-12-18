@@ -84,7 +84,7 @@ test('is an actual array, unlike arguments', () => {
   expect(args.splice).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(Object.getPrototypeOf(rests)).toBe(/*ENTER YOUR GUESS HERE*/)
   expect(rests.splice).toBeDefined()
-  expect(rests.splice).toBe(Array.prototype.splice)
+  expect(rests.splice).toBe(/*ENTER YOUR GUESS HERE*/)
 })
 
 test('it can default all arguments, optionally', () => {
